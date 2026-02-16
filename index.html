@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html>
+<!-- ❌ Sin lang -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ❌ Título genérico -->
+    <title>Página</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #fff0f5, #fce4ec, #f8bbd0, #fff0f5);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            /* ❌ Color de texto con muy bajo contraste */
+            color: #f8c8d8;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ❌ Sin estructura semántica - todo divs */
+
+        .top-bar {
+            background: linear-gradient(90deg, rgba(236, 64, 122, 0.15), rgba(240, 98, 146, 0.25), rgba(236, 64, 122, 0.15));
+            backdrop-filter: blur(20px);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(236, 64, 122, 0.15);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            /* ❌ Bajo contraste */
+            color: #f48fb1;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            font-style: italic;
+            font-weight: 400;
+            color: #f8bbd0;
+        }
+
+        .menu {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        /* ❌ Links sin estados de foco visibles */
+        .menu a {
+            text-decoration: none;
+            /* ❌ Bajo contraste */
+            color: #f8bbd0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .menu a:hover {
+            color: #ec407a;
+        }
+
+        /* ❌ Sin outline en focus */
+        .menu a:focus {
+            outline: none;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 140px 20px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(248, 187, 208, 0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(240, 98, 146, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 30%, rgba(252, 228, 236, 0.4) 0%, transparent 50%);
+            animation: floatingBg 20s ease-in-out infinite;
+        }
+
+        @keyframes floatingBg {
+
+            0%,
+            100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            33% {
+                transform: translate(30px, -30px) rotate(2deg);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) rotate(-1deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            /* ❌ Bajo contraste */
+            color: #f48fb1;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+
+        /* ❌ Encabezados sin jerarquía - usando divs con clases */
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 400;
+            /* ❌ Bajo contraste sobre fondo rosa claro */
+            color: #f06292;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: #ec407a;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            line-height: 1.8;
+            /* ❌ Muy bajo contraste */
+            color: #f8bbd0;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            font-weight: 300;
+        }
+
+        /* ❌ Botón hecho con div, no accesible con teclado */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ec407a, #f06292);
+            /* ❌ Texto blanco sobre rosa - bajo contraste */
+            color: white;
+            padding: 18px 55px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(236, 64, 122, 0.3);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::after {
+            left: 100%;
+        }
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #f06292, transparent);
+            margin: 80px auto;
+        }
+
+        .features-section {
+            padding: 100px 60px;
+            position: relative;
+        }
+
+        .section-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            /* ❌ Bajo contraste */
+            color: #f48fb1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            /* ❌ Bajo contraste */
+            color: #f06292;
+            text-align: center;
+            font-weight: 400;
+            margin-bottom: 70px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(236, 64, 122, 0.1);
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #f8bbd0, #ec407a, #f8bbd0);
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(236, 64, 122, 0.12);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ❌ Íconos decorativos sin ocultar de lectores de pantalla */
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .feature-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            /* ❌ Bajo contraste */
+            color: #f06292;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-text {
+            font-size: 16px;
+            line-height: 1.8;
+            /* ❌ Muy bajo contraste */
+            color: #f8bbd0;
+            font-weight: 300;
+        }
+
+        .gallery-section {
+            padding: 100px 60px;
+            overflow: hidden;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ❌ Imágenes sin alt text */
+        .gallery-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: saturate(0.8) brightness(1.05);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: saturate(1.2) brightness(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(transparent, rgba(236, 64, 122, 0.6));
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .testimonial-section {
+            padding: 120px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, transparent, rgba(252, 228, 236, 0.4), transparent);
+        }
+
+        .testimonial-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-style: italic;
+            /* ❌ Bajo contraste */
+            color: #f48fb1;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            /* ❌ Bajo contraste */
+            color: #f8bbd0;
+        }
+
+        .contact-section {
+            padding: 100px 60px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ❌ Formulario sin labels, sin mensajes de error accesibles */
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 0;
+            border: none;
+            border-bottom: 1px solid rgba(236, 64, 122, 0.2);
+            background: transparent;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            /* ❌ Bajo contraste en placeholder */
+            color: #f48fb1;
+            transition: border-color 0.3s;
+        }
+
+        .form-input::placeholder {
+            /* ❌ Placeholder como único indicador - bajo contraste */
+            color: #f8bbd0;
+            font-style: italic;
+        }
+
+        /* ❌ Sin indicador de foco */
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: #ec407a;
+        }
+
+        .form-textarea {
+            width: 100%;
+            padding: 18px 0;
+            border: none;
+            border-bottom: 1px solid rgba(236, 64, 122, 0.2);
+            background: transparent;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #f48fb1;
+            resize: vertical;
+            min-height: 120px;
+            transition: border-color 0.3s;
+        }
+
+        .form-textarea::placeholder {
+            color: #f8bbd0;
+            font-style: italic;
+        }
+
+        .form-textarea:focus {
+            outline: none;
+            border-bottom-color: #ec407a;
+        }
+
+        .submit-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ec407a, #f06292);
+            color: white;
+            padding: 18px 55px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        /* ❌ Sin focus visible */
+        .submit-btn:focus {
+            outline: none;
+        }
+
+        .submit-btn:hover {
+            box-shadow: 0 15px 40px rgba(236, 64, 122, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .bottom-bar {
+            background: linear-gradient(90deg, rgba(236, 64, 122, 0.1), rgba(240, 98, 146, 0.2), rgba(236, 64, 122, 0.1));
+            padding: 40px 60px;
+            text-align: center;
+            border-top: 1px solid rgba(236, 64, 122, 0.1);
+        }
+
+        .bottom-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            /* ❌ Bajo contraste */
+            color: #f8bbd0;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* ❌ Links sin texto accesible, solo íconos */
+        .social-links a {
+            color: #f48fb1;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ec407a;
+            transform: translateY(-3px);
+        }
+
+        .social-links a:focus {
+            outline: none;
+        }
+
+        /* ❌ Contenido que aparece solo con hover del mouse */
+        .hover-only-info {
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 14px;
+            color: #f06292;
+            margin-top: 10px;
+        }
+
+        .feature-card:hover .hover-only-info {
+            opacity: 1;
+        }
+
+        .floating-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .floating-decoration.circle1 {
+            top: 20%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(248, 187, 208, 0.2), transparent);
+            animation: float1 8s ease-in-out infinite;
+        }
+
+        .floating-decoration.circle2 {
+            bottom: 20%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(240, 98, 146, 0.1), transparent);
+            animation: float2 10s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-20px, 30px);
+            }
+        }
+
+        @keyframes float2 {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(30px, -20px);
+            }
+        }
+
+        /* ❌ Video/audio sin controles accesibles */
+        .media-section {
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* ❌ Botón de play solo visual, no accesible */
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            background: rgba(236, 64, 122, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .play-btn:hover {
+            background: rgba(236, 64, 122, 0.9);
+            transform: scale(1.1);
+        }
+
+        .play-triangle {
+            width: 0;
+            height: 0;
+            border-left: 22px solid white;
+            border-top: 14px solid transparent;
+            border-bottom: 14px solid transparent;
+            margin-left: 5px;
+        }
+
+        /* ❌ Skip link inexistente */
+
+        /* ❌ Tabla de precios sin headers accesibles */
+        .pricing-table {
+            max-width: 800px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .pricing-table td {
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(236, 64, 122, 0.1);
+            font-size: 16px;
+            color: #f48fb1;
+        }
+
+        .pricing-table td:last-child {
+            text-align: right;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+        }
+
+        /* Decoraciones adicionales */
+        .petal {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.6;
+            font-size: 20px;
+            animation: falling 10s linear infinite;
+        }
+
+        @keyframes falling {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* ❌ Texto como imagen / no seleccionable */
+        .fancy-text {
+            background: linear-gradient(135deg, #ec407a, #f48fb1, #ec407a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            user-select: none;
+        }
+
+        /* ❌ Información transmitida solo por color */
+        .status-available {
+            color: #f48fb1;
+        }
+
+        .status-unavailable {
+            color: #fce4ec;
+        }
+
+        /* ❌ Texto muy pequeño */
+        .fine-print {
+            font-size: 8px;
+            color: #f8bbd0;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Animación de entrada */
+        .fade-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ❌ Auto-playing carousel sin controles de pausa */
+        .carousel {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 40px 0;
+        }
+
+        .carousel-track {
+            display: inline-flex;
+            gap: 60px;
+            animation: scroll 20s linear infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-item {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #f8bbd0;
+            font-style: italic;
+            white-space: nowrap;
+        }
+
+        .carousel-dot {
+            color: #ec407a;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ❌ Sin skip link -->
+
+    <!-- Decoraciones flotantes -->
+    <div class="floating-decoration circle1"></div>
+    <div class="floating-decoration circle2"></div>
+
+    <!-- Pétalos cayendo (decorativos pero distractores) -->
+    <div class="petal" style="left: 10%; animation-delay: 0s;">🌸</div>
+    <div class="petal" style="left: 30%; animation-delay: 2s;">✿</div>
+    <div class="petal" style="left: 50%; animation-delay: 4s;">🌸</div>
+    <div class="petal" style="left: 70%; animation-delay: 1s;">✿</div>
+    <div class="petal" style="left: 90%; animation-delay: 3s;">🌸</div>
+
+    <!-- ❌ Usando div en vez de header -->
+    <div class="top-bar">
+        <!-- ❌ Logo sin enlace al inicio, sin significado semántico -->
+        <div class="logo">
+            Rosé <span>Atelier</span>
+        </div>
+        <!-- ❌ Usando div en vez de nav -->
+        <div class="menu">
+            <!-- ❌ Links vacíos con href="#" y sin indicador de foco -->
+            <a href="#" onclick="return false;">Inicio</a>
+            <a href="#" onclick="return false;">Colección</a>
+            <a href="#" onclick="return false;">Galería</a>
+            <a href="#" onclick="return false;">Testimonios</a>
+            <a href="#" onclick="return false;">Contacto</a>
+        </div>
+    </div>
+
+    <!-- ❌ Usando div en vez de main -->
+    <div>
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-subtitle">Elegancia Atemporal</div>
+                <!-- ❌ Título principal como div, no como h1 -->
+                <div class="hero-title fancy-text">
+                    El Arte de la<br><em>Belleza Rosa</em>
+                </div>
+                <div class="hero-description">
+                    Descubre una experiencia única donde la sofisticación se encuentra
+                    con la delicadeza de los tonos rosados más exquisitos
+                </div>
+                <!-- ❌ Botón hecho con div, no focusable -->
+                <div class="cta-button" onclick="alert('¡Bienvenida!')">
+                    Explorar Colección
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Carousel auto-playing ❌ sin pausa -->
+        <div class="carousel">
+            <div class="carousel-track">
+                <span class="carousel-item">Elegancia</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Sofisticación</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Belleza</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Exclusividad</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Lujo</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Armonía</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Elegancia</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Sofisticación</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Belleza</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Exclusividad</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Lujo</span>
+                <span class="carousel-dot">✦</span>
+                <span class="carousel-item">Armonía</span>
+                <span class="carousel-dot">✦</span>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <div class="section-label">Nuestros Servicios</div>
+            <!-- ❌ Título como div, no como h2 -->
+            <div class="section-title">Experiencias <em>Exclusivas</em></div>
+
+            <div class="features-grid">
+                <div class="feature-card fade-element">
+                    <!-- ❌ Ícono emoji sin aria-hidden -->
+                    <span class="feature-icon">💎</span>
+                    <div class="feature-name">Joyería Artesanal</div>
+                    <div class="feature-text">
+                        Piezas únicas creadas a mano con los materiales más selectos y diseños exclusivos
+                    </div>
+                    <!-- ❌ Info solo visible en hover -->
+                    <div class="hover-only-info">Desde $299 — Disponible</div>
+                </div>
+
+                <div class="feature-card fade-element">
+                    <span class="feature-icon">🌹</span>
+                    <div class="feature-name">Arreglos Florales</div>
+                    <div class="feature-text">
+                        Composiciones botánicas de alta costura para eventos y espacios de ensueño
+                    </div>
+                    <div class="hover-only-info">Desde $149 — Disponible</div>
+                </div>
+
+                <div class="feature-card fade-element">
+                    <span class="feature-icon">✨</span>
+                    <div class="feature-name">Spa & Bienestar</div>
+                    <div class="feature-text">
+                        Tratamientos premium de relajación con aromas y esencias de rosa natural
+                    </div>
+                    <div class="hover-only-info">Desde $199 — Disponible</div>
+                </div>
+
+                <div class="feature-card fade-element">
+                    <span class="feature-icon">👗</span>
+                    <div class="feature-name">Moda Exclusiva</div>
+                    <div class="feature-text">
+                        Colecciones de temporada con las tendencias más elegantes en tonos rosados
+                    </div>
+                    <div class="hover-only-info">Desde $499 — Disponible</div>
+                </div>
+
+                <div class="feature-card fade-element">
+                    <span class="feature-icon">🎀</span>
+                    <div class="feature-name">Eventos Premium</div>
+                    <div class="feature-text">
+                        Organización y decoración de eventos con un toque de distinción incomparable
+                    </div>
+                    <div class="hover-only-info">Desde $999 — Disponible</div>
+                </div>
+
+                <div class="feature-card fade-element">
+                    <span class="feature-icon">🍰</span>
+                    <div class="feature-name">Repostería Fina</div>
+                    <div class="feature-text">
+                        Creaciones dulces de autor con decoración artística en tonos pastel
+                    </div>
+                    <div class="hover-only-info">Desde $89 — Disponible</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Gallery Section -->
+        <div class="gallery-section">
+            <div class="section-label">Galería</div>
+            <div class="section-title">Momentos <em>Capturados</em></div>
+
+            <div class="gallery-grid">
+                <!-- ❌ Imágenes sin alt text adecuado -->
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=400&fit=crop" alt="">
+                    <div class="gallery-overlay">
+                        <span>Flores de Temporada</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop" alt="">
+                    <div class="gallery-overlay">
+                        <span>Cosmética Premium</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop" alt="">
+                    <div class="gallery-overlay">
+                        <span>Decoración Rosa</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1595872018818-97555653a011?w=400&h=400&fit=crop" alt="">
+                    <div class="gallery-overlay">
+                        <span>Joyería Artesanal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Pricing como tabla ❌ sin thead/th -->
+        <div class="features-section">
+            <div class="section-label">Precios</div>
+            <div class="section-title">Nuestras <em>Tarifas</em></div>
+
+            <table class="pricing-table">
+                <!-- ❌ Sin caption, sin thead, sin th -->
+                <tr>
+                    <td>
+                        <!-- ❌ Estado transmitido solo por color -->
+                        <span class="status-available">●</span> Consultoría de Imagen Personal
+                    </td>
+                    <td>$199</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="status-available">●</span> Sesión de Spa Completa
+                    </td>
+                    <td>$349</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="status-unavailable">●</span> Paquete Evento Platinum
+                    </td>
+                    <td>$1,499</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="status-available">●</span> Arreglo Floral Premium
+                    </td>
+                    <td>$249</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="status-unavailable">●</span> Colección Exclusiva Temporada
+                    </td>
+                    <td>$899</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Media Section ❌ sin subtítulos ni transcripción -->
+        <div class="media-section">
+            <div class="section-label">Descubre</div>
+            <div class="section-title">Nuestro <em>Mundo</em></div>
+
+            <div class="video-container">
+                <!-- ❌ "Botón" de play no accesible con teclado, sin label -->
+                <div class="play-btn" onclick="alert('Reproduciendo video...')">
+                    <div class="play-triangle"></div>
+                </div>
+            </div>
+            <!-- ❌ Sin transcripción ni subtítulos -->
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Testimonial Section -->
+        <div class="testimonial-section">
+            <div class="section-label">Testimonios</div>
+            <!-- ❌ No usa blockquote -->
+            <div class="testimonial-quote">
+                "Una experiencia absolutamente mágica. Cada detalle fue cuidado
+                con una elegancia que superó todas mis expectativas. Simplemente perfecto."
+            </div>
+            <div class="testimonial-author">— María del Carmen Rosales</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Contact Section ❌ Formulario totalmente inaccesible -->
+        <div class="contact-section">
+            <div class="section-label">Contacto</div>
+            <div class="section-title">Escríbenos</div>
+
+            <!-- ❌ Sin form tag -->
+            <div>
+                <div class="form-group">
+                    <!-- ❌ Sin label, solo placeholder -->
+                    <input type="text" class="form-input" placeholder="Tu nombre completo">
+                </div>
+                <div class="form-group">
+                    <!-- ❌ Sin label, sin validación accesible -->
+                    <input type="text" class="form-input" placeholder="Tu correo electrónico">
+                </div>
+                <div class="form-group">
+                    <!-- ❌ Sin label, sin asociación -->
+                    <input type="text" class="form-input" placeholder="Teléfono (opcional)">
+                </div>
+                <div class="form-group">
+                    <!-- ❌ Sin label -->
+                    <textarea class="form-textarea" placeholder="Cuéntanos sobre tu evento soñado..."></textarea>
+                </div>
+                <!-- ❌ Submit sin type correcto, sin form -->
+                <div class="cta-button submit-btn" onclick="alert('Formulario enviado')">
+                    Enviar Mensaje
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ❌ Usando div en vez de footer -->
+    <div class="bottom-bar">
+        <div class="bottom-text">
+            © 2025 Rosé Atelier — Todos los derechos reservados
+        </div>
+        <div class="social-links">
+            <!-- ❌ Links sin texto accesible, solo emojis decorativos -->
+            <a href="#" onclick="return false;">♡</a>
+            <a href="#" onclick="return false;">✦</a>
+            <a href="#" onclick="return false;">❋</a>
+            <a href="#" onclick="return false;">✧</a>
+        </div>
+        <!-- ❌ Texto demasiado pequeño -->
+        <div class="fine-print">
+            Al usar este sitio aceptas nuestros términos y condiciones. Los precios pueden variar sin previo aviso.
+            Consulta disponibilidad. Aplican restricciones. Servicio disponible solo en CDMX y área metropolitana.
+        </div>
+    </div>
+
+    <!-- ❌ JavaScript que impide accesibilidad -->
+    <script>
+        // ❌ Desactivar el menú contextual (afecta usuarios de tecnologías asistivas)
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // ❌ Animación de entrada que depende solo de JS
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-element').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ❌ Trap de teclado - impide navegar con Tab normalmente en la galería
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('keydown', function (e) {
+                if (e.key === 'Tab') {
+                    // No hace nada útil, pero podría confundir
+                }
+            });
+        });
+
+        // ❌ Auto-scroll que no se puede pausar
+        let scrollPos = 0;
+        function autoScrollTestimonial() {
+            // Simulación de comportamiento molesto
+        }
+    </script>
+</body>
+
+</html>
