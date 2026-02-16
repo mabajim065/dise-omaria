@@ -3,15 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página</title>
+    <title>x</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400&display=swap');
 
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         body {
@@ -19,88 +18,69 @@
             background: linear-gradient(135deg, #fff0f5, #fce4ec, #f8bbd9, #fff0f5);
             background-size: 400% 400%;
             animation: bg 12s ease infinite;
-            min-height: 100vh;
-            color: #f8c8d8;
+            color: #fce4ec;
+            cursor: default;
+            -webkit-user-select: none;
+            user-select: none;
             overflow-x: hidden;
         }
 
         @keyframes bg {
             0% {
-                background-position: 0% 50%;
+                background-position: 0% 50%
             }
 
             50% {
-                background-position: 100% 50%;
+                background-position: 100% 50%
             }
 
             100% {
-                background-position: 0% 50%;
+                background-position: 0% 50%
             }
         }
 
-        /* ============================================
-           BARRA SUPERIOR (debería ser <header> + <nav>)
-           ============================================ */
-        .barra {
-            background: linear-gradient(90deg,
-                    rgba(236, 64, 122, 0.12),
-                    rgba(240, 98, 146, 0.22),
-                    rgba(236, 64, 122, 0.12));
-            backdrop-filter: blur(20px);
+        *:focus {
+            outline: none !important;
+            box-shadow: none !important
+        }
+
+        .b {
+            background: rgba(236, 64, 122, 0.1);
             padding: 22px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(236, 64, 122, 0.12);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
         }
 
-        .logo {
+        .lo {
             font-family: 'Playfair Display', serif;
             font-size: 30px;
-            font-weight: 700;
-            color: #f48fb1;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        .logo i {
-            font-style: italic;
-            font-weight: 400;
             color: #f8bbd0;
+            letter-spacing: 3px;
         }
 
-        .menu {
+        .m {
             display: flex;
-            gap: 40px;
-            list-style: none;
+            gap: 40px
         }
 
-        .menu a {
-            text-decoration: none;
+        .m span {
             color: #f8bbd0;
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 300;
+            font-size: 10px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            transition: color 0.3s;
+            cursor: pointer;
         }
 
-        .menu a:hover {
-            color: #ec407a;
+        .m span:hover {
+            color: #f06292
         }
 
-        .menu a:focus {
-            outline: none;
-        }
-
-        /* ============================================
-           HERO
-           ============================================ */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -118,123 +98,85 @@
             inset: -50%;
             width: 200%;
             height: 200%;
-            background:
-                radial-gradient(ellipse at 30% 50%, rgba(248, 187, 208, 0.35) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 50%, rgba(240, 98, 146, 0.15) 0%, transparent 50%);
-            animation: flotar 18s ease-in-out infinite;
+            background: radial-gradient(ellipse at 30% 50%, rgba(248, 187, 208, 0.3), transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(240, 98, 146, 0.15), transparent 50%);
+            animation: f 18s ease-in-out infinite;
         }
 
-        @keyframes flotar {
+        @keyframes f {
 
             0%,
             100% {
-                transform: translate(0, 0) rotate(0deg);
+                transform: translate(0, 0)
             }
 
-            33% {
-                transform: translate(30px, -25px) rotate(2deg);
-            }
-
-            66% {
-                transform: translate(-20px, 20px) rotate(-1deg);
+            50% {
+                transform: translate(30px, -25px)
             }
         }
 
-        .hero-inner {
+        .hi {
             position: relative;
             z-index: 2;
-            max-width: 780px;
+            max-width: 780px
         }
 
-        .hero-sub {
+        .hs {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 9px;
             letter-spacing: 8px;
-            text-transform: uppercase;
-            color: #f48fb1;
+            color: #f8bbd0;
             margin-bottom: 30px;
         }
 
-        .hero-titulo {
+        .ht {
             font-family: 'Playfair Display', serif;
-            font-size: 70px;
-            font-weight: 400;
-            color: #f4a0c0;
+            font-size: 68px;
+            color: #f8bbd0;
             line-height: 1.1;
             margin-bottom: 28px;
         }
 
-        .hero-titulo em {
-            font-style: italic;
-            color: #f06292;
-        }
-
-        .hero-desc {
-            font-size: 20px;
+        .hd {
+            font-size: 19px;
             line-height: 1.8;
-            color: #f8bbd0;
+            color: #fce4ec;
             max-width: 580px;
             margin: 0 auto 50px;
-            font-weight: 300;
         }
 
-        .boton {
+        .btn {
             display: inline-block;
-            background: linear-gradient(135deg, #ec407a, #f06292);
-            color: #ffe0ec;
+            background: linear-gradient(135deg, #f48fb1, #f8bbd0);
+            color: #fce4ec;
             padding: 18px 58px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
+            font-size: 10px;
             letter-spacing: 4px;
             text-transform: uppercase;
-            border: none;
             cursor: pointer;
             transition: all 0.4s;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
         }
 
-        .boton:hover {
+        .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 45px rgba(236, 64, 122, 0.3);
+            box-shadow: 0 15px 45px rgba(236, 64, 122, 0.2);
         }
 
-        .boton::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transition: left 0.5s;
-        }
-
-        .boton:hover::after {
-            left: 100%;
-        }
-
-        /* ============================================
-           SEPARADOR
-           ============================================ */
         .sep {
             width: 60px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #f06292, transparent);
+            background: linear-gradient(90deg, transparent, #f8bbd0, transparent);
             margin: 80px auto;
         }
 
-        /* ============================================
-           MARQUESINA AUTO-PLAY
-           ============================================ */
-        .marquesina {
+        .marq {
             overflow: hidden;
             padding: 35px 0;
-            white-space: nowrap;
+            white-space: nowrap
         }
 
-        .marquesina-track {
+        .mt {
             display: inline-flex;
             gap: 50px;
             animation: correr 22s linear infinite;
@@ -242,15 +184,15 @@
 
         @keyframes correr {
             0% {
-                transform: translateX(0);
+                transform: translateX(0)
             }
 
             100% {
-                transform: translateX(-50%);
+                transform: translateX(-50%)
             }
         }
 
-        .marq-item {
+        .mi {
             font-family: 'Playfair Display', serif;
             font-size: 22px;
             color: #f8bbd0;
@@ -258,38 +200,34 @@
             white-space: nowrap;
         }
 
-        .marq-dot {
-            color: #f06292;
-            margin: 0 8px;
+        .md {
+            color: #fce4ec;
+            margin: 0 8px
         }
 
-        /* ============================================
-           SERVICIOS
-           ============================================ */
-        .servicios {
-            padding: 100px 60px;
+        .srv {
+            padding: 100px 60px
         }
 
-        .sec-label {
+        .sl {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 9px;
             letter-spacing: 6px;
-            text-transform: uppercase;
-            color: #f48fb1;
+            color: #f8bbd0;
             text-align: center;
             margin-bottom: 18px;
+            text-transform: uppercase;
         }
 
-        .sec-titulo {
+        .st {
             font-family: 'Playfair Display', serif;
             font-size: 46px;
-            color: #f4a0c0;
+            color: #f8bbd0;
             text-align: center;
-            font-weight: 400;
             margin-bottom: 65px;
         }
 
-        .grid3 {
+        .g3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 35px;
@@ -297,10 +235,8 @@
             margin: 0 auto;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(236, 64, 122, 0.08);
+        .c {
+            background: rgba(255, 255, 255, 0.25);
             padding: 48px 38px;
             text-align: center;
             transition: all 0.5s;
@@ -308,70 +244,64 @@
             overflow: hidden;
         }
 
-        .card::before {
+        .c::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 3px;
-            background: linear-gradient(90deg, #f8bbd0, #ec407a, #f8bbd0);
+            background: linear-gradient(90deg, #f8bbd0, #f48fb1, #f8bbd0);
             transform: scaleX(0);
             transition: transform 0.5s;
         }
 
-        .card:hover::before {
-            transform: scaleX(1);
+        .c:hover::before {
+            transform: scaleX(1)
         }
 
-        .card:hover {
+        .c:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(236, 64, 122, 0.1);
-            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 25px 60px rgba(236, 64, 122, 0.08);
+            background: rgba(255, 255, 255, 0.5);
         }
 
-        .card-icon {
+        .ci {
             font-size: 42px;
             margin-bottom: 22px;
-            display: block;
+            display: block
         }
 
-        .card-nombre {
+        .cn {
             font-family: 'Playfair Display', serif;
             font-size: 21px;
-            color: #f06292;
+            color: #f8bbd0;
             margin-bottom: 14px;
-            font-weight: 600;
         }
 
-        .card-texto {
+        .ct {
             font-size: 15px;
             line-height: 1.8;
-            color: #f8bbd0;
-            font-weight: 300;
+            color: #fce4ec
         }
 
-        .solo-hover {
+        .sh {
             opacity: 0;
             transition: opacity 0.3s;
-            font-size: 13px;
-            color: #f06292;
+            font-size: 12px;
+            color: #fce4ec;
             margin-top: 12px;
-            font-family: 'Montserrat', sans-serif;
         }
 
-        .card:hover .solo-hover {
-            opacity: 1;
+        .c:hover .sh {
+            opacity: 1
         }
 
-        /* ============================================
-           GALERÍA
-           ============================================ */
-        .galeria {
-            padding: 100px 60px;
+        .gal {
+            padding: 100px 60px
         }
 
-        .grid4 {
+        .g4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 18px;
@@ -379,89 +309,80 @@
             margin: 0 auto;
         }
 
-        .gal-item {
+        .gi {
             position: relative;
             aspect-ratio: 1;
             overflow: hidden;
             cursor: pointer;
         }
 
-        .gal-item img {
+        .gi img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.7s;
-            filter: saturate(0.8) brightness(1.05);
         }
 
-        .gal-item:hover img {
-            transform: scale(1.12);
-            filter: saturate(1.2) brightness(1.1);
+        .gi:hover img {
+            transform: scale(1.12)
         }
 
-        .gal-over {
+        .go {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             padding: 28px 18px 18px;
-            background: linear-gradient(transparent, rgba(236, 64, 122, 0.55));
+            background: linear-gradient(transparent, rgba(236, 64, 122, 0.4));
             opacity: 0;
             transition: opacity 0.4s;
         }
 
-        .gal-item:hover .gal-over {
-            opacity: 1;
+        .gi:hover .go {
+            opacity: 1
         }
 
-        .gal-over span {
-            color: white;
+        .go span {
+            color: #fce4ec;
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 9px;
             letter-spacing: 3px;
-            text-transform: uppercase;
         }
 
-        /* ============================================
-           TABLA PRECIOS
-           ============================================ */
-        .tabla-precios {
+        .tp {
             max-width: 800px;
             margin: 0 auto;
             border-collapse: collapse;
             width: 100%;
         }
 
-        .tabla-precios td {
+        .tp td {
             padding: 20px 28px;
-            border-bottom: 1px solid rgba(236, 64, 122, 0.08);
-            font-size: 16px;
-            color: #f48fb1;
+            border-bottom: 1px solid rgba(236, 64, 122, 0.06);
+            font-size: 15px;
+            color: #f8bbd0;
         }
 
-        .tabla-precios td:last-child {
+        .tp td:last-child {
             text-align: right;
             font-family: 'Playfair Display', serif;
             font-size: 20px;
         }
 
-        .dispo {
-            color: #f48fb1;
+        .di {
+            color: #f8bbd0
         }
 
-        .agotado {
-            color: #fce4ec;
+        .ag {
+            color: #fce4ec
         }
 
-        /* ============================================
-           VIDEO
-           ============================================ */
-        .media {
+        .med {
             padding: 80px 60px;
-            text-align: center;
+            text-align: center
         }
 
-        .video-box {
+        .vb {
             max-width: 800px;
             margin: 0 auto;
             aspect-ratio: 16/9;
@@ -469,14 +390,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
         }
 
-        .play {
+        .pl {
             width: 80px;
             height: 80px;
-            background: rgba(236, 64, 122, 0.65);
+            background: rgba(236, 64, 122, 0.5);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -485,315 +404,279 @@
             transition: all 0.3s;
         }
 
-        .play:hover {
-            background: rgba(236, 64, 122, 0.9);
+        .pl:hover {
+            background: rgba(236, 64, 122, 0.8);
             transform: scale(1.1);
         }
 
-        .triangulo {
+        .tr {
             width: 0;
             height: 0;
-            border-left: 22px solid white;
+            border-left: 22px solid #fce4ec;
             border-top: 14px solid transparent;
             border-bottom: 14px solid transparent;
             margin-left: 5px;
         }
 
-        /* ============================================
-           TESTIMONIOS
-           ============================================ */
-        .testimonios {
+        .tes {
             padding: 120px 60px;
             text-align: center;
-            background: linear-gradient(180deg, transparent, rgba(252, 228, 236, 0.35), transparent);
+            background: linear-gradient(180deg, transparent, rgba(252, 228, 236, 0.3), transparent);
         }
 
-        .cita {
+        .ci2 {
             font-family: 'Playfair Display', serif;
             font-size: 34px;
             font-style: italic;
-            color: #f48fb1;
+            color: #f8bbd0;
             max-width: 780px;
             margin: 0 auto 35px;
             line-height: 1.6;
         }
 
-        .autor {
+        .au {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 9px;
             letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #f8bbd0;
+            color: #fce4ec;
         }
 
-        /* ============================================
-           FORMULARIO
-           ============================================ */
-        .contacto {
+        .con {
             padding: 100px 60px;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .campo {
-            margin-bottom: 28px;
+        .ca {
+            margin-bottom: 28px
         }
 
-        .input {
+        .inp {
             width: 100%;
             padding: 18px 0;
             border: none;
-            border-bottom: 1px solid rgba(236, 64, 122, 0.18);
+            border-bottom: 1px solid rgba(236, 64, 122, 0.12);
             background: transparent;
             font-family: 'Cormorant Garamond', serif;
             font-size: 18px;
-            color: #f48fb1;
-            transition: border-color 0.3s;
-        }
-
-        .input::placeholder {
             color: #f8bbd0;
-            font-style: italic;
         }
 
-        .input:focus {
+        .inp::placeholder {
+            color: #fce4ec;
+            font-style: italic
+        }
+
+        .inp:focus {
             outline: none;
-            border-bottom-color: #ec407a;
+            border-bottom-color: #f48fb1
         }
 
-        .textarea {
+        .txa {
             width: 100%;
             padding: 18px 0;
             border: none;
-            border-bottom: 1px solid rgba(236, 64, 122, 0.18);
+            border-bottom: 1px solid rgba(236, 64, 122, 0.12);
             background: transparent;
             font-family: 'Cormorant Garamond', serif;
             font-size: 18px;
-            color: #f48fb1;
-            resize: vertical;
+            color: #f8bbd0;
+            resize: none;
             min-height: 120px;
         }
 
-        .textarea::placeholder {
-            color: #f8bbd0;
-            font-style: italic;
+        .txa::placeholder {
+            color: #fce4ec;
+            font-style: italic
         }
 
-        .textarea:focus {
-            outline: none;
-            border-bottom-color: #ec407a;
+        .txa:focus {
+            outline: none
         }
 
-        .btn-enviar {
-            display: block;
-            width: 100%;
-            background: linear-gradient(135deg, #ec407a, #f06292);
-            color: #ffe0ec;
-            padding: 18px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: all 0.4s;
-        }
-
-        .btn-enviar:hover {
-            box-shadow: 0 15px 40px rgba(236, 64, 122, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .btn-enviar:focus {
-            outline: none;
-        }
-
-        /* ============================================
-           PIE
-           ============================================ */
         .pie {
-            background: linear-gradient(90deg,
-                    rgba(236, 64, 122, 0.08),
-                    rgba(240, 98, 146, 0.18),
-                    rgba(236, 64, 122, 0.08));
+            background: rgba(236, 64, 122, 0.06);
             padding: 40px 60px;
             text-align: center;
-            border-top: 1px solid rgba(236, 64, 122, 0.08);
         }
 
-        .pie-texto {
+        .pt {
             font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
+            font-size: 9px;
             letter-spacing: 3px;
-            color: #f8bbd0;
-            text-transform: uppercase;
+            color: #fce4ec;
         }
 
-        .redes {
+        .rd {
             margin-top: 18px;
             display: flex;
             justify-content: center;
             gap: 28px;
         }
 
-        .redes a {
-            color: #f48fb1;
-            text-decoration: none;
-            font-size: 20px;
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        .redes a:hover {
-            color: #ec407a;
-            transform: translateY(-3px);
-        }
-
-        .redes a:focus {
-            outline: none;
-        }
-
-        .letra-chica {
-            font-size: 7px;
+        .rd span {
             color: #f8bbd0;
-            margin-top: 12px;
-            line-height: 1.4;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        /* ============================================
-           PÉTALOS CAYENDO
-           ============================================ */
-        .petalo {
+        .rd span:hover {
+            color: #f48fb1;
+            transform: translateY(-3px)
+        }
+
+        .lc {
+            font-size: 6px;
+            color: #fce4ec;
+            margin-top: 12px;
+            line-height: 1.3;
+        }
+
+        .pet {
             position: fixed;
             pointer-events: none;
             z-index: 9999;
-            opacity: 0.55;
+            opacity: 0.5;
             font-size: 22px;
             animation: caer 11s linear infinite;
         }
 
         @keyframes caer {
             0% {
-                transform: translateY(-100vh) rotate(0deg);
-                opacity: 0.7;
+                transform: translateY(-100vh) rotate(0);
+                opacity: 0.7
             }
 
             100% {
                 transform: translateY(100vh) rotate(720deg);
-                opacity: 0;
+                opacity: 0
             }
         }
 
-        .deco-circulo {
+        .dc {
             position: fixed;
             pointer-events: none;
             border-radius: 50%;
             z-index: 0;
         }
 
-        .deco1 {
+        .d1 {
             top: 18%;
             right: 8%;
             width: 300px;
             height: 300px;
             background: radial-gradient(circle, rgba(248, 187, 208, 0.2), transparent);
-            animation: flotar 9s ease-in-out infinite;
+            animation: f 9s ease-in-out infinite;
         }
 
-        .deco2 {
+        .d2 {
             bottom: 18%;
             left: 5%;
             width: 220px;
             height: 220px;
-            background: radial-gradient(circle, rgba(240, 98, 146, 0.12), transparent);
-            animation: flotar 12s ease-in-out infinite reverse;
+            background: radial-gradient(circle, rgba(240, 98, 146, 0.1), transparent);
+            animation: f 12s ease-in-out infinite reverse;
         }
 
-        /* ============================================
-           RESPONSIVE BÁSICO
-           ============================================ */
-        @media (max-width: 768px) {
-            .barra {
+        .blink {
+            animation: parpadeo 0.8s linear infinite
+        }
+
+        @keyframes parpadeo {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0
+            }
+        }
+
+        @media(max-width:768px) {
+            .b {
                 padding: 15px 20px;
                 flex-direction: column;
+                gap: 12px
+            }
+
+            .m {
                 gap: 12px;
-            }
-
-            .menu {
-                gap: 15px;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: center
             }
 
-            .hero-titulo {
-                font-size: 38px;
+            .ht {
+                font-size: 36px
             }
 
-            .sec-titulo {
-                font-size: 30px;
+            .st {
+                font-size: 28px
             }
 
-            .grid3 {
-                grid-template-columns: 1fr;
+            .g3 {
+                grid-template-columns: 1fr
             }
 
-            .grid4 {
-                grid-template-columns: repeat(2, 1fr);
+            .g4 {
+                grid-template-columns: 1fr 1fr
             }
 
-            .servicios,
-            .galeria,
-            .media,
-            .contacto {
-                padding: 60px 20px;
+            .srv,
+            .gal,
+            .med,
+            .con {
+                padding: 60px 20px
             }
 
-            .testimonios {
-                padding: 80px 20px;
+            .tes {
+                padding: 80px 20px
             }
 
-            .cita {
-                font-size: 22px;
+            .ci2 {
+                font-size: 20px
             }
         }
     </style>
 </head>
 
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
-    <!-- Decoraciones -->
-    <div class="deco-circulo deco1"></div>
-    <div class="deco-circulo deco2"></div>
-    <div class="petalo" style="left:8%;  animation-delay:0s;">🌸</div>
-    <div class="petalo" style="left:25%; animation-delay:2.5s;">✿</div>
-    <div class="petalo" style="left:50%; animation-delay:4s;">🌸</div>
-    <div class="petalo" style="left:72%; animation-delay:1s;">✿</div>
-    <div class="petalo" style="left:90%; animation-delay:3s;">🌸</div>
+    <div class="dc d1"></div>
+    <div class="dc d2"></div>
+    <div class="pet" style="left:8%;animation-delay:0s">🌸</div>
+    <div class="pet" style="left:25%;animation-delay:2s">✿</div>
+    <div class="pet" style="left:50%;animation-delay:4s">🌸</div>
+    <div class="pet" style="left:72%;animation-delay:1s">✿</div>
+    <div class="pet" style="left:90%;animation-delay:3s">🌸</div>
+    <div class="pet" style="left:40%;animation-delay:5s">❀</div>
+    <div class="pet" style="left:60%;animation-delay:0.5s">🌷</div>
 
-    <!-- ==================== BARRA SUPERIOR ==================== -->
-    <div class="barra">
-        <div class="logo">Rosé <i>Atelier</i></div>
-        <div class="menu">
-            <a href="#" onclick="return false;">Inicio</a>
-            <a href="#" onclick="return false;">Servicios</a>
-            <a href="#" onclick="return false;">Galería</a>
-            <a href="#" onclick="return false;">Precios</a>
-            <a href="#" onclick="return false;">Contacto</a>
+    <!-- BARRA -->
+    <div class="b">
+        <div class="lo">Rosé <i>Atelier</i></div>
+        <div class="m">
+            <span onclick="void(0)">Inicio</span>
+            <span onclick="void(0)">Servicios</span>
+            <span onclick="void(0)">Galería</span>
+            <span onclick="void(0)">Precios</span>
+            <span onclick="void(0)">Contacto</span>
         </div>
     </div>
 
-    <!-- ==================== HERO ==================== -->
+    <!-- HERO -->
     <div class="hero">
-        <div class="hero-inner">
-            <div class="hero-sub">✦ Elegancia Atemporal ✦</div>
-            <div class="hero-titulo">
-                El Arte de la<br><em>Belleza Rosa</em>
-            </div>
-            <div class="hero-desc">
+        <div class="hi">
+            <div class="hs">✦ ELEGANCIA ATEMPORAL ✦</div>
+            <div class="ht">El Arte de la<br><i>Belleza Rosa</i></div>
+            <div class="hd">
                 Descubre una experiencia única donde la sofisticación
                 se encuentra con la delicadeza de los tonos rosados
                 más exquisitos del mundo.
             </div>
-            <div class="boton" onclick="alert('¡Bienvenida!')">
+            <div class="btn" onclick="alert('¡Bienvenida!')">
                 Explorar Colección
             </div>
         </div>
@@ -801,136 +684,122 @@
 
     <div class="sep"></div>
 
-    <!-- ==================== MARQUESINA ==================== -->
-    <div class="marquesina">
-        <div class="marquesina-track">
-            <span class="marq-item">Elegancia</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Sofisticación</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Belleza</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Exclusividad</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Lujo</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Armonía</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Elegancia</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Sofisticación</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Belleza</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Exclusividad</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Lujo</span>
-            <span class="marq-dot">✦</span>
-            <span class="marq-item">Armonía</span>
-            <span class="marq-dot">✦</span>
+    <!-- MARQUESINA -->
+    <div class="marq">
+        <div class="mt">
+            <span class="mi">Elegancia</span><span class="md">✦</span>
+            <span class="mi">Sofisticación</span><span class="md">✦</span>
+            <span class="mi">Belleza</span><span class="md">✦</span>
+            <span class="mi">Exclusividad</span><span class="md">✦</span>
+            <span class="mi">Lujo</span><span class="md">✦</span>
+            <span class="mi">Armonía</span><span class="md">✦</span>
+            <span class="mi">Elegancia</span><span class="md">✦</span>
+            <span class="mi">Sofisticación</span><span class="md">✦</span>
+            <span class="mi">Belleza</span><span class="md">✦</span>
+            <span class="mi">Exclusividad</span><span class="md">✦</span>
+            <span class="mi">Lujo</span><span class="md">✦</span>
+            <span class="mi">Armonía</span><span class="md">✦</span>
         </div>
     </div>
 
-    <!-- ==================== SERVICIOS ==================== -->
-    <div class="servicios">
-        <div class="sec-label">Nuestros Servicios</div>
-        <div class="sec-titulo">Experiencias <em>Exclusivas</em></div>
+    <!-- SERVICIOS -->
+    <div class="srv">
+        <div class="sl">NUESTROS SERVICIOS</div>
+        <div class="st">Experiencias <i>Exclusivas</i></div>
 
-        <div class="grid3">
-            <div class="card">
-                <span class="card-icon">💎</span>
-                <div class="card-nombre">Joyería Artesanal</div>
-                <div class="card-texto">Piezas únicas creadas a mano con los materiales más selectos y diseños
-                    irrepetibles</div>
-                <div class="solo-hover">Desde $299 — Disponible</div>
+        <div class="g3">
+            <div class="c">
+                <span class="ci">💎</span>
+                <div class="cn">Joyería Artesanal</div>
+                <div class="ct">Piezas únicas creadas a mano con los materiales más selectos</div>
+                <div class="sh">Desde $299</div>
             </div>
-            <div class="card">
-                <span class="card-icon">🌹</span>
-                <div class="card-nombre">Arreglos Florales</div>
-                <div class="card-texto">Composiciones botánicas de alta costura para eventos y espacios de ensueño</div>
-                <div class="solo-hover">Desde $149 — Disponible</div>
+            <div class="c">
+                <span class="ci">🌹</span>
+                <div class="cn">Arreglos Florales</div>
+                <div class="ct">Composiciones botánicas de alta costura para eventos</div>
+                <div class="sh">Desde $149</div>
             </div>
-            <div class="card">
-                <span class="card-icon">✨</span>
-                <div class="card-nombre">Spa &amp; Bienestar</div>
-                <div class="card-texto">Tratamientos premium de relajación con aromas y esencias de rosa natural</div>
-                <div class="solo-hover">Desde $199 — Disponible</div>
+            <div class="c">
+                <span class="ci">✨</span>
+                <div class="cn">Spa & Bienestar</div>
+                <div class="ct">Tratamientos premium con aromas de rosa natural</div>
+                <div class="sh">Desde $199</div>
             </div>
-            <div class="card">
-                <span class="card-icon">👗</span>
-                <div class="card-nombre">Moda Exclusiva</div>
-                <div class="card-texto">Colecciones de temporada con las tendencias más elegantes en tonos rosados</div>
-                <div class="solo-hover">Desde $499 — Disponible</div>
+            <div class="c">
+                <span class="ci">👗</span>
+                <div class="cn">Moda Exclusiva</div>
+                <div class="ct">Colecciones elegantes en tonos rosados de temporada</div>
+                <div class="sh">Desde $499</div>
             </div>
-            <div class="card">
-                <span class="card-icon">🎀</span>
-                <div class="card-nombre">Eventos Premium</div>
-                <div class="card-texto">Organización y decoración de eventos con un toque de distinción incomparable
-                </div>
-                <div class="solo-hover">Desde $999 — Disponible</div>
+            <div class="c">
+                <span class="ci">🎀</span>
+                <div class="cn">Eventos Premium</div>
+                <div class="ct">Decoración incomparable para tus celebraciones</div>
+                <div class="sh">Desde $999</div>
             </div>
-            <div class="card">
-                <span class="card-icon">🍰</span>
-                <div class="card-nombre">Repostería Fina</div>
-                <div class="card-texto">Creaciones dulces de autor con decoración artística en tonos pastel</div>
-                <div class="solo-hover">Desde $89 — Disponible</div>
+            <div class="c">
+                <span class="ci">🍰</span>
+                <div class="cn">Repostería Fina</div>
+                <div class="ct">Dulces de autor con decoración artística pastel</div>
+                <div class="sh">Desde $89</div>
             </div>
         </div>
     </div>
 
     <div class="sep"></div>
 
-    <!-- ==================== GALERÍA ==================== -->
-    <div class="galeria">
-        <div class="sec-label">Galería</div>
-        <div class="sec-titulo">Momentos <em>Capturados</em></div>
+    <!-- GALERÍA -->
+    <div class="gal">
+        <div class="sl">GALERÍA</div>
+        <div class="st">Momentos <i>Capturados</i></div>
 
-        <div class="grid4">
-            <div class="gal-item">
+        <div class="g4">
+            <div class="gi">
                 <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=400&fit=crop">
-                <div class="gal-over"><span>Flores</span></div>
+                <div class="go"><span>Flores</span></div>
             </div>
-            <div class="gal-item">
+            <div class="gi">
                 <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop">
-                <div class="gal-over"><span>Cosmética</span></div>
+                <div class="go"><span>Cosmética</span></div>
             </div>
-            <div class="gal-item">
+            <div class="gi">
                 <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop">
-                <div class="gal-over"><span>Decoración</span></div>
+                <div class="go"><span>Decoración</span></div>
             </div>
-            <div class="gal-item">
+            <div class="gi">
                 <img src="https://images.unsplash.com/photo-1595872018818-97555653a011?w=400&h=400&fit=crop">
-                <div class="gal-over"><span>Joyería</span></div>
+                <div class="go"><span>Joyería</span></div>
             </div>
         </div>
     </div>
 
     <div class="sep"></div>
 
-    <!-- ==================== PRECIOS ==================== -->
-    <div class="servicios">
-        <div class="sec-label">Precios</div>
-        <div class="sec-titulo">Nuestras <em>Tarifas</em></div>
+    <!-- PRECIOS -->
+    <div class="srv">
+        <div class="sl">PRECIOS</div>
+        <div class="st">Nuestras <i>Tarifas</i></div>
 
-        <table class="tabla-precios">
+        <table class="tp">
             <tr>
-                <td><span class="dispo">●</span> Consultoría de Imagen</td>
+                <td><span class="di">●</span> Consultoría de Imagen</td>
                 <td>$199</td>
             </tr>
             <tr>
-                <td><span class="dispo">●</span> Sesión Spa Completa</td>
+                <td><span class="di">●</span> Sesión Spa Completa</td>
                 <td>$349</td>
             </tr>
             <tr>
-                <td><span class="agotado">●</span> Paquete Evento Platinum</td>
+                <td><span class="ag">●</span> Evento Platinum</td>
                 <td>$1,499</td>
             </tr>
             <tr>
-                <td><span class="dispo">●</span> Arreglo Floral Premium</td>
+                <td><span class="di">●</span> Arreglo Floral Premium</td>
                 <td>$249</td>
             </tr>
             <tr>
-                <td><span class="agotado">●</span> Colección Temporada</td>
+                <td><span class="ag">●</span> Colección Temporada</td>
                 <td>$899</td>
             </tr>
         </table>
@@ -938,75 +807,83 @@
 
     <div class="sep"></div>
 
-    <!-- ==================== VIDEO ==================== -->
-    <div class="media">
-        <div class="sec-label">Descubre</div>
-        <div class="sec-titulo">Nuestro <em>Mundo</em></div>
-
-        <div class="video-box">
-            <div class="play" onclick="alert('Reproduciendo...')">
-                <div class="triangulo"></div>
+    <!-- VIDEO -->
+    <div class="med">
+        <div class="sl">DESCUBRE</div>
+        <div class="st">Nuestro <i>Mundo</i></div>
+        <div class="vb">
+            <div class="pl" onclick="alert('▶ Reproduciendo...')">
+                <div class="tr"></div>
             </div>
         </div>
     </div>
 
     <div class="sep"></div>
 
-    <!-- ==================== TESTIMONIOS ==================== -->
-    <div class="testimonios">
-        <div class="sec-label">Testimonios</div>
-        <div class="cita">
-            "Una experiencia absolutamente mágica. Cada detalle fue
-            cuidado con una elegancia que superó todas mis expectativas.
-            Simplemente perfecto."
+    <!-- TESTIMONIOS -->
+    <div class="tes">
+        <div class="sl">TESTIMONIOS</div>
+        <div class="ci2">
+            "Una experiencia absolutamente mágica. Cada detalle
+            superó todas mis expectativas. Perfecto."
         </div>
-        <div class="autor">— María del Carmen Rosales</div>
+        <div class="au">— María del Carmen Rosales</div>
     </div>
 
     <div class="sep"></div>
 
-    <!-- ==================== CONTACTO ==================== -->
-    <div class="contacto">
-        <div class="sec-label">Contacto</div>
-        <div class="sec-titulo">Escríbenos</div>
+    <!-- CONTACTO -->
+    <div class="con">
+        <div class="sl">CONTACTO</div>
+        <div class="st">Escríbenos</div>
 
         <div>
-            <div class="campo">
-                <input type="text" class="input" placeholder="Tu nombre completo">
+            <div class="ca">
+                <input class="inp" placeholder="Nombre">
             </div>
-            <div class="campo">
-                <input type="text" class="input" placeholder="Tu correo electrónico">
+            <div class="ca">
+                <input class="inp" placeholder="Email">
             </div>
-            <div class="campo">
-                <input type="text" class="input" placeholder="Teléfono (opcional)">
+            <div class="ca">
+                <input class="inp" placeholder="Teléfono">
             </div>
-            <div class="campo">
-                <textarea class="textarea" placeholder="Cuéntanos sobre tu evento soñado..."></textarea>
+            <div class="ca">
+                <textarea class="txa" placeholder="Tu mensaje..."></textarea>
             </div>
-            <div class="boton btn-enviar" onclick="alert('¡Enviado!')">
-                Enviar Mensaje
+            <div class="btn" onclick="alert('Enviado')" style="display:block;text-align:center;width:100%">
+                ENVIAR <span class="blink">●</span>
             </div>
         </div>
     </div>
 
-    <!-- ==================== PIE ==================== -->
+    <!-- PIE -->
     <div class="pie">
-        <div class="pie-texto">© 2025 Rosé Atelier — Todos los derechos reservados</div>
-        <div class="redes">
-            <a href="#">♡</a>
-            <a href="#">✦</a>
-            <a href="#">❋</a>
-            <a href="#">✧</a>
+        <div class="pt">© 2025 ROSÉ ATELIER</div>
+        <div class="rd">
+            <span onclick="void(0)">♡</span>
+            <span onclick="void(0)">✦</span>
+            <span onclick="void(0)">❋</span>
+            <span onclick="void(0)">✧</span>
         </div>
-        <div class="letra-chica">
-            Al usar este sitio aceptas nuestros términos y condiciones. Los precios pueden
-            variar sin previo aviso. Consulta disponibilidad. Aplican restricciones.
+        <div class="lc">
+            Al usar este sitio aceptas términos y condiciones.
+            Precios sujetos a cambio. Aplican restricciones.
+            Solo CDMX. Consulta disponibilidad con tu asesor.
         </div>
     </div>
 
     <script>
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
+        // Bloquear teclado
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Tab') e.preventDefault();
+        });
+        // Bloquear clic derecho
+        document.addEventListener('contextmenu', function (e) { e.preventDefault() });
+        // Bloquear copiar
+        document.addEventListener('copy', function (e) { e.preventDefault() });
+        // Bloquear pegar en inputs
+        document.querySelectorAll('.inp,.txa').forEach(function (el) {
+            el.addEventListener('paste', function (e) { e.preventDefault() });
         });
     </script>
 </body>
