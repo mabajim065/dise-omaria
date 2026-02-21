@@ -1,891 +1,361 @@
-<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>x</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        body {
-            font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(135deg, #fff0f5, #fce4ec, #f8bbd9, #fff0f5);
-            background-size: 400% 400%;
-            animation: bg 12s ease infinite;
-            color: #fce4ec;
-            cursor: default;
-            -webkit-user-select: none;
-            user-select: none;
-            overflow-x: hidden;
-        }
-
-        @keyframes bg {
-            0% {
-                background-position: 0% 50%
-            }
-
-            50% {
-                background-position: 100% 50%
-            }
-
-            100% {
-                background-position: 0% 50%
-            }
-        }
-
-        *:focus {
-            outline: none !important;
-            box-shadow: none !important
-        }
-
-        .b {
-            background: rgba(236, 64, 122, 0.1);
-            padding: 22px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .lo {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            color: #f8bbd0;
-            letter-spacing: 3px;
-        }
-
-        .m {
-            display: flex;
-            gap: 40px
-        }
-
-        .m span {
-            color: #f8bbd0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-        }
-
-        .m span:hover {
-            color: #f06292
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 160px 20px 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(248, 187, 208, 0.3), transparent 50%),
-                radial-gradient(ellipse at 70% 50%, rgba(240, 98, 146, 0.15), transparent 50%);
-            animation: f 18s ease-in-out infinite;
-        }
-
-        @keyframes f {
-
-            0%,
-            100% {
-                transform: translate(0, 0)
-            }
-
-            50% {
-                transform: translate(30px, -25px)
-            }
-        }
-
-        .hi {
-            position: relative;
-            z-index: 2;
-            max-width: 780px
-        }
-
-        .hs {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 8px;
-            color: #f8bbd0;
-            margin-bottom: 30px;
-        }
-
-        .ht {
-            font-family: 'Playfair Display', serif;
-            font-size: 68px;
-            color: #f8bbd0;
-            line-height: 1.1;
-            margin-bottom: 28px;
-        }
-
-        .hd {
-            font-size: 19px;
-            line-height: 1.8;
-            color: #fce4ec;
-            max-width: 580px;
-            margin: 0 auto 50px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #f48fb1, #f8bbd0);
-            color: #fce4ec;
-            padding: 18px 58px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 45px rgba(236, 64, 122, 0.2);
-        }
-
-        .sep {
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #f8bbd0, transparent);
-            margin: 80px auto;
-        }
-
-        .marq {
-            overflow: hidden;
-            padding: 35px 0;
-            white-space: nowrap
-        }
-
-        .mt {
-            display: inline-flex;
-            gap: 50px;
-            animation: correr 22s linear infinite;
-        }
-
-        @keyframes correr {
-            0% {
-                transform: translateX(0)
-            }
-
-            100% {
-                transform: translateX(-50%)
-            }
-        }
-
-        .mi {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: #f8bbd0;
-            font-style: italic;
-            white-space: nowrap;
-        }
-
-        .md {
-            color: #fce4ec;
-            margin: 0 8px
-        }
-
-        .srv {
-            padding: 100px 60px
-        }
-
-        .sl {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 6px;
-            color: #f8bbd0;
-            text-align: center;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-        }
-
-        .st {
-            font-family: 'Playfair Display', serif;
-            font-size: 46px;
-            color: #f8bbd0;
-            text-align: center;
-            margin-bottom: 65px;
-        }
-
-        .g3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .c {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 48px 38px;
-            text-align: center;
-            transition: all 0.5s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .c::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #f8bbd0, #f48fb1, #f8bbd0);
-            transform: scaleX(0);
-            transition: transform 0.5s;
-        }
-
-        .c:hover::before {
-            transform: scaleX(1)
-        }
-
-        .c:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(236, 64, 122, 0.08);
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        .ci {
-            font-size: 42px;
-            margin-bottom: 22px;
-            display: block
-        }
-
-        .cn {
-            font-family: 'Playfair Display', serif;
-            font-size: 21px;
-            color: #f8bbd0;
-            margin-bottom: 14px;
-        }
-
-        .ct {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #fce4ec
-        }
-
-        .sh {
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 12px;
-            color: #fce4ec;
-            margin-top: 12px;
-        }
-
-        .c:hover .sh {
-            opacity: 1
-        }
-
-        .gal {
-            padding: 100px 60px
-        }
-
-        .g4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gi {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .gi img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s;
-        }
-
-        .gi:hover img {
-            transform: scale(1.12)
-        }
-
-        .go {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 28px 18px 18px;
-            background: linear-gradient(transparent, rgba(236, 64, 122, 0.4));
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .gi:hover .go {
-            opacity: 1
-        }
-
-        .go span {
-            color: #fce4ec;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 3px;
-        }
-
-        .tp {
-            max-width: 800px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        .tp td {
-            padding: 20px 28px;
-            border-bottom: 1px solid rgba(236, 64, 122, 0.06);
-            font-size: 15px;
-            color: #f8bbd0;
-        }
-
-        .tp td:last-child {
-            text-align: right;
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-        }
-
-        .di {
-            color: #f8bbd0
-        }
-
-        .ag {
-            color: #fce4ec
-        }
-
-        .med {
-            padding: 80px 60px;
-            text-align: center
-        }
-
-        .vb {
-            max-width: 800px;
-            margin: 0 auto;
-            aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pl {
-            width: 80px;
-            height: 80px;
-            background: rgba(236, 64, 122, 0.5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .pl:hover {
-            background: rgba(236, 64, 122, 0.8);
-            transform: scale(1.1);
-        }
-
-        .tr {
-            width: 0;
-            height: 0;
-            border-left: 22px solid #fce4ec;
-            border-top: 14px solid transparent;
-            border-bottom: 14px solid transparent;
-            margin-left: 5px;
-        }
-
-        .tes {
-            padding: 120px 60px;
-            text-align: center;
-            background: linear-gradient(180deg, transparent, rgba(252, 228, 236, 0.3), transparent);
-        }
-
-        .ci2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 34px;
-            font-style: italic;
-            color: #f8bbd0;
-            max-width: 780px;
-            margin: 0 auto 35px;
-            line-height: 1.6;
-        }
-
-        .au {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 4px;
-            color: #fce4ec;
-        }
-
-        .con {
-            padding: 100px 60px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .ca {
-            margin-bottom: 28px
-        }
-
-        .inp {
-            width: 100%;
-            padding: 18px 0;
-            border: none;
-            border-bottom: 1px solid rgba(236, 64, 122, 0.12);
-            background: transparent;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
-            color: #f8bbd0;
-        }
-
-        .inp::placeholder {
-            color: #fce4ec;
-            font-style: italic
-        }
-
-        .inp:focus {
-            outline: none;
-            border-bottom-color: #f48fb1
-        }
-
-        .txa {
-            width: 100%;
-            padding: 18px 0;
-            border: none;
-            border-bottom: 1px solid rgba(236, 64, 122, 0.12);
-            background: transparent;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
-            color: #f8bbd0;
-            resize: none;
-            min-height: 120px;
-        }
-
-        .txa::placeholder {
-            color: #fce4ec;
-            font-style: italic
-        }
-
-        .txa:focus {
-            outline: none
-        }
-
-        .pie {
-            background: rgba(236, 64, 122, 0.06);
-            padding: 40px 60px;
-            text-align: center;
-        }
-
-        .pt {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 3px;
-            color: #fce4ec;
-        }
-
-        .rd {
-            margin-top: 18px;
-            display: flex;
-            justify-content: center;
-            gap: 28px;
-        }
-
-        .rd span {
-            color: #f8bbd0;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .rd span:hover {
-            color: #f48fb1;
-            transform: translateY(-3px)
-        }
-
-        .lc {
-            font-size: 6px;
-            color: #fce4ec;
-            margin-top: 12px;
-            line-height: 1.3;
-        }
-
-        .pet {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.5;
-            font-size: 22px;
-            animation: caer 11s linear infinite;
-        }
-
-        @keyframes caer {
-            0% {
-                transform: translateY(-100vh) rotate(0);
-                opacity: 0.7
-            }
-
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0
-            }
-        }
-
-        .dc {
-            position: fixed;
-            pointer-events: none;
-            border-radius: 50%;
-            z-index: 0;
-        }
-
-        .d1 {
-            top: 18%;
-            right: 8%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(248, 187, 208, 0.2), transparent);
-            animation: f 9s ease-in-out infinite;
-        }
-
-        .d2 {
-            bottom: 18%;
-            left: 5%;
-            width: 220px;
-            height: 220px;
-            background: radial-gradient(circle, rgba(240, 98, 146, 0.1), transparent);
-            animation: f 12s ease-in-out infinite reverse;
-        }
-
-        .blink {
-            animation: parpadeo 0.8s linear infinite
-        }
-
-        @keyframes parpadeo {
-
-            0%,
-            100% {
-                opacity: 1
-            }
-
-            50% {
-                opacity: 0
-            }
-        }
-
-        @media(max-width:768px) {
-            .b {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 12px
-            }
-
-            .m {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center
-            }
-
-            .ht {
-                font-size: 36px
-            }
-
-            .st {
-                font-size: 28px
-            }
-
-            .g3 {
-                grid-template-columns: 1fr
-            }
-
-            .g4 {
-                grid-template-columns: 1fr 1fr
-            }
-
-            .srv,
-            .gal,
-            .med,
-            .con {
-                padding: 60px 20px
-            }
-
-            .tes {
-                padding: 80px 20px
-            }
-
-            .ci2 {
-                font-size: 20px
-            }
-        }
-    </style>
+<title></title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: #ffe0eb; font-family: Arial; }
+.banner { background: #ff69b4; padding: 40px; text-align: center; }
+.banner h3 { color: #ff6eb4; font-size: 36px; }
+.banner p { color: #ffa0c8; font-size: 11px; }
+.nav { background: #ff85c2; padding: 10px; text-align: center; }
+.nav a { color: #ffaed7; margin: 0 10px; text-decoration: none; font-size: 12px; }
+.content { display: flex; flex-wrap: wrap; padding: 20px; gap: 20px; justify-content: center; }
+.card { background: #ffc0cb; border-radius: 12px; padding: 20px; width: 300px; }
+.card h4 { color: #ffb0c4; margin-bottom: 10px; }
+.card p { color: #ffc8d6; font-size: 12px; line-height: 1.3; }
+.card a { color: #ffb6c1; }
+.gallery { text-align: center; padding: 30px; background: #ffb6c1; }
+.gallery img { width: 150px; height: 150px; margin: 10px; border-radius: 50%; border: 3px solid #ff69b4; }
+.form-section { background: #ffd6e0; padding: 40px; text-align: center; }
+.form-section input,
+.form-section textarea,
+.form-section select {
+  display: block; margin: 8px auto; padding: 10px; width: 280px;
+  border: 2px solid #ffb6c1; border-radius: 8px; background: #fff0f5;
+  color: #ffd0dc; font-size: 12px;
+}
+.form-section textarea { height: 80px; resize: none; }
+.form-section button {
+  background: #ff69b4; border: none; padding: 12px 30px;
+  border-radius: 20px; color: #ff91c8; font-size: 14px; margin: 5px;
+  cursor: pointer;
+}
+.cta-btn {
+  display: inline-block; background: #ff69b4; color: #ff8abf;
+  padding: 10px 25px; border-radius: 20px; text-decoration: none;
+  font-size: 13px; margin: 5px;
+}
+.footer { background: #ff69b4; padding: 30px; text-align: center; }
+.footer p { color: #ff85c0; font-size: 11px; }
+.footer a { color: #ff9ed0; font-size: 11px; }
+.ticker { background: #ff1493; color: #ff5ca8; padding: 8px; }
+.sidebar { color: #ffc0cb; font-size: 11px; padding: 15px; background: #ffcce0; }
+table { width: 80%; margin: 20px auto; background: #ffd6e8; border-collapse: collapse; }
+table td, table th { padding: 10px; border: 1px solid #ffb6c1; color: #ffc8d6; font-size: 12px; }
+table th { background: #ffaec9; color: #ffc4d8; }
+.hidden-text { color: #ffe0eb; font-size: 9px; }
+.blink { animation: parpadeo 0.5s infinite; }
+@keyframes parpadeo { 50% { opacity: 0; } }
+.popup-overlay {
+  position: fixed; bottom: 20px; right: 20px; background: #ff69b4;
+  padding: 20px; border-radius: 15px; width: 250px; z-index: 999;
+}
+.popup-overlay p { color: #ff9ac8; font-size: 12px; }
+.icon-link { display: inline-block; width: 40px; height: 40px; margin: 5px; }
+</style>
 </head>
+<body>
 
-<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+<!-- ====== MARQUEE ====== -->
+<marquee class="ticker" scrollamount="8">
+  🌸 ¡¡OFERTAS ROSAS INCREÍBLES!! 🌸 ¡¡NO TE LO PIERDAS!! 🌸 DESCUENTOS EXCLUSIVOS 🌸
+</marquee>
 
-    <div class="dc d1"></div>
-    <div class="dc d2"></div>
-    <div class="pet" style="left:8%;animation-delay:0s">🌸</div>
-    <div class="pet" style="left:25%;animation-delay:2s">✿</div>
-    <div class="pet" style="left:50%;animation-delay:4s">🌸</div>
-    <div class="pet" style="left:72%;animation-delay:1s">✿</div>
-    <div class="pet" style="left:90%;animation-delay:3s">🌸</div>
-    <div class="pet" style="left:40%;animation-delay:5s">❀</div>
-    <div class="pet" style="left:60%;animation-delay:0.5s">🌷</div>
+<!-- ====== BANNER SIN H1, EMPIEZA EN H3 (heading skip) ====== -->
+<div class="banner">
+  <h3>✿ Tienda Rosa Fantástica ✿</h3>
+  <p>La mejor tienda rosa del universo con productos increíbles para ti</p>
+  <br>
+  <!-- Links con texto vago / redundante -->
+  <a class="cta-btn" href="productos.html">Click aquí</a>
+  <a class="cta-btn" href="ofertas.html">Click aquí</a>
+  <a class="cta-btn" href="mas.html">Más</a>
+</div>
 
-    <!-- BARRA -->
-    <div class="b">
-        <div class="lo">Rosé <i>Atelier</i></div>
-        <div class="m">
-            <span onclick="void(0)">Inicio</span>
-            <span onclick="void(0)">Servicios</span>
-            <span onclick="void(0)">Galería</span>
-            <span onclick="void(0)">Precios</span>
-            <span onclick="void(0)">Contacto</span>
-        </div>
+<!-- ====== NAV SIN SEMÁNTICA, LINKS VACÍOS ====== -->
+<div class="nav">
+  <a href="index.html"></a>
+  <a href="catalogo.html"><img src="menu-icon.png"></a>
+  <a href="blog.html">  </a>
+  <a href="contacto.html"></a>
+  <a href="index.html">Inicio</a>
+  <a href="index.html">Ir a inicio</a>
+  <a href="about.html">Leer más</a>
+  <a href="info.html">Leer más</a>
+  <a href="faq.html">Pincha aquí</a>
+</div>
+
+<!-- ====== HEADING VACÍO ====== -->
+<h1></h1>
+<h2></h2>
+
+<!-- ====== GALERÍA DE IMÁGENES SIN ALT ====== -->
+<div class="gallery">
+  <h5 style="color: #ffcce0;">Nuestra Galería Rosa</h5>
+  <img src="foto1.jpg">
+  <img src="foto2.jpg">
+  <img src="foto3.jpg">
+  <img src="foto4.jpg">
+  <img src="foto5.jpg">
+  <img src="foto6.jpg">
+  <img src="rosa-decorativa.png" alt="">
+  <img src="adorno.png" alt="">
+  <!-- Imágenes con alt redundante -->
+  <img src="flor.jpg" alt="flor.jpg">
+  <img src="imagen.jpg" alt="image">
+  <img src="photo.jpg" alt="foto">
+</div>
+
+<!-- ====== CARDS CON PROBLEMAS ====== -->
+<div class="content">
+  <div class="card">
+    <h6>Producto Estrella</h6>
+    <p>Este producto es absolutamente maravilloso y viene en tonos rosas preciosos.</p>
+    <img src="producto1.jpg">
+    <br><br>
+    <a href="producto1.html">Click aquí</a>
+    <a href="producto1.html">Ver producto</a>
+    <p class="hidden-text">texto oculto para SEO rosa producto bonito flores</p>
+  </div>
+  <div class="card">
+    <h6>Oferta Especial</h6>
+    <p>Aprovecha esta oferta especial con descuentos rosas increíbles para todos.</p>
+    <img src="producto2.jpg">
+    <br><br>
+    <a href="#"></a>
+    <a href="javascript:void(0)">Comprar</a>
+    <div onclick="window.location='compra.html'" style="cursor:pointer; color:#ffb6c1;">
+      Haz clic para comprar
+    </div>
+  </div>
+  <div class="card">
+    <h6>Novedades</h6>
+    <p>Descubre las últimas novedades de nuestra tienda rosa con artículos nuevos.</p>
+    <img src="producto3.jpg">
+    <br><br>
+    <a href="novedades.html">Aquí</a>
+    <a href="">Link</a>
+  </div>
+</div>
+
+<!-- ====== TABLA SIN ENCABEZADOS CORRECTOS ====== -->
+<table>
+  <tr>
+    <td><b>Producto</b></td>
+    <td><b>Precio</b></td>
+    <td><b>Stock</b></td>
+    <td><b>Valoración</b></td>
+  </tr>
+  <tr>
+    <td>Rosa Eterna</td>
+    <td>29.99€</td>
+    <td><span style="color: #ff69b4;">●</span></td>
+    <td><span style="color: #ff1493;">★★★★</span></td>
+  </tr>
+  <tr>
+    <td>Peluche Rosa</td>
+    <td>15.50€</td>
+    <td><span style="color: #ffb6c1;">●</span></td>
+    <td><span style="color: #ffc0cb;">★★★</span></td>
+  </tr>
+  <tr>
+    <td>Vela Aromática</td>
+    <td>12.00€</td>
+    <td><span style="color: #ff69b4;">●</span></td>
+    <td><span style="color: #ff69b4;">★★★★★</span></td>
+  </tr>
+</table>
+
+<!-- ====== FORMULARIO SIN LABELS ====== -->
+<div class="form-section">
+  <h4 style="color: #ffaec9;">📧 Suscríbete a Nuestro Newsletter Rosa</h4>
+  <br>
+  <form action="" method="post">
+    <input type="text" placeholder="Nombre">
+    <input type="text" placeholder="Apellidos">
+    <input type="email" placeholder="Email">
+    <input type="tel" placeholder="Teléfono">
+    <input type="text" placeholder="Dirección">
+    <input type="text" placeholder="Ciudad">
+    <input type="password" placeholder="Contraseña">
+    <input type="password" placeholder="Confirmar contraseña">
+    <select>
+      <option>Selecciona tu rosa favorita</option>
+      <option>Rosa pastel</option>
+      <option>Rosa fucsia</option>
+      <option>Rosa salmón</option>
+    </select>
+    <select>
+      <option>¿Cómo nos conociste?</option>
+      <option>Instagram</option>
+      <option>TikTok</option>
+      <option>Amigos</option>
+    </select>
+    <textarea placeholder="Déjanos un mensaje rosa..."></textarea>
+
+    <!-- Checkboxes y radios sin label -->
+    <div style="text-align:left; max-width:280px; margin:10px auto; color:#ffaec9; font-size:12px;">
+      <input type="checkbox"> Acepto los términos y condiciones<br>
+      <input type="checkbox"> Quiero recibir ofertas rosas<br>
+      <input type="checkbox"> Soy mayor de edad<br>
+      <input type="radio" name="freq"> Diario
+      <input type="radio" name="freq"> Semanal
+      <input type="radio" name="freq"> Mensual<br>
+      <input type="radio" name="prefer"> Rosas claras
+      <input type="radio" name="prefer"> Rosas fuertes
     </div>
 
-    <!-- HERO -->
-    <div class="hero">
-        <div class="hi">
-            <div class="hs">✦ ELEGANCIA ATEMPORAL ✦</div>
-            <div class="ht">El Arte de la<br><i>Belleza Rosa</i></div>
-            <div class="hd">
-                Descubre una experiencia única donde la sofisticación
-                se encuentra con la delicadeza de los tonos rosados
-                más exquisitos del mundo.
-            </div>
-            <div class="btn" onclick="alert('¡Bienvenida!')">
-                Explorar Colección
-            </div>
-        </div>
-    </div>
+    <!-- Botones vacíos -->
+    <button></button>
+    <button type="submit"></button>
+    <button>  </button>
+    <input type="image" src="submit-btn.png">
+    <br><br>
+    <button>Enviar 💖</button>
+  </form>
+</div>
 
-    <div class="sep"></div>
+<!-- ====== TEXTO PARPADEANTE ====== -->
+<div style="text-align:center; padding:20px; background:#ff69b4;">
+  <p class="blink" style="color:#ff91c8; font-size:20px;">
+    🌸 ¡¡ÚLTIMA OPORTUNIDAD!! ¡¡COMPRA YA!! 🌸
+  </p>
+</div>
 
-    <!-- MARQUESINA -->
-    <div class="marq">
-        <div class="mt">
-            <span class="mi">Elegancia</span><span class="md">✦</span>
-            <span class="mi">Sofisticación</span><span class="md">✦</span>
-            <span class="mi">Belleza</span><span class="md">✦</span>
-            <span class="mi">Exclusividad</span><span class="md">✦</span>
-            <span class="mi">Lujo</span><span class="md">✦</span>
-            <span class="mi">Armonía</span><span class="md">✦</span>
-            <span class="mi">Elegancia</span><span class="md">✦</span>
-            <span class="mi">Sofisticación</span><span class="md">✦</span>
-            <span class="mi">Belleza</span><span class="md">✦</span>
-            <span class="mi">Exclusividad</span><span class="md">✦</span>
-            <span class="mi">Lujo</span><span class="md">✦</span>
-            <span class="mi">Armonía</span><span class="md">✦</span>
-        </div>
-    </div>
+<!-- ====== MÁS MARQUEES ====== -->
+<marquee direction="right" class="ticker">
+  💖 Envío gratis en pedidos rosas 💖 Devolución garantizada 💖
+</marquee>
 
-    <!-- SERVICIOS -->
-    <div class="srv">
-        <div class="sl">NUESTROS SERVICIOS</div>
-        <div class="st">Experiencias <i>Exclusivas</i></div>
+<!-- ====== SIDEBAR CON PROBLEMAS ====== -->
+<div class="sidebar">
+  <h6 style="color:#ffd6e8;">Links Útiles</h6>
+  <!-- Empty links -->
+  <a href="link1.html" class="icon-link"><img src="icon1.png"></a>
+  <a href="link2.html" class="icon-link"><img src="icon2.png"></a>
+  <a href="link3.html" class="icon-link"><img src="icon3.png"></a>
+  <a href="link4.html" class="icon-link"><img src="icon4.png"></a>
+  <!-- Redundant title -->
+  <a href="link5.html" title="enlace enlace enlace">Enlace</a>
+  <!-- javascript void links -->
+  <a href="javascript:void(0)">Ver más</a>
+  <a href="#">Información</a>
+  <a href="#">Contacto</a>
 
-        <div class="g3">
-            <div class="c">
-                <span class="ci">💎</span>
-                <div class="cn">Joyería Artesanal</div>
-                <div class="ct">Piezas únicas creadas a mano con los materiales más selectos</div>
-                <div class="sh">Desde $299</div>
-            </div>
-            <div class="c">
-                <span class="ci">🌹</span>
-                <div class="cn">Arreglos Florales</div>
-                <div class="ct">Composiciones botánicas de alta costura para eventos</div>
-                <div class="sh">Desde $149</div>
-            </div>
-            <div class="c">
-                <span class="ci">✨</span>
-                <div class="cn">Spa & Bienestar</div>
-                <div class="ct">Tratamientos premium con aromas de rosa natural</div>
-                <div class="sh">Desde $199</div>
-            </div>
-            <div class="c">
-                <span class="ci">👗</span>
-                <div class="cn">Moda Exclusiva</div>
-                <div class="ct">Colecciones elegantes en tonos rosados de temporada</div>
-                <div class="sh">Desde $499</div>
-            </div>
-            <div class="c">
-                <span class="ci">🎀</span>
-                <div class="cn">Eventos Premium</div>
-                <div class="ct">Decoración incomparable para tus celebraciones</div>
-                <div class="sh">Desde $999</div>
-            </div>
-            <div class="c">
-                <span class="ci">🍰</span>
-                <div class="cn">Repostería Fina</div>
-                <div class="ct">Dulces de autor con decoración artística pastel</div>
-                <div class="sh">Desde $89</div>
-            </div>
-        </div>
-    </div>
+  <!-- Broken ARIA references -->
+  <div aria-labelledby="elemento-inexistente-1">Contenido rosa</div>
+  <div aria-describedby="elemento-inexistente-2">Más contenido rosa</div>
+  <div aria-labelledby="fantasma">Sección especial</div>
+  <input aria-labelledby="no-existe" type="text">
 
-    <div class="sep"></div>
+  <!-- Orphaned label -->
+  <label for="campo-fantasma">Campo misterioso:</label>
+  <label for="otro-fantasma">Otro campo:</label>
+  <label>Label huérfana sin input</label>
+</div>
 
-    <!-- GALERÍA -->
-    <div class="gal">
-        <div class="sl">GALERÍA</div>
-        <div class="st">Momentos <i>Capturados</i></div>
+<!-- ====== SEGUNDO FORMULARIO PROBLEMÁTICO ====== -->
+<div class="form-section" style="background:#ffcce0;">
+  <h3 style="color:#ffb6d9;">Contacto Express</h3>
+  <form>
+    <input type="text" value="">
+    <input type="text" value="">
+    <input type="text" value="">
+    <textarea></textarea>
+    <select>
+      <option></option>
+      <option>Opción A</option>
+    </select>
+    <button></button>
+    <input type="image" src="enviar.png">
+    <input type="image" src="reset.png">
+  </form>
+</div>
 
-        <div class="g4">
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=400&fit=crop">
-                <div class="go"><span>Flores</span></div>
-            </div>
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop">
-                <div class="go"><span>Cosmética</span></div>
-            </div>
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop">
-                <div class="go"><span>Decoración</span></div>
-            </div>
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1595872018818-97555653a011?w=400&h=400&fit=crop">
-                <div class="go"><span>Joyería</span></div>
-            </div>
-        </div>
-    </div>
+<!-- ====== CONTENIDO CON MÁS ERRORES ====== -->
+<div style="padding: 30px; text-align: center; background: #ffe0eb;">
 
-    <div class="sep"></div>
+  <!-- Heading order completamente roto -->
+  <h2 style="color:#ffd0e0;"></h2>
+  <h6 style="color:#ffc8d8;">Sección pequeña</h6>
+  <h3 style="color:#ffd0e8;"></h3>
 
-    <!-- PRECIOS -->
-    <div class="srv">
-        <div class="sl">PRECIOS</div>
-        <div class="st">Nuestras <i>Tarifas</i></div>
+  <!-- Iframe sin título -->
+  <iframe src="https://example.com" width="300" height="200" style="border: 2px solid #ff69b4;"></iframe>
+  <iframe src="https://example.com/2" width="300" height="200" style="border: 2px solid #ff69b4;"></iframe>
 
-        <table class="tp">
-            <tr>
-                <td><span class="di">●</span> Consultoría de Imagen</td>
-                <td>$199</td>
-            </tr>
-            <tr>
-                <td><span class="di">●</span> Sesión Spa Completa</td>
-                <td>$349</td>
-            </tr>
-            <tr>
-                <td><span class="ag">●</span> Evento Platinum</td>
-                <td>$1,499</td>
-            </tr>
-            <tr>
-                <td><span class="di">●</span> Arreglo Floral Premium</td>
-                <td>$249</td>
-            </tr>
-            <tr>
-                <td><span class="ag">●</span> Colección Temporada</td>
-                <td>$899</td>
-            </tr>
-        </table>
-    </div>
+  <!-- Video/audio sin controles -->
+  <video autoplay loop style="width:300px; border-radius:10px; border:3px solid #ff69b4;">
+    <source src="video-rosa.mp4" type="video/mp4">
+  </video>
 
-    <div class="sep"></div>
+  <audio autoplay loop>
+    <source src="musica-rosa.mp3" type="audio/mpeg">
+  </audio>
 
-    <!-- VIDEO -->
-    <div class="med">
-        <div class="sl">DESCUBRE</div>
-        <div class="st">Nuestro <i>Mundo</i></div>
-        <div class="vb">
-            <div class="pl" onclick="alert('▶ Reproduciendo...')">
-                <div class="tr"></div>
-            </div>
-        </div>
-    </div>
+  <!-- Más texto de bajo contraste -->
+  <p style="color:#ffd5e5; font-size:10px;">
+    Términos y condiciones: Al visitar esta página aceptas todas nuestras políticas rosas
+    incluyendo el uso de cookies rosas y rastreo rosa y todo lo demás que sea rosa.
+  </p>
+  <p style="color:#ffe0eb; font-size:9px; background:#ffd5e5;">
+    Este texto es prácticamente invisible porque el contraste es mínimo entre rosa y rosa.
+  </p>
 
-    <div class="sep"></div>
+  <!-- Más links problemáticos -->
+  <a href="page1.html"><img src="img1.png"></a>
+  <a href="page2.html"><img src="img2.png"></a>
+  <a href="page3.html"> </a>
+  <a href="page4.html">	</a>
+  <a href="page5.html">Click aquí</a>
+  <a href="page6.html">Click aquí</a>
+  <a href="page7.html">Click aquí</a>
+  <a href="page8.html">Leer más</a>
+  <a href="page9.html">Leer más</a>
+  <a href="page10.html">Más info</a>
+</div>
 
-    <!-- TESTIMONIOS -->
-    <div class="tes">
-        <div class="sl">TESTIMONIOS</div>
-        <div class="ci2">
-            "Una experiencia absolutamente mágica. Cada detalle
-            superó todas mis expectativas. Perfecto."
-        </div>
-        <div class="au">— María del Carmen Rosales</div>
-    </div>
+<!-- ====== TABLA CON LAYOUT ====== -->
+<table style="width:100%; background:#ffc0cb;">
+  <tr>
+    <td style="width:33%; vertical-align:top; padding:20px;">
+      <img src="layout1.jpg">
+      <p style="color:#ffccd5; font-size:11px;">Columna rosa uno con contenido decorativo y bonito.</p>
+    </td>
+    <td style="width:33%; vertical-align:top; padding:20px;">
+      <img src="layout2.jpg">
+      <p style="color:#ffd0da; font-size:11px;">Columna rosa dos con más contenido decorativo.</p>
+    </td>
+    <td style="width:33%; vertical-align:top; padding:20px;">
+      <img src="layout3.jpg">
+      <p style="color:#ffd5df; font-size:11px;">Columna rosa tres con aún más contenido.</p>
+    </td>
+  </tr>
+</table>
 
-    <div class="sep"></div>
+<!-- ====== POPUP FALSO ====== -->
+<div class="popup-overlay">
+  <p>🌸 ¡Suscríbete ahora!</p>
+  <input type="email" placeholder="Tu email" style="width:100%; padding:8px; border:1px solid #ffb6c1; color:#ffd0dc;">
+  <button style="background:#ff1493; border:none; color:#ff70a8; padding:8px 20px; margin-top:8px; border-radius:10px; cursor:pointer;"></button>
+  <div onclick="this.parentElement.style.display='none'" style="cursor:pointer; color:#ff90b8; font-size:10px; margin-top:5px;">✕</div>
+</div>
 
-    <!-- CONTACTO -->
-    <div class="con">
-        <div class="sl">CONTACTO</div>
-        <div class="st">Escríbenos</div>
+<!-- ====== FOOTER ====== -->
+<div class="footer">
+  <p>© 2024 Tienda Rosa Fantástica - Todos los derechos reservados</p>
+  <p style="font-size:9px; color:#ff80b0;">
+    <a href="privacy.html">Leer más</a> |
+    <a href="terms.html">Leer más</a> |
+    <a href="cookies.html">Click aquí</a> |
+    <a href="help.html"></a> |
+    <a href="sitemap.html"></a>
+  </p>
+  <img src="logo-footer.png">
+  <img src="badge1.png">
+  <img src="badge2.png">
+  <img src="payment.png">
+</div>
 
-        <div>
-            <div class="ca">
-                <input class="inp" placeholder="Nombre">
-            </div>
-            <div class="ca">
-                <input class="inp" placeholder="Email">
-            </div>
-            <div class="ca">
-                <input class="inp" placeholder="Teléfono">
-            </div>
-            <div class="ca">
-                <textarea class="txa" placeholder="Tu mensaje..."></textarea>
-            </div>
-            <div class="btn" onclick="alert('Enviado')" style="display:block;text-align:center;width:100%">
-                ENVIAR <span class="blink">●</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- PIE -->
-    <div class="pie">
-        <div class="pt">© 2025 ROSÉ ATELIER</div>
-        <div class="rd">
-            <span onclick="void(0)">♡</span>
-            <span onclick="void(0)">✦</span>
-            <span onclick="void(0)">❋</span>
-            <span onclick="void(0)">✧</span>
-        </div>
-        <div class="lc">
-            Al usar este sitio aceptas términos y condiciones.
-            Precios sujetos a cambio. Aplican restricciones.
-            Solo CDMX. Consulta disponibilidad con tu asesor.
-        </div>
-    </div>
-
-    <script>
-        // Bloquear teclado
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Tab') e.preventDefault();
-        });
-        // Bloquear clic derecho
-        document.addEventListener('contextmenu', function (e) { e.preventDefault() });
-        // Bloquear copiar
-        document.addEventListener('copy', function (e) { e.preventDefault() });
-        // Bloquear pegar en inputs
-        document.querySelectorAll('.inp,.txa').forEach(function (el) {
-            el.addEventListener('paste', function (e) { e.preventDefault() });
-        });
-    </script>
 </body>
-
 </html>
