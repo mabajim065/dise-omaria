@@ -893,168 +893,178 @@
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="logo">✿ Bloom Studio</div>
-        <div class="nav-links">
-            <a href="#">Inicio</a>
-            <a href="#">Servicios</a>
-            <a href="#">Equipo</a>
-            <a href="#">Galería</a>
-            <a href="#">Blog</a>
-            <a href="#">Precios</a>
-            <a href="#">Contacto</a>
-        </div>
-    </div>
+<!-- cambio 4: Convertir navbar en <header> con elemento semántico <nav> para definir región de navegación -->
+<header class="navbar">
+    <div class="logo">✿ Bloom Studio</div>
+    <nav class="nav-links">
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Equipo</a>
+        <a href="#">Galería</a>
+        <a href="#">Blog</a>
+        <a href="#">Precios</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+<!-- cambio 4: fin header -->
 
-    <div class="hero">
+<!-- cambio 4: Envolver todo el contenido principal en <main> para definir región de contenido principal -->
+<main>
+    <!-- cambio 4: Convertir hero en <section> y título principal en <h1> -->
+    <section class="hero">
         <div class="hero-content">
-            <div class="titulo-hero">Diseño Creativo que Inspira</div>
-            <div class="subtitulo-hero">
+            <h1 class="titulo-hero">Diseño Creativo que Inspira</h1> <!-- cambio 4: usar <h1> para el título principal de la página -->
+            <p class="subtitulo-hero"> <!-- cambio 4: usar <p> para párrafos -->
                 Transformamos ideas en experiencias digitales únicas. 
                 Nuestro equipo de expertos crea soluciones visuales que 
                 conectan con tu audiencia.
-            </div>
-            <div class="btn-hero" onclick="document.querySelector('.contacto').scrollIntoView()">
-                Comenzar Proyecto
-            </div>
+            </p>
+            <a href="#contacto" class="btn-hero">Comenzar Proyecto</a> <!-- cambio 4: cambiar div por <a> con href -->
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section hero -->
 
-    <div class="servicios">
-        <div class="seccion-titulo">Nuestros Servicios</div>
-        <div class="seccion-sub">Soluciones creativas para cada necesidad</div>
+    <!-- cambio 4: Convertir servicios en <section> -->
+    <section class="servicios" id="servicios">
+        <h2 class="seccion-titulo">Nuestros Servicios</h2> <!-- cambio 4: usar <h2> para títulos de sección -->
+        <p class="seccion-sub">Soluciones creativas para cada necesidad</p> <!-- cambio 4: usar <p> -->
 
         <div class="servicios-grid">
-            <div class="servicio-card">
+            <!-- cambio 4: Cada servicio es un <article> con <h3> para el título -->
+            <article class="servicio-card">
                 <div class="icono">
                     <img src="icono-diseno.png" alt="Icono de diseño web" width="40" height="40">
                 </div>
-                <div class="card-titulo">Diseño Web</div>
-                <div class="card-texto">
+                <h3 class="card-titulo">Diseño Web</h3> <!-- cambio 4: usar <h3> para títulos de tarjetas -->
+                <p class="card-texto"> <!-- cambio 4: usar <p> -->
                     Creamos sitios web modernos y atractivos que reflejan 
                     la identidad de tu marca con las últimas tendencias.
-                </div>
-            </div>
+                </p>
+            </article>
 
-            <div class="servicio-card">
+            <article class="servicio-card">
                 <div class="icono">
                     <img src="icono-branding.png" alt="Icono de branding" width="40" height="40">
                 </div>
-                <div class="card-titulo">Branding</div>
-                <div class="card-texto">
+                <h3 class="card-titulo">Branding</h3>
+                <p class="card-texto">
                     Desarrollamos identidades de marca memorables que 
                     conectan emocionalmente con tu público objetivo.
-                </div>
-            </div>
+                </p>
+            </article>
 
-            <div class="servicio-card">
+            <article class="servicio-card">
                 <div class="icono">
                     <img src="icono-marketing.png" alt="Icono de marketing digital" width="40" height="40">
                 </div>
-                <div class="card-titulo">Marketing Digital</div>
-                <div class="card-texto">
+                <h3 class="card-titulo">Marketing Digital</h3>
+                <p class="card-texto">
                     Estrategias de marketing que impulsan tu presencia 
                     digital y generan resultados medibles.
-                </div>
-            </div>
+                </p>
+            </article>
 
-            <div class="servicio-card">
+            <article class="servicio-card">
                 <div class="icono">
                     <img src="icono-foto.png" alt="Icono de fotografía" width="40" height="40">
                 </div>
-                <div class="card-titulo">Fotografía</div>
-                <div class="card-texto">
+                <h3 class="card-titulo">Fotografía</h3>
+                <p class="card-texto">
                     Capturamos momentos únicos con un enfoque artístico 
                     profesional para tu negocio.
-                </div>
-            </div>
+                </p>
+            </article>
 
-            <div class="servicio-card">
+            <article class="servicio-card">
                 <div class="icono">
                     <img src="icono-video.png" alt="Icono de producción de video" width="40" height="40">
                 </div>
-                <div class="card-titulo">Producción de Video</div>
-                <div class="card-texto">
+                <h3 class="card-titulo">Producción de Video</h3>
+                <p class="card-texto">
                     Videos corporativos y creativos que cuentan la 
                     historia de tu marca de forma impactante.
-                </div>
-            </div>
+                </p>
+            </article>
 
-            <div class="servicio-card">
+            <article class="servicio-card">
                 <div class="icono">
                     <img src="icono-app.png" alt="Icono de apps móviles" width="40" height="40">
                 </div>
-                <div class="card-titulo">Apps Móviles</div>
-                <div class="card-texto">
+                <h3 class="card-titulo">Apps Móviles</h3>
+                <p class="card-texto">
                     Aplicaciones móviles intuitivas y funcionales para 
                     iOS y Android con diseño centrado en el usuario.
-                </div>
-            </div>
+                </p>
+            </article>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section servicios -->
 
-    <div class="equipo">
+    <!-- cambio 4: Convertir equipo en <section> -->
+    <section class="equipo" id="equipo">
         <div class="equipo-inner">
-            <div class="seccion-titulo">Nuestro Equipo</div>
-            <div class="seccion-sub">Profesionales apasionados por la creatividad</div>
+            <h2 class="seccion-titulo">Nuestro Equipo</h2>
+            <p class="seccion-sub">Profesionales apasionados por la creatividad</p>
 
             <div class="equipo-grid">
-                <div class="miembro-card">
+                <article class="miembro-card">
                     <img src="persona1.jpg" alt="Foto de Laura Martínez, Directora Creativa">
                     <div class="miembro-info">
-                        <div class="nombre">Laura Martínez</div>
-                        <div class="cargo">Directora Creativa</div>
+                        <h3 class="nombre">Laura Martínez</h3> <!-- cambio 4: usar <h3> -->
+                        <p class="cargo">Directora Creativa</p>
                         <div class="redes">
-                            <a href="#">in</a>
-                            <a href="#">tw</a>
-                            <a href="#">ig</a>
+                            <a href="#" aria-label="LinkedIn de Laura Martínez">in</a>
+                            <a href="#" aria-label="Twitter de Laura Martínez">tw</a>
+                            <a href="#" aria-label="Instagram de Laura Martínez">ig</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="miembro-card">
+                <article class="miembro-card">
                     <img src="persona2.jpg" alt="Foto de Carlos Rodríguez, Diseñador UI/UX">
                     <div class="miembro-info">
-                        <div class="nombre">Carlos Rodríguez</div>
-                        <div class="cargo">Diseñador UI/UX</div>
+                        <h3 class="nombre">Carlos Rodríguez</h3>
+                        <p class="cargo">Diseñador UI/UX</p>
                         <div class="redes">
-                            <a href="#">in</a>
-                            <a href="#">tw</a>
-                            <a href="#">ig</a>
+                            <a href="#" aria-label="LinkedIn de Carlos Rodríguez">in</a>
+                            <a href="#" aria-label="Twitter de Carlos Rodríguez">tw</a>
+                            <a href="#" aria-label="Instagram de Carlos Rodríguez">ig</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="miembro-card">
+                <article class="miembro-card">
                     <img src="persona3.jpg" alt="Foto de Ana García, Desarrolladora Frontend">
                     <div class="miembro-info">
-                        <div class="nombre">Ana García</div>
-                        <div class="cargo">Desarrolladora Frontend</div>
+                        <h3 class="nombre">Ana García</h3>
+                        <p class="cargo">Desarrolladora Frontend</p>
                         <div class="redes">
-                            <a href="#">in</a>
-                            <a href="#">tw</a>
-                            <a href="#">ig</a>
+                            <a href="#" aria-label="LinkedIn de Ana García">in</a>
+                            <a href="#" aria-label="Twitter de Ana García">tw</a>
+                            <a href="#" aria-label="Instagram de Ana García">ig</a>
                         </div>
                     </div>
-                </div>
+                </article>
 
-                <div class="miembro-card">
+                <article class="miembro-card">
                     <img src="persona4.jpg" alt="Foto de Miguel Torres, Director de Marketing">
                     <div class="miembro-info">
-                        <div class="nombre">Miguel Torres</div>
-                        <div class="cargo">Director de Marketing</div>
+                        <h3 class="nombre">Miguel Torres</h3>
+                        <p class="cargo">Director de Marketing</p>
                         <div class="redes">
-                            <a href="#">in</a>
-                            <a href="#">tw</a>
-                            <a href="#">ig</a>
+                            <a href="#" aria-label="LinkedIn de Miguel Torres">in</a>
+                            <a href="#" aria-label="Twitter de Miguel Torres">tw</a>
+                            <a href="#" aria-label="Instagram de Miguel Torres">ig</a>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section equipo -->
 
-    <div class="estadisticas">
+    <!-- cambio 4: Convertir estadísticas en <section> -->
+    <section class="estadisticas">
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-numero">250+</div>
@@ -1073,59 +1083,63 @@
                 <div class="stat-label">Años</div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section estadísticas -->
 
-    <div class="testimonios">
-        <div class="seccion-titulo">Lo que Dicen Nuestros Clientes</div>
+    <!-- cambio 4: Convertir testimonios en <section> -->
+    <section class="testimonios" id="testimonios">
+        <h2 class="seccion-titulo">Lo que Dicen Nuestros Clientes</h2>
 
         <div class="testimonios-grid">
-            <div class="testimonio-card">
-                <div class="quote">
+            <article class="testimonio-card">
+                <blockquote class="quote"> <!-- cambio 4: usar <blockquote> para citas -->
                     "Bloom Studio transformó completamente nuestra presencia digital. 
                     Su creatividad y profesionalismo superaron todas nuestras expectativas."
-                </div>
+                </blockquote>
                 <div class="autor">
                     <img src="cliente1.jpg" alt="Foto de perfil de María López">
                     <div>
-                        <div class="autor-nombre">María López</div>
-                        <div class="autor-cargo">CEO, TechStart</div>
+                        <p class="autor-nombre">María López</p>
+                        <p class="autor-cargo">CEO, TechStart</p>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="testimonio-card">
-                <div class="quote">
+            <article class="testimonio-card">
+                <blockquote class="quote">
                     "El equipo entendió perfectamente nuestra visión y la llevó al siguiente 
                     nivel. Recomiendo sus servicios al 100%."
-                </div>
+                </blockquote>
                 <div class="autor">
                     <img src="cliente2.jpg" alt="Foto de perfil de Roberto Sánchez">
                     <div>
-                        <div class="autor-nombre">Roberto Sánchez</div>
-                        <div class="autor-cargo">Director, ModaPlus</div>
+                        <p class="autor-nombre">Roberto Sánchez</p>
+                        <p class="autor-cargo">Director, ModaPlus</p>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <div class="testimonio-card">
-                <div class="quote">
+            <article class="testimonio-card">
+                <blockquote class="quote">
                     "Increíble atención al detalle y resultados que hablan por sí solos. 
                     Nuestras ventas aumentaron un 40% tras el rediseño."
-                </div>
+                </blockquote>
                 <div class="autor">
                     <img src="cliente3.jpg" alt="Foto de perfil de Patricia Ruiz">
                     <div>
-                        <div class="autor-nombre">Patricia Ruiz</div>
-                        <div class="autor-cargo">Fundadora, GreenLife</div>
+                        <p class="autor-nombre">Patricia Ruiz</p>
+                        <p class="autor-cargo">Fundadora, GreenLife</p>
                     </div>
                 </div>
-            </div>
+            </article>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section testimonios -->
 
-    <div class="galeria">
+    <!-- cambio 4: Convertir galería en <section> -->
+    <section class="galeria" id="galeria">
         <div class="galeria-inner">
-            <div class="seccion-titulo">Nuestro Portfolio</div>
+            <h2 class="seccion-titulo">Nuestro Portfolio</h2>
 
             <div class="galeria-grid">
                 <img src="proyecto1.jpg" alt="Muestra de proyecto 1" onclick="alert('Ver proyecto')">
@@ -1138,68 +1152,76 @@
                 <img src="proyecto8.jpg" alt="Muestra de proyecto 8" onclick="alert('Ver proyecto')">
             </div>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section galería -->
 
-    <div class="comparativa">
+    <!-- cambio 4: Convertir comparativa en <section> -->
+    <section class="comparativa">
         <div class="comparativa-inner">
-            <div class="seccion-titulo">Comparativa de Servicios</div>
+            <h2 class="seccion-titulo">Comparativa de Servicios</h2>
 
             <table class="tabla-comparativa">
-                <tr>
-                    <td>Característica</td>
-                    <td>Básico</td>
-                    <td>Profesional</td>
-                    <td>Enterprise</td>
-                </tr>
-                <tr>
-                    <td>Páginas incluidas</td>
-                    <td>5</td>
-                    <td>15</td>
-                    <td>Ilimitadas</td>
-                </tr>
-                <tr>
-                    <td>Diseño responsivo</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>SEO básico</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>Soporte prioritario</td>
-                    <td>✗</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>E-commerce</td>
-                    <td>✗</td>
-                    <td>✗</td>
-                    <td>✓</td>
-                </tr>
-                <tr>
-                    <td>Analytics avanzado</td>
-                    <td>✗</td>
-                    <td>✓</td>
-                    <td>✓</td>
-                </tr>
+                <thead> <!-- cambio 4: usar <thead> para encabezados de tabla -->
+                    <tr>
+                        <th scope="col">Característica</th> <!-- cambio 4: usar <th> para celdas de encabezado -->
+                        <th scope="col">Básico</th>
+                        <th scope="col">Profesional</th>
+                        <th scope="col">Enterprise</th>
+                    </tr>
+                </thead>
+                <tbody> <!-- cambio 4: usar <tbody> para el cuerpo de la tabla -->
+                    <tr>
+                        <td>Páginas incluidas</td>
+                        <td>5</td>
+                        <td>15</td>
+                        <td>Ilimitadas</td>
+                    </tr>
+                    <tr>
+                        <td>Diseño responsivo</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>SEO básico</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Soporte prioritario</td>
+                        <td>✗</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>E-commerce</td>
+                        <td>✗</td>
+                        <td>✗</td>
+                        <td>✓</td>
+                    </tr>
+                    <tr>
+                        <td>Analytics avanzado</td>
+                        <td>✗</td>
+                        <td>✓</td>
+                        <td>✓</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section comparativa -->
 
-    <div class="precios">
-        <div class="seccion-titulo">Planes y Precios</div>
-        <div class="seccion-sub">Elige el plan perfecto para tu proyecto</div>
+    <!-- cambio 4: Convertir precios en <section> -->
+    <section class="precios" id="precios">
+        <h2 class="seccion-titulo">Planes y Precios</h2>
+        <p class="seccion-sub">Elige el plan perfecto para tu proyecto</p>
 
         <div class="precios-grid">
-            <div class="precio-card">
-                <div class="plan-nombre">Básico</div>
-                <div class="plan-precio">$299</div>
-                <div class="plan-periodo">por proyecto</div>
+            <article class="precio-card">
+                <h3 class="plan-nombre">Básico</h3> <!-- cambio 4: usar <h3> -->
+                <p class="plan-precio">$299</p>
+                <p class="plan-periodo">por proyecto</p>
                 <ul class="plan-features">
                     <li>Diseño de 5 páginas</li>
                     <li>Responsive design</li>
@@ -1207,13 +1229,13 @@
                     <li>1 revisión</li>
                     <li>Entrega en 2 semanas</li>
                 </ul>
-                <div class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</div>
-            </div>
+                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button> <!-- cambio 4: usar <button> -->
+            </article>
 
-            <div class="precio-card destacado">
-                <div class="plan-nombre">Profesional</div>
-                <div class="plan-precio">$599</div>
-                <div class="plan-periodo">por proyecto</div>
+            <article class="precio-card destacado">
+                <h3 class="plan-nombre">Profesional</h3>
+                <p class="plan-precio">$599</p>
+                <p class="plan-periodo">por proyecto</p>
                 <ul class="plan-features">
                     <li>Diseño de 15 páginas</li>
                     <li>Responsive + animaciones</li>
@@ -1221,13 +1243,13 @@
                     <li>3 revisiones</li>
                     <li>Entrega en 3 semanas</li>
                 </ul>
-                <div class="btn-plan solid" onclick="alert('Seleccionado')">Elegir Plan</div>
-            </div>
+                <button class="btn-plan solid" onclick="alert('Seleccionado')">Elegir Plan</button>
+            </article>
 
-            <div class="precio-card">
-                <div class="plan-nombre">Enterprise</div>
-                <div class="plan-precio">$999</div>
-                <div class="plan-periodo">por proyecto</div>
+            <article class="precio-card">
+                <h3 class="plan-nombre">Enterprise</h3>
+                <p class="plan-precio">$999</p>
+                <p class="plan-periodo">por proyecto</p>
                 <ul class="plan-features">
                     <li>Páginas ilimitadas</li>
                     <li>Full stack development</li>
@@ -1235,121 +1257,128 @@
                     <li>Revisiones ilimitadas</li>
                     <li>Soporte 24/7</li>
                 </ul>
-                <div class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</div>
-            </div>
+                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button>
+            </article>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section precios -->
 
-    <div class="video-section">
-        <div class="seccion-titulo">Conoce Nuestro Proceso</div>
-        <div class="seccion-sub">Mira cómo trabajamos para crear experiencias increíbles</div>
+    <!-- cambio 4: Convertir video-section en <section> -->
+    <section class="video-section">
+        <h2 class="seccion-titulo">Conoce Nuestro Proceso</h2>
+        <p class="seccion-sub">Mira cómo trabajamos para crear experiencias increíbles</p>
 
         <div class="video-container">
-            <video autoplay loop muted>
+            <video autoplay loop muted aria-label="Video sobre nuestro proceso creativo">
                 <source src="proceso-creativo.mp4" type="video/mp4">
             </video>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section video -->
 
-    <div class="blog">
+    <!-- cambio 4: Convertir blog en <section> -->
+    <section class="blog" id="blog">
         <div class="blog-inner">
-            <div class="seccion-titulo">Últimas Publicaciones</div>
+            <h2 class="seccion-titulo">Últimas Publicaciones</h2>
 
             <div class="blog-grid">
-                <div class="blog-card">
+                <!-- cambio 4: Cada entrada de blog es un <article> -->
+                <article class="blog-card">
                     <img src="blog1.jpg" alt="Imagen de portada del artículo sobre tendencias de diseño">
                     <div class="blog-contenido">
-                        <div class="blog-fecha">15 Enero 2024</div>
-                        <div class="blog-titulo">Tendencias de Diseño Web para 2024</div>
-                        <div class="blog-extracto">
+                        <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time> <!-- cambio 4: usar <time> -->
+                        <h3 class="blog-titulo">Tendencias de Diseño Web para 2024</h3>
+                        <p class="blog-extracto">
                             Descubre las últimas tendencias que están definiendo 
                             el diseño web este año y cómo aplicarlas.
-                        </div>
+                        </p>
                         <a href="#" class="leer-mas">Leer más</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="blog-card">
+                <article class="blog-card">
                     <img src="blog2.jpg" alt="Imagen de portada del artículo sobre branding digital">
                     <div class="blog-contenido">
-                        <div class="blog-fecha">28 Diciembre 2023</div>
-                        <div class="blog-titulo">La Importancia del Branding Digital</div>
-                        <div class="blog-extracto">
+                        <time class="blog-fecha" datetime="2023-12-28">28 Diciembre 2023</time>
+                        <h3 class="blog-titulo">La Importancia del Branding Digital</h3>
+                        <p class="blog-extracto">
                             Por qué una identidad de marca sólida es fundamental 
                             para el éxito de tu negocio online.
-                        </div>
+                        </p>
                         <a href="#" class="leer-mas">Leer más</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="blog-card">
+                <article class="blog-card">
                     <img src="blog3.jpg" alt="Imagen de portada del artículo sobre UX">
                     <div class="blog-contenido">
-                        <div class="blog-fecha">10 Diciembre 2023</div>
-                        <div class="blog-titulo">UX: Diseñando para el Usuario</div>
-                        <div class="blog-extracto">
+                        <time class="blog-fecha" datetime="2023-12-10">10 Diciembre 2023</time>
+                        <h3 class="blog-titulo">UX: Diseñando para el Usuario</h3>
+                        <p class="blog-extracto">
                             Principios clave de UX que todo diseñador debe 
                             conocer para crear mejores experiencias.
-                        </div>
+                        </p>
                         <a href="#" class="leer-mas">Leer más</a>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section blog -->
 
-    <div class="contacto">
-        <div class="seccion-titulo">Contáctanos</div>
-        <div class="seccion-sub">¿Tienes un proyecto en mente? Hablemos</div>
+    <!-- cambio 4: Convertir contacto en <section> -->
+    <section class="contacto" id="contacto">
+        <h2 class="seccion-titulo">Contáctanos</h2>
+        <p class="seccion-sub">¿Tienes un proyecto en mente? Hablemos</p>
 
         <div class="contacto-form">
             <form>
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" placeholder="Nombre completo" aria-label="Nombre completo">
+                        <input type="text" placeholder="Nombre completo" aria-label="Nombre completo" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Correo electrónico" aria-label="Correo electrónico">
+                        <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" placeholder="Teléfono" aria-label="Teléfono">
+                        <input type="tel" placeholder="Teléfono" aria-label="Teléfono">
                     </div>
                     <div class="form-group">
-                        <select aria-label="Seleccionar servicio">
+                        <select aria-label="Seleccionar servicio" required>
                             <option value="">Seleccionar servicio</option>
-                            <option>Diseño Web</option>
-                            <option>Branding</option>
-                            <option>Marketing Digital</option>
-                            <option>Fotografía</option>
-                            <option>Video</option>
-                            <option>App Móvil</option>
+                            <option value="diseno-web">Diseño Web</option>
+                            <option value="branding">Branding</option>
+                            <option value="marketing">Marketing Digital</option>
+                            <option value="fotografia">Fotografía</option>
+                            <option value="video">Video</option>
+                            <option value="app">App Móvil</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" placeholder="Asunto del mensaje" aria-label="Asunto del mensaje">
+                    <input type="text" placeholder="Asunto del mensaje" aria-label="Asunto del mensaje" required>
                 </div>
 
                 <div class="form-group">
-                    <textarea placeholder="Cuéntanos sobre tu proyecto..." aria-label="Cuéntanos sobre tu proyecto"></textarea>
+                    <textarea placeholder="Cuéntanos sobre tu proyecto..." aria-label="Cuéntanos sobre tu proyecto" required></textarea>
                 </div>
 
                 <div class="form-group">
                     <select aria-label="¿Cómo nos encontraste?">
                         <option value="">¿Cómo nos encontraste?</option>
-                        <option>Google</option>
-                        <option>Redes Sociales</option>
-                        <option>Recomendación</option>
-                        <option>Otro</option>
+                        <option value="google">Google</option>
+                        <option value="redes">Redes Sociales</option>
+                        <option value="recomendacion">Recomendación</option>
+                        <option value="otro">Otro</option>
                     </select>
                 </div>
 
                 <div class="checkbox-group">
-                    <input type="checkbox" id="terminos">
+                    <input type="checkbox" id="terminos" required>
                     <label for="terminos">Acepto la política de privacidad y términos de uso</label>
                 </div>
 
@@ -1358,69 +1387,71 @@
                     <label for="novedades">Deseo recibir novedades y ofertas por email</label>
                 </div>
 
-                <button type="submit" class="btn-enviar" onclick="alert('Formulario enviado')">
-                    Enviar Mensaje
-                </button>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
             </form>
         </div>
-    </div>
+    </section>
+    <!-- cambio 4: fin section contacto -->
+</main>
+<!-- cambio 4: fin main -->
 
-    <div class="footer">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-titulo">✿ Bloom Studio</div>
-                <div class="footer-desc">
-                    Somos un estudio creativo especializado en diseño digital, 
-                    branding y desarrollo web. Transformamos ideas en experiencias 
-                    digitales memorables desde 2016.
-                </div>
-            </div>
-            <div>
-                <div class="footer-titulo">Servicios</div>
-                <ul class="footer-links">
-                    <li><a href="#">Diseño Web</a></li>
-                    <li><a href="#">Branding</a></li>
-                    <li><a href="#">Marketing</a></li>
-                    <li><a href="#">Fotografía</a></li>
-                    <li><a href="#">Apps</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="footer-titulo">Empresa</div>
-                <ul class="footer-links">
-                    <li><a href="#">Sobre Nosotros</a></li>
-                    <li><a href="#">Equipo</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacto</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="footer-titulo">Legal</div>
-                <ul class="footer-links">
-                    <li><a href="#">Privacidad</a></li>
-                    <li><a href="#">Términos</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">Licencias</a></li>
-                </ul>
-            </div>
+<!-- cambio 4: Convertir footer en elemento <footer> semántico -->
+<footer class="footer">
+    <div class="footer-grid">
+        <div>
+            <h3 class="footer-titulo">✿ Bloom Studio</h3> <!-- cambio 4: usar <h3> -->
+            <p class="footer-desc">
+                Somos un estudio creativo especializado en diseño digital, 
+                branding y desarrollo web. Transformamos ideas en experiencias 
+                digitales memorables desde 2016.
+            </p>
         </div>
-
-        <div class="footer-bottom">
-            <div class="copyright">© 2024 Bloom Studio. Todos los derechos reservados.</div>
-            <div class="footer-social">
-                <a href="#">f</a>
-                <a href="#">t</a>
-                <a href="#">in</a>
-                <a href="#">ig</a>
-                <a href="#">yt</a>
-            </div>
+        <div>
+            <h3 class="footer-titulo">Servicios</h3>
+            <ul class="footer-links">
+                <li><a href="#servicios">Diseño Web</a></li>
+                <li><a href="#servicios">Branding</a></li>
+                <li><a href="#servicios">Marketing</a></li>
+                <li><a href="#servicios">Fotografía</a></li>
+                <li><a href="#servicios">Apps</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="footer-titulo">Empresa</h3>
+            <ul class="footer-links">
+                <li><a href="#equipo">Sobre Nosotros</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3 class="footer-titulo">Legal</h3>
+            <ul class="footer-links">
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Licencias</a></li>
+            </ul>
         </div>
     </div>
 
-    <script>
-        document.oncontextmenu = function() { return false; };
-    </script>
+    <div class="footer-bottom">
+        <p class="copyright">© 2024 Bloom Studio. Todos los derechos reservados.</p>
+        <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">t</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Instagram">ig</a>
+            <a href="#" aria-label="YouTube">yt</a>
+        </div>
+    </div>
+</footer>
+<!-- cambio 4: fin footer -->
 
+<script>
+    document.oncontextmenu = function() { return false; };
+</script>
 </body>
 </html>
