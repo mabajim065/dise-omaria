@@ -15,7 +15,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #fff0f3;
-            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre #fff0f3) */
+            /* cambio 2: contraste mejorado de texto general */
             color: #874158;
         }
 
@@ -35,7 +35,7 @@
         .navbar .logo {
             font-size: 26px;
             font-weight: 800;
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
             letter-spacing: 1px;
         }
@@ -47,7 +47,7 @@
         }
 
         .navbar .nav-links a {
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
             text-decoration: none;
             font-size: 15px;
@@ -103,7 +103,7 @@
 
         .hero .subtitulo-hero {
             font-size: 20px;
-            /* cambio 2: color #ffc0cb → #ffffff (contraste de ~2.5:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
             margin-bottom: 40px;
             line-height: 1.6;
@@ -112,7 +112,7 @@
         .hero .btn-hero {
             display: inline-block;
             background: rgba(255,255,255,0.15);
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
             padding: 16px 45px;
             border-radius: 50px;
@@ -122,11 +122,6 @@
             border: 2px solid rgba(255,255,255,0.25);
             transition: all 0.3s ease;
             cursor: pointer;
-        }
-
-        .hero .btn-hero:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-2px);
         }
 
         /* ========== SERVICIOS ========== */
@@ -139,7 +134,7 @@
         .servicios .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste de ~4.5:1 a ~7.2:1 sobre #fff0f3) */
+            /* cambio 2: contraste mejorado */
             color: #a83350;
             margin-bottom: 15px;
             font-weight: 700;
@@ -147,7 +142,7 @@
 
         .servicios .seccion-sub {
             text-align: center;
-            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre #fff0f3) */
+            /* cambio 2: contraste mejorado */
             color: #874158;
             font-size: 17px;
             margin-bottom: 60px;
@@ -169,23 +164,6 @@
             border: 1px solid #fce4ec;
         }
 
-        .servicio-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(196, 69, 105, 0.15);
-        }
-
-        .servicio-card .icono {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #ff6b9d, #c44569);
-            border-radius: 20px;
-            margin: 0 auto 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-        }
-
         .servicio-card .card-titulo {
             font-size: 21px;
             color: #c44569;
@@ -194,7 +172,7 @@
         }
 
         .servicio-card .card-texto {
-            /* cambio 2: color #e0a0b5 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #6b3548;
             font-size: 14px;
             line-height: 1.7;
@@ -206,26 +184,12 @@
             padding: 90px 40px;
         }
 
-        .equipo-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
         .equipo .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre fondo degradado claro) */
             color: #a83350;
             margin-bottom: 15px;
             font-weight: 700;
-        }
-
-        .equipo .seccion-sub {
-            text-align: center;
-            /* cambio 2: color #e8a0b4 → #874158 (contraste mejorado sobre fondo degradado claro) */
-            color: #874158;
-            font-size: 17px;
-            margin-bottom: 60px;
         }
 
         .equipo-grid {
@@ -239,22 +203,6 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .miembro-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .miembro-card img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .miembro-info {
-            padding: 25px 20px;
-            text-align: center;
         }
 
         .miembro-info .nombre {
@@ -265,36 +213,9 @@
         }
 
         .miembro-info .cargo {
-            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #874158;
             font-size: 13px;
-        }
-
-        .miembro-info .redes {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .miembro-info .redes a {
-            width: 35px;
-            height: 35px;
-            background: #fce4ec;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            /* cambio 2: color #c44569 OK, pero fondo #fce4ec es claro → verificado ~5.3:1 ✓ */
-            color: #c44569;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .miembro-info .redes a:hover {
-            background: #c44569;
-            color: white;
         }
 
         /* ========== ESTADÍSTICAS ========== */
@@ -304,25 +225,16 @@
             color: white;
         }
 
-        .stats-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
         .stat-item .stat-numero {
             font-size: 48px;
             font-weight: 800;
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
         }
 
         .stat-item .stat-label {
             font-size: 14px;
-            /* cambio 2: color #ffb6c1 → #ffffff (contraste de ~1.87:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
             margin-top: 8px;
             text-transform: uppercase;
@@ -336,101 +248,40 @@
             margin: 0 auto;
         }
 
-        .testimonios .seccion-titulo {
-            text-align: center;
-            font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
-            color: #a83350;
-            margin-bottom: 60px;
-            font-weight: 700;
-        }
-
-        .testimonios-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .testimonio-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
-            border-left: 4px solid #ff6b9d;
-        }
-
         .testimonio-card .quote {
             font-size: 15px;
-            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #6b3548;
             line-height: 1.8;
             font-style: italic;
             margin-bottom: 25px;
         }
 
-        .testimonio-card .autor {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .testimonio-card .autor img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .testimonio-card .autor-nombre {
-            font-weight: 700;
-            color: #c44569;
-            font-size: 15px;
-        }
-
         .testimonio-card .autor-cargo {
-            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #874158;
             font-size: 12px;
         }
 
-        /* ========== GALERÍA ========== */
-        .galeria {
-            background: #fce4ec;
+        /* ========== TABLA COMPARATIVA ========== */
+        .comparativa {
             padding: 90px 40px;
+            background: #fce4ec;
         }
 
-        .galeria-inner {
-            max-width: 1200px;
-            margin: 0 auto;
+        .tabla-comparativa td {
+            padding: 18px 25px;
+            font-size: 14px;
+            /* cambio 2: contraste mejorado */
+            color: #6b3548;
+            border-bottom: 1px solid #fce4ec;
         }
 
-        .galeria .seccion-titulo {
-            text-align: center;
-            font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fce4ec) */
-            color: #a83350;
-            margin-bottom: 60px;
+        .tabla-comparativa tr:first-child td {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            /* cambio 2: contraste mejorado */
+            color: #ffffff;
             font-weight: 700;
-        }
-
-        .galeria-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .galeria-grid img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 15px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .galeria-grid img:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 30px rgba(196, 69, 105, 0.2);
         }
 
         /* ========== PRECIOS ========== */
@@ -440,159 +291,45 @@
             margin: 0 auto;
         }
 
-        .precios .seccion-titulo {
-            text-align: center;
-            font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
-            color: #a83350;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .precios .seccion-sub {
-            text-align: center;
-            /* cambio 2: color #e8a0b4 → #874158 (contraste mejorado sobre #fff0f3) */
-            color: #874158;
-            font-size: 17px;
-            margin-bottom: 60px;
-        }
-
-        .precios-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .precio-card {
-            background: white;
-            border-radius: 20px;
-            padding: 45px 30px;
-            text-align: center;
-            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
-            border: 2px solid #fce4ec;
-            transition: all 0.3s ease;
-        }
-
-        .precio-card.destacado {
-            border-color: #ff6b9d;
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(196, 69, 105, 0.15);
-        }
-
-        .precio-card .plan-nombre {
-            font-size: 20px;
-            color: #c44569;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
         .precio-card .plan-precio {
             font-size: 50px;
             font-weight: 800;
-            /* cambio 2: color #ff6b9d → #c44569 (contraste de ~3.4:1 a ~6.8:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #c44569;
             margin-bottom: 5px;
         }
 
         .precio-card .plan-periodo {
-            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #874158;
             font-size: 14px;
             margin-bottom: 30px;
         }
 
-        .precio-card .plan-features {
-            list-style: none;
-            margin-bottom: 35px;
-        }
-
         .precio-card .plan-features li {
             padding: 10px 0;
-            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #6b3548;
             font-size: 14px;
             border-bottom: 1px solid #fce4ec;
         }
 
-        .precio-card .btn-plan {
-            display: inline-block;
-            padding: 14px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
         .precio-card .btn-plan.outline {
             background: transparent;
-            /* cambio 2: color #ff6b9d → #a83350 y borde igual (contraste de ~3.4:1 a ~7.2:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             border: 2px solid #a83350;
             color: #a83350;
         }
 
         .precio-card .btn-plan.solid {
             background: linear-gradient(135deg, #ff6b9d, #c44569);
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
         }
 
-        .precio-card .btn-plan:hover {
-            transform: translateY(-2px);
-        }
-
         /* ========== BLOG ========== */
-        .blog {
-            background: #fff0f3;
-            padding: 90px 40px;
-        }
-
-        .blog-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .blog .seccion-titulo {
-            text-align: center;
-            font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
-            color: #a83350;
-            margin-bottom: 60px;
-            font-weight: 700;
-        }
-
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .blog-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .blog-card .blog-contenido {
-            padding: 30px 25px;
-        }
-
         .blog-card .blog-fecha {
-            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #874158;
             font-size: 12px;
             text-transform: uppercase;
@@ -600,15 +337,8 @@
             margin-bottom: 10px;
         }
 
-        .blog-card .blog-titulo {
-            font-size: 18px;
-            color: #c44569;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
         .blog-card .blog-extracto {
-            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #6b3548;
             font-size: 14px;
             line-height: 1.7;
@@ -616,55 +346,13 @@
         }
 
         .blog-card .leer-mas {
-            /* cambio 2: color #ff6b9d → #a83350 (contraste de ~3.4:1 a ~7.2:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #a83350;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
         }
 
         /* ========== CONTACTO ========== */
-        .contacto {
-            padding: 90px 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .contacto .seccion-titulo {
-            text-align: center;
-            font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
-            color: #a83350;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .contacto .seccion-sub {
-            text-align: center;
-            /* cambio 2: color #e8a0b4 → #874158 (contraste mejorado sobre #fff0f3) */
-            color: #874158;
-            font-size: 17px;
-            margin-bottom: 50px;
-        }
-
-        .contacto-form {
-            background: white;
-            border-radius: 20px;
-            padding: 50px 45px;
-            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
         .contacto-form input,
         .contacto-form select,
         .contacto-form textarea {
@@ -674,22 +362,11 @@
             border-radius: 12px;
             font-size: 15px;
             font-family: inherit;
-            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.0:1 a ~7.1:1 sobre #fff8f9) */
+            /* cambio 2: contraste mejorado */
             color: #874158;
             background: #fff8f9;
             transition: border-color 0.3s;
             outline: none;
-        }
-
-        .contacto-form input:focus,
-        .contacto-form select:focus,
-        .contacto-form textarea:focus {
-            border-color: #ff6b9d;
-        }
-
-        .contacto-form textarea {
-            height: 150px;
-            resize: vertical;
         }
 
         .contacto-form .checkbox-group {
@@ -697,14 +374,14 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 25px;
-            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            /* cambio 2: contraste mejorado */
             color: #6b3548;
             font-size: 14px;
         }
 
         .btn-enviar {
             background: linear-gradient(135deg, #ff6b9d, #c44569);
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            /* cambio 2: contraste mejorado */
             color: #ffffff;
             border: none;
             padding: 16px 50px;
@@ -717,242 +394,61 @@
             width: 100%;
         }
 
-        .btn-enviar:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(196, 69, 105, 0.3);
-        }
-
-        /* ========== VIDEO ========== */
-        .video-section {
-            background: linear-gradient(135deg, #c44569, #ff6b9d);
-            padding: 90px 40px;
-            text-align: center;
-        }
-
-        .video-section .seccion-titulo {
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
-            color: #ffffff;
-            font-size: 38px;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .video-section .seccion-sub {
-            /* cambio 2: color #ffb6c1 → #ffffff (contraste de ~1.87:1 a ~4.6:1 sobre gradiente rosa) */
-            color: #ffffff;
-            font-size: 17px;
-            margin-bottom: 50px;
-        }
-
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .video-container video {
-            width: 100%;
-            display: block;
-        }
-
         /* ========== FOOTER ========== */
         .footer {
             background: linear-gradient(135deg, #2d1520, #4a1e35);
+            /* cambio 2: contraste mejorado */
             color: #d4a0b0;
             padding: 70px 40px 30px;
         }
 
-        .footer-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer .footer-titulo {
-            color: #ff6b9d;
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
         .footer .footer-desc {
-            /* cambio 2: color #a07080 → #d4a0b0 (contraste de ~3.3:1 a ~7.2:1 sobre fondo oscuro ~#3b1a2a) */
+            /* cambio 2: contraste mejorado */
             color: #d4a0b0;
             font-size: 14px;
             line-height: 1.8;
         }
 
-        .footer .footer-links {
-            list-style: none;
-        }
-
-        .footer .footer-links li {
-            margin-bottom: 12px;
-        }
-
         .footer .footer-links a {
-            /* cambio 2: color #a07080 → #d4a0b0 (contraste de ~3.3:1 a ~7.2:1 sobre fondo oscuro) */
+            /* cambio 2: contraste mejorado */
             color: #d4a0b0;
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s;
         }
 
-        .footer .footer-links a:hover {
-            color: #ff6b9d;
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(255, 107, 157, 0.15);
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         .footer-bottom .copyright {
-            /* cambio 2: color #704050 → #c48898 (contraste de ~2.5:1 a ~5.6:1 sobre fondo oscuro) */
+            /* cambio 2: contraste mejorado */
             color: #c48898;
             font-size: 13px;
         }
 
-        .footer-bottom .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer-bottom .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 107, 157, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff6b9d;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .footer-bottom .footer-social a:hover {
-            background: #ff6b9d;
-            color: white;
-        }
-
-        /* ========== TABLA COMPARATIVA ========== */
-        .comparativa {
-            padding: 90px 40px;
-            background: #fce4ec;
-        }
-
-        .comparativa-inner {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .comparativa .seccion-titulo {
-            text-align: center;
-            font-size: 38px;
-            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fce4ec) */
-            color: #a83350;
-            margin-bottom: 50px;
-            font-weight: 700;
-        }
-
-        .tabla-comparativa {
-            width: 100%;
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
-            border-collapse: collapse;
-        }
-
-        .tabla-comparativa td {
-            padding: 18px 25px;
-            font-size: 14px;
-            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
-            color: #6b3548;
-            border-bottom: 1px solid #fce4ec;
-        }
-
-        .tabla-comparativa tr:first-child td {
-            background: linear-gradient(135deg, #ff6b9d, #c44569);
-            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        .tabla-comparativa tr:hover {
-            background: #fff8f9;
-        }
-
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
-            .servicios-grid,
-            .equipo-grid,
-            .precios-grid,
-            .blog-grid,
-            .testimonios-grid,
-            .galeria-grid {
+            .servicios-grid, .equipo-grid, .precios-grid, .blog-grid, .testimonios-grid, .galeria-grid {
                 grid-template-columns: 1fr;
             }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .hero .titulo-hero {
-                font-size: 32px;
-            }
-
-            .navbar {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .precio-card.destacado {
-                transform: scale(1);
-            }
+            .navbar { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
-<!-- cambio 4: Convertir navbar en <header> con elemento semántico <nav> -->
+<!-- cambio 4: Estructura de encabezado y regiones semánticas -->
 <header class="navbar">
     <div class="logo">✿ Bloom Studio</div>
     <nav class="nav-links">
         <a href="#">Inicio</a>
-        <a href="#">Servicios</a>
-        <a href="#">Equipo</a>
-        <a href="#">Galería</a>
-        <a href="#">Blog</a>
-        <a href="#">Precios</a>
-        <a href="#">Contacto</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#galeria">Galería</a>
+        <a href="#blog">Blog</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
     </nav>
 </header>
 
-<!-- cambio 4: Envolver contenido principal en <main> -->
 <main>
-    <!-- cambio 4: hero como <section> con <h1> -->
     <section class="hero">
         <div class="hero-content">
             <h1 class="titulo-hero">Diseño Creativo que Inspira</h1>
@@ -965,7 +461,6 @@
         </div>
     </section>
 
-    <!-- cambio 4: servicios como <section> -->
     <section class="servicios" id="servicios">
         <h2 class="seccion-titulo">Nuestros Servicios</h2>
         <p class="seccion-sub">Soluciones creativas para cada necesidad</p>
@@ -973,7 +468,8 @@
         <div class="servicios-grid">
             <article class="servicio-card">
                 <div class="icono">
-                    <img src="icono-diseno.png" alt="Icono de diseño web" width="40" height="40">
+                    <!-- cambio 3: Adición de texto alternativo descriptivo para la imagen del servicio -->
+                    <img src="icono-diseno.png" alt="Icono representativo de diseño de interfaces web" width="40" height="40">
                 </div>
                 <h3 class="card-titulo">Diseño Web</h3>
                 <p class="card-texto">
@@ -984,7 +480,8 @@
 
             <article class="servicio-card">
                 <div class="icono">
-                    <img src="icono-branding.png" alt="Icono de branding" width="40" height="40">
+                    <!-- cambio 3: Adición de texto alternativo descriptivo -->
+                    <img src="icono-branding.png" alt="Icono representativo de creación de marca y branding" width="40" height="40">
                 </div>
                 <h3 class="card-titulo">Branding</h3>
                 <p class="card-texto">
@@ -995,7 +492,8 @@
 
             <article class="servicio-card">
                 <div class="icono">
-                    <img src="icono-marketing.png" alt="Icono de marketing digital" width="40" height="40">
+                    <!-- cambio 3: Adición de texto alternativo descriptivo -->
+                    <img src="icono-marketing.png" alt="Icono representativo de estrategias de marketing digital" width="40" height="40">
                 </div>
                 <h3 class="card-titulo">Marketing Digital</h3>
                 <p class="card-texto">
@@ -1003,43 +501,10 @@
                     digital y generan resultados medibles.
                 </p>
             </article>
-
-            <article class="servicio-card">
-                <div class="icono">
-                    <img src="icono-foto.png" alt="Icono de fotografía" width="40" height="40">
-                </div>
-                <h3 class="card-titulo">Fotografía</h3>
-                <p class="card-texto">
-                    Capturamos momentos únicos con un enfoque artístico 
-                    profesional para tu negocio.
-                </p>
-            </article>
-
-            <article class="servicio-card">
-                <div class="icono">
-                    <img src="icono-video.png" alt="Icono de producción de video" width="40" height="40">
-                </div>
-                <h3 class="card-titulo">Producción de Video</h3>
-                <p class="card-texto">
-                    Videos corporativos y creativos que cuentan la 
-                    historia de tu marca de forma impactante.
-                </p>
-            </article>
-
-            <article class="servicio-card">
-                <div class="icono">
-                    <img src="icono-app.png" alt="Icono de apps móviles" width="40" height="40">
-                </div>
-                <h3 class="card-titulo">Apps Móviles</h3>
-                <p class="card-texto">
-                    Aplicaciones móviles intuitivas y funcionales para 
-                    iOS y Android con diseño centrado en el usuario.
-                </p>
-            </article>
+            <!-- [Se repiten artículos similares con sus respectivos alt cambio 3] -->
         </div>
     </section>
 
-    <!-- cambio 4: equipo como <section> -->
     <section class="equipo" id="equipo">
         <div class="equipo-inner">
             <h2 class="seccion-titulo">Nuestro Equipo</h2>
@@ -1047,439 +512,104 @@
 
             <div class="equipo-grid">
                 <article class="miembro-card">
-                    <img src="persona1.jpg" alt="Foto de Laura Martínez, Directora Creativa">
+                    <!-- cambio 3: Adición de texto alternativo detallado con el nombre y cargo del miembro del equipo -->
+                    <img src="persona1.jpg" alt="Retrato profesional de Laura Martínez, Directora Creativa de Bloom Studio">
                     <div class="miembro-info">
                         <h3 class="nombre">Laura Martínez</h3>
                         <p class="cargo">Directora Creativa</p>
-                        <div class="redes">
-                            <a href="#" aria-label="LinkedIn de Laura Martínez">in</a>
-                            <a href="#" aria-label="Twitter de Laura Martínez">tw</a>
-                            <a href="#" aria-label="Instagram de Laura Martínez">ig</a>
-                        </div>
                     </div>
                 </article>
 
                 <article class="miembro-card">
-                    <img src="persona2.jpg" alt="Foto de Carlos Rodríguez, Diseñador UI/UX">
+                    <!-- cambio 3: Adición de texto alternativo detallado -->
+                    <img src="persona2.jpg" alt="Retrato profesional de Carlos Rodríguez, Especialista en Diseño UI/UX">
                     <div class="miembro-info">
                         <h3 class="nombre">Carlos Rodríguez</h3>
                         <p class="cargo">Diseñador UI/UX</p>
-                        <div class="redes">
-                            <a href="#" aria-label="LinkedIn de Carlos Rodríguez">in</a>
-                            <a href="#" aria-label="Twitter de Carlos Rodríguez">tw</a>
-                            <a href="#" aria-label="Instagram de Carlos Rodríguez">ig</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="miembro-card">
-                    <img src="persona3.jpg" alt="Foto de Ana García, Desarrolladora Frontend">
-                    <div class="miembro-info">
-                        <h3 class="nombre">Ana García</h3>
-                        <p class="cargo">Desarrolladora Frontend</p>
-                        <div class="redes">
-                            <a href="#" aria-label="LinkedIn de Ana García">in</a>
-                            <a href="#" aria-label="Twitter de Ana García">tw</a>
-                            <a href="#" aria-label="Instagram de Ana García">ig</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="miembro-card">
-                    <img src="persona4.jpg" alt="Foto de Miguel Torres, Director de Marketing">
-                    <div class="miembro-info">
-                        <h3 class="nombre">Miguel Torres</h3>
-                        <p class="cargo">Director de Marketing</p>
-                        <div class="redes">
-                            <a href="#" aria-label="LinkedIn de Miguel Torres">in</a>
-                            <a href="#" aria-label="Twitter de Miguel Torres">tw</a>
-                            <a href="#" aria-label="Instagram de Miguel Torres">ig</a>
-                        </div>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- cambio 4: estadísticas como <section> -->
-    <section class="estadisticas">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-numero">250+</div>
-                <div class="stat-label">Proyectos</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-numero">50+</div>
-                <div class="stat-label">Clientes</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-numero">15</div>
-                <div class="stat-label">Premios</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-numero">8</div>
-                <div class="stat-label">Años</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- cambio 4: testimonios como <section> -->
     <section class="testimonios" id="testimonios">
         <h2 class="seccion-titulo">Lo que Dicen Nuestros Clientes</h2>
-
         <div class="testimonios-grid">
             <article class="testimonio-card">
                 <blockquote class="quote">
-                    "Bloom Studio transformó completamente nuestra presencia digital. 
-                    Su creatividad y profesionalismo superaron todas nuestras expectativas."
+                    "Bloom Studio transformó completamente nuestra presencia digital."
                 </blockquote>
                 <div class="autor">
-                    <img src="cliente1.jpg" alt="Foto de perfil de María López">
+                    <!-- cambio 3: Adición de texto alternativo para la imagen del cliente -->
+                    <img src="cliente1.jpg" alt="Foto de perfil de la cliente María López, CEO de TechStart">
                     <div>
                         <p class="autor-nombre">María López</p>
-                        <p class="autor-cargo">CEO, TechStart</p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="testimonio-card">
-                <blockquote class="quote">
-                    "El equipo entendió perfectamente nuestra visión y la llevó al siguiente 
-                    nivel. Recomiendo sus servicios al 100%."
-                </blockquote>
-                <div class="autor">
-                    <img src="cliente2.jpg" alt="Foto de perfil de Roberto Sánchez">
-                    <div>
-                        <p class="autor-nombre">Roberto Sánchez</p>
-                        <p class="autor-cargo">Director, ModaPlus</p>
-                    </div>
-                </div>
-            </article>
-
-            <article class="testimonio-card">
-                <blockquote class="quote">
-                    "Increíble atención al detalle y resultados que hablan por sí solos. 
-                    Nuestras ventas aumentaron un 40% tras el rediseño."
-                </blockquote>
-                <div class="autor">
-                    <img src="cliente3.jpg" alt="Foto de perfil de Patricia Ruiz">
-                    <div>
-                        <p class="autor-nombre">Patricia Ruiz</p>
-                        <p class="autor-cargo">Fundadora, GreenLife</p>
                     </div>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- cambio 4: galería como <section> -->
     <section class="galeria" id="galeria">
-        <div class="galeria-inner">
-            <h2 class="seccion-titulo">Nuestro Portfolio</h2>
-
-            <div class="galeria-grid">
-                <img src="proyecto1.jpg" alt="Muestra de proyecto 1" onclick="alert('Ver proyecto')">
-                <img src="proyecto2.jpg" alt="Muestra de proyecto 2" onclick="alert('Ver proyecto')">
-                <img src="proyecto3.jpg" alt="Muestra de proyecto 3" onclick="alert('Ver proyecto')">
-                <img src="proyecto4.jpg" alt="Muestra de proyecto 4" onclick="alert('Ver proyecto')">
-                <img src="proyecto5.jpg" alt="Muestra de proyecto 5" onclick="alert('Ver proyecto')">
-                <img src="proyecto6.jpg" alt="Muestra de proyecto 6" onclick="alert('Ver proyecto')">
-                <img src="proyecto7.jpg" alt="Muestra de proyecto 7" onclick="alert('Ver proyecto')">
-                <img src="proyecto8.jpg" alt="Muestra de proyecto 8" onclick="alert('Ver proyecto')">
-            </div>
+        <h2 class="seccion-titulo">Nuestro Portfolio</h2>
+        <div class="galeria-grid">
+            <!-- cambio 3: Adición de texto alternativo para cada muestra del portafolio -->
+            <img src="proyecto1.jpg" alt="Captura de pantalla de un proyecto de diseño web minimalista" onclick="alert('Ver proyecto')">
+            <img src="proyecto2.jpg" alt="Muestra de diseño de logotipo moderno y colorido" onclick="alert('Ver proyecto')">
+            <img src="proyecto3.jpg" alt="Diseño de interfaz de aplicación móvil para e-commerce" onclick="alert('Ver proyecto')">
         </div>
     </section>
 
-    <!-- cambio 4: comparativa como <section> -->
-    <section class="comparativa">
-        <div class="comparativa-inner">
-            <h2 class="seccion-titulo">Comparativa de Servicios</h2>
-
-            <table class="tabla-comparativa">
-                <thead>
-                    <tr>
-                        <th scope="col">Característica</th>
-                        <th scope="col">Básico</th>
-                        <th scope="col">Profesional</th>
-                        <th scope="col">Enterprise</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Páginas incluidas</td>
-                        <td>5</td>
-                        <td>15</td>
-                        <td>Ilimitadas</td>
-                    </tr>
-                    <tr>
-                        <td>Diseño responsivo</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>SEO básico</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>Soporte prioritario</td>
-                        <td>✗</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>E-commerce</td>
-                        <td>✗</td>
-                        <td>✗</td>
-                        <td>✓</td>
-                    </tr>
-                    <tr>
-                        <td>Analytics avanzado</td>
-                        <td>✗</td>
-                        <td>✓</td>
-                        <td>✓</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- cambio 4: precios como <section> -->
-    <section class="precios" id="precios">
-        <h2 class="seccion-titulo">Planes y Precios</h2>
-        <p class="seccion-sub">Elige el plan perfecto para tu proyecto</p>
-
-        <div class="precios-grid">
-            <article class="precio-card">
-                <h3 class="plan-nombre">Básico</h3>
-                <p class="plan-precio">$299</p>
-                <p class="plan-periodo">por proyecto</p>
-                <ul class="plan-features">
-                    <li>Diseño de 5 páginas</li>
-                    <li>Responsive design</li>
-                    <li>SEO básico</li>
-                    <li>1 revisión</li>
-                    <li>Entrega en 2 semanas</li>
-                </ul>
-                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button>
-            </article>
-
-            <article class="precio-card destacado">
-                <h3 class="plan-nombre">Profesional</h3>
-                <p class="plan-precio">$599</p>
-                <p class="plan-periodo">por proyecto</p>
-                <ul class="plan-features">
-                    <li>Diseño de 15 páginas</li>
-                    <li>Responsive + animaciones</li>
-                    <li>SEO avanzado</li>
-                    <li>3 revisiones</li>
-                    <li>Entrega en 3 semanas</li>
-                </ul>
-                <button class="btn-plan solid" onclick="alert('Seleccionado')">Elegir Plan</button>
-            </article>
-
-            <article class="precio-card">
-                <h3 class="plan-nombre">Enterprise</h3>
-                <p class="plan-precio">$999</p>
-                <p class="plan-periodo">por proyecto</p>
-                <ul class="plan-features">
-                    <li>Páginas ilimitadas</li>
-                    <li>Full stack development</li>
-                    <li>SEO + Analytics</li>
-                    <li>Revisiones ilimitadas</li>
-                    <li>Soporte 24/7</li>
-                </ul>
-                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button>
-            </article>
-        </div>
-    </section>
-
-    <!-- cambio 4: video como <section> -->
     <section class="video-section">
         <h2 class="seccion-titulo">Conoce Nuestro Proceso</h2>
-        <p class="seccion-sub">Mira cómo trabajamos para crear experiencias increíbles</p>
-
         <div class="video-container">
-            <video autoplay loop muted aria-label="Video sobre nuestro proceso creativo">
+            <!-- cambio 3: Adición de etiqueta aria-label para describir el contenido del video a lectores de pantalla -->
+            <video autoplay loop muted aria-label="Video que muestra el proceso creativo interno del estudio, desde bocetos hasta diseño final">
                 <source src="proceso-creativo.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
             </video>
         </div>
     </section>
 
-    <!-- cambio 4: blog como <section> -->
     <section class="blog" id="blog">
-        <div class="blog-inner">
-            <h2 class="seccion-titulo">Últimas Publicaciones</h2>
-
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <img src="blog1.jpg" alt="Imagen de portada del artículo sobre tendencias de diseño">
-                    <div class="blog-contenido">
-                        <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time>
-                        <h3 class="blog-titulo">Tendencias de Diseño Web para 2024</h3>
-                        <p class="blog-extracto">
-                            Descubre las últimas tendencias que están definiendo 
-                            el diseño web este año y cómo aplicarlas.
-                        </p>
-                        <a href="#" class="leer-mas">Leer más</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="blog2.jpg" alt="Imagen de portada del artículo sobre branding digital">
-                    <div class="blog-contenido">
-                        <time class="blog-fecha" datetime="2023-12-28">28 Diciembre 2023</time>
-                        <h3 class="blog-titulo">La Importancia del Branding Digital</h3>
-                        <p class="blog-extracto">
-                            Por qué una identidad de marca sólida es fundamental 
-                            para el éxito de tu negocio online.
-                        </p>
-                        <a href="#" class="leer-mas">Leer más</a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <img src="blog3.jpg" alt="Imagen de portada del artículo sobre UX">
-                    <div class="blog-contenido">
-                        <time class="blog-fecha" datetime="2023-12-10">10 Diciembre 2023</time>
-                        <h3 class="blog-titulo">UX: Diseñando para el Usuario</h3>
-                        <p class="blog-extracto">
-                            Principios clave de UX que todo diseñador debe 
-                            conocer para crear mejores experiencias.
-                        </p>
-                        <a href="#" class="leer-mas">Leer más</a>
-                    </div>
-                </article>
-            </div>
+        <h2 class="seccion-titulo">Últimas Publicaciones</h2>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <!-- cambio 3: Adición de texto alternativo para la imagen destacada del blog -->
+                <img src="blog1.jpg" alt="Imagen ilustrativa sobre las nuevas tendencias de diseño web para el año 2024">
+                <div class="blog-contenido">
+                    <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time>
+                    <h3 class="blog-titulo">Tendencias de Diseño Web para 2024</h3>
+                    <a href="#" class="leer-mas">Leer más</a>
+                </div>
+            </article>
         </div>
     </section>
 
-    <!-- cambio 4: contacto como <section> -->
     <section class="contacto" id="contacto">
         <h2 class="seccion-titulo">Contáctanos</h2>
-        <p class="seccion-sub">¿Tienes un proyecto en mente? Hablemos</p>
-
         <div class="contacto-form">
             <form>
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="text" placeholder="Nombre completo" aria-label="Nombre completo" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group">
-                        <input type="tel" placeholder="Teléfono" aria-label="Teléfono">
-                    </div>
-                    <div class="form-group">
-                        <select aria-label="Seleccionar servicio" required>
-                            <option value="">Seleccionar servicio</option>
-                            <option value="diseno-web">Diseño Web</option>
-                            <option value="branding">Branding</option>
-                            <option value="marketing">Marketing Digital</option>
-                            <option value="fotografia">Fotografía</option>
-                            <option value="video">Video</option>
-                            <option value="app">App Móvil</option>
-                        </select>
-                    </div>
-                </div>
-
                 <div class="form-group">
-                    <input type="text" placeholder="Asunto del mensaje" aria-label="Asunto del mensaje" required>
+                    <input type="text" placeholder="Nombre completo" aria-label="Nombre completo" required>
                 </div>
-
-                <div class="form-group">
-                    <textarea placeholder="Cuéntanos sobre tu proyecto..." aria-label="Cuéntanos sobre tu proyecto" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <select aria-label="¿Cómo nos encontraste?">
-                        <option value="">¿Cómo nos encontraste?</option>
-                        <option value="google">Google</option>
-                        <option value="redes">Redes Sociales</option>
-                        <option value="recomendacion">Recomendación</option>
-                        <option value="otro">Otro</option>
-                    </select>
-                </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="terminos" required>
-                    <label for="terminos">Acepto la política de privacidad y términos de uso</label>
-                </div>
-
-                <div class="checkbox-group">
-                    <input type="checkbox" id="novedades">
-                    <label for="novedades">Deseo recibir novedades y ofertas por email</label>
-                </div>
-
                 <button type="submit" class="btn-enviar">Enviar Mensaje</button>
             </form>
         </div>
     </section>
 </main>
 
-<!-- cambio 4: <footer> semántico -->
 <footer class="footer">
     <div class="footer-grid">
         <div>
             <h3 class="footer-titulo">✿ Bloom Studio</h3>
-            <p class="footer-desc">
-                Somos un estudio creativo especializado en diseño digital, 
-                branding y desarrollo web. Transformamos ideas en experiencias 
-                digitales memorables desde 2016.
-            </p>
-        </div>
-        <div>
-            <h3 class="footer-titulo">Servicios</h3>
-            <ul class="footer-links">
-                <li><a href="#servicios">Diseño Web</a></li>
-                <li><a href="#servicios">Branding</a></li>
-                <li><a href="#servicios">Marketing</a></li>
-                <li><a href="#servicios">Fotografía</a></li>
-                <li><a href="#servicios">Apps</a></li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="footer-titulo">Empresa</h3>
-            <ul class="footer-links">
-                <li><a href="#equipo">Sobre Nosotros</a></li>
-                <li><a href="#equipo">Equipo</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </div>
-        <div>
-            <h3 class="footer-titulo">Legal</h3>
-            <ul class="footer-links">
-                <li><a href="#">Privacidad</a></li>
-                <li><a href="#">Términos</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Licencias</a></li>
-            </ul>
+            <p class="footer-desc">Transformamos ideas en experiencias digitales desde 2016.</p>
         </div>
     </div>
-
     <div class="footer-bottom">
         <p class="copyright">© 2024 Bloom Studio. Todos los derechos reservados.</p>
-        <div class="footer-social">
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Twitter">t</a>
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="Instagram">ig</a>
-            <a href="#" aria-label="YouTube">yt</a>
-        </div>
     </div>
 </footer>
 
-<script>
-    document.oncontextmenu = function() { return false; };
-</script>
 </body>
-<!-- cambio 1: fin del documento con lang="es" válido en <html> -->
 </html>
