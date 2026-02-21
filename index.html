@@ -1306,19 +1306,19 @@
             <form>
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" placeholder="Nombre completo">
+                        <input type="text" placeholder="Nombre completo" aria-label="Nombre completo">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Correo electrónico">
+                        <input type="text" placeholder="Correo electrónico" aria-label="Correo electrónico">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" placeholder="Teléfono">
+                        <input type="text" placeholder="Teléfono" aria-label="Teléfono">
                     </div>
                     <div class="form-group">
-                        <select>
+                        <select aria-label="Seleccionar servicio">
                             <option value="">Seleccionar servicio</option>
                             <option>Diseño Web</option>
                             <option>Branding</option>
@@ -1331,15 +1331,15 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" placeholder="Asunto del mensaje">
+                    <input type="text" placeholder="Asunto del mensaje" aria-label="Asunto del mensaje">
                 </div>
 
                 <div class="form-group">
-                    <textarea placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                    <textarea placeholder="Cuéntanos sobre tu proyecto..." aria-label="Cuéntanos sobre tu proyecto"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <select>
+                    <select aria-label="¿Cómo nos encontraste?">
                         <option value="">¿Cómo nos encontraste?</option>
                         <option>Google</option>
                         <option>Redes Sociales</option>
@@ -1350,12 +1350,12 @@
 
                 <div class="checkbox-group">
                     <input type="checkbox" id="terminos">
-                    Acepto la política de privacidad y términos de uso
+                    <label for="terminos">Acepto la política de privacidad y términos de uso</label>
                 </div>
 
                 <div class="checkbox-group">
-                    <input type="checkbox">
-                    Deseo recibir novedades y ofertas por email
+                    <input type="checkbox" id="novedades">
+                    <label for="novedades">Deseo recibir novedades y ofertas por email</label>
                 </div>
 
                 <button type="submit" class="btn-enviar" onclick="alert('Formulario enviado')">
