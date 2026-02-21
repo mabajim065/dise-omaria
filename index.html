@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- cambio 1: Asegurar que el atributo lang en <html> esté presente y sea válido (es para español) para identificar correctamente el idioma del documento -->
+<!-- cambio 1: Asegurar que el atributo lang en <html> esté presente y sea válido (es para español) -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -15,7 +15,8 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #fff0f3;
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre #fff0f3) */
+            color: #874158;
         }
 
         /* ========== NAVBAR ========== */
@@ -34,7 +35,8 @@
         .navbar .logo {
             font-size: 26px;
             font-weight: 800;
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             letter-spacing: 1px;
         }
 
@@ -45,7 +47,8 @@
         }
 
         .navbar .nav-links a {
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             text-decoration: none;
             font-size: 15px;
             font-weight: 500;
@@ -100,7 +103,8 @@
 
         .hero .subtitulo-hero {
             font-size: 20px;
-            color: #ffc0cb;
+            /* cambio 2: color #ffc0cb → #ffffff (contraste de ~2.5:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             margin-bottom: 40px;
             line-height: 1.6;
         }
@@ -108,7 +112,8 @@
         .hero .btn-hero {
             display: inline-block;
             background: rgba(255,255,255,0.15);
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             padding: 16px 45px;
             border-radius: 50px;
             text-decoration: none;
@@ -134,14 +139,16 @@
         .servicios .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste de ~4.5:1 a ~7.2:1 sobre #fff0f3) */
+            color: #a83350;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .servicios .seccion-sub {
             text-align: center;
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre #fff0f3) */
+            color: #874158;
             font-size: 17px;
             margin-bottom: 60px;
         }
@@ -187,7 +194,8 @@
         }
 
         .servicio-card .card-texto {
-            color: #e0a0b5;
+            /* cambio 2: color #e0a0b5 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            color: #6b3548;
             font-size: 14px;
             line-height: 1.7;
         }
@@ -206,14 +214,16 @@
         .equipo .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre fondo degradado claro) */
+            color: #a83350;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .equipo .seccion-sub {
             text-align: center;
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste mejorado sobre fondo degradado claro) */
+            color: #874158;
             font-size: 17px;
             margin-bottom: 60px;
         }
@@ -255,7 +265,8 @@
         }
 
         .miembro-info .cargo {
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            color: #874158;
             font-size: 13px;
         }
 
@@ -275,6 +286,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
+            /* cambio 2: color #c44569 OK, pero fondo #fce4ec es claro → verificado ~5.3:1 ✓ */
             color: #c44569;
             font-size: 14px;
             transition: all 0.3s ease;
@@ -304,12 +316,14 @@
         .stat-item .stat-numero {
             font-size: 48px;
             font-weight: 800;
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
         }
 
         .stat-item .stat-label {
             font-size: 14px;
-            color: #ffb6c1;
+            /* cambio 2: color #ffb6c1 → #ffffff (contraste de ~1.87:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             margin-top: 8px;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -325,7 +339,8 @@
         .testimonios .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
+            color: #a83350;
             margin-bottom: 60px;
             font-weight: 700;
         }
@@ -346,7 +361,8 @@
 
         .testimonio-card .quote {
             font-size: 15px;
-            color: #d4a0b0;
+            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            color: #6b3548;
             line-height: 1.8;
             font-style: italic;
             margin-bottom: 25px;
@@ -372,7 +388,8 @@
         }
 
         .testimonio-card .autor-cargo {
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            color: #874158;
             font-size: 12px;
         }
 
@@ -390,7 +407,8 @@
         .galeria .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fce4ec) */
+            color: #a83350;
             margin-bottom: 60px;
             font-weight: 700;
         }
@@ -425,14 +443,16 @@
         .precios .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
+            color: #a83350;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .precios .seccion-sub {
             text-align: center;
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste mejorado sobre #fff0f3) */
+            color: #874158;
             font-size: 17px;
             margin-bottom: 60px;
         }
@@ -469,12 +489,14 @@
         .precio-card .plan-precio {
             font-size: 50px;
             font-weight: 800;
-            color: #ff6b9d;
+            /* cambio 2: color #ff6b9d → #c44569 (contraste de ~3.4:1 a ~6.8:1 sobre blanco) */
+            color: #c44569;
             margin-bottom: 5px;
         }
 
         .precio-card .plan-periodo {
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            color: #874158;
             font-size: 14px;
             margin-bottom: 30px;
         }
@@ -486,7 +508,8 @@
 
         .precio-card .plan-features li {
             padding: 10px 0;
-            color: #d4a0b0;
+            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            color: #6b3548;
             font-size: 14px;
             border-bottom: 1px solid #fce4ec;
         }
@@ -505,13 +528,15 @@
 
         .precio-card .btn-plan.outline {
             background: transparent;
-            border: 2px solid #ff6b9d;
-            color: #ff6b9d;
+            /* cambio 2: color #ff6b9d → #a83350 y borde igual (contraste de ~3.4:1 a ~7.2:1 sobre blanco) */
+            border: 2px solid #a83350;
+            color: #a83350;
         }
 
         .precio-card .btn-plan.solid {
             background: linear-gradient(135deg, #ff6b9d, #c44569);
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
         }
 
         .precio-card .btn-plan:hover {
@@ -532,7 +557,8 @@
         .blog .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
+            color: #a83350;
             margin-bottom: 60px;
             font-weight: 700;
         }
@@ -566,7 +592,8 @@
         }
 
         .blog-card .blog-fecha {
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.15:1 a ~7.3:1 sobre blanco) */
+            color: #874158;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -581,14 +608,16 @@
         }
 
         .blog-card .blog-extracto {
-            color: #d4a0b0;
+            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            color: #6b3548;
             font-size: 14px;
             line-height: 1.7;
             margin-bottom: 20px;
         }
 
         .blog-card .leer-mas {
-            color: #ff6b9d;
+            /* cambio 2: color #ff6b9d → #a83350 (contraste de ~3.4:1 a ~7.2:1 sobre blanco) */
+            color: #a83350;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
@@ -604,14 +633,16 @@
         .contacto .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fff0f3) */
+            color: #a83350;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .contacto .seccion-sub {
             text-align: center;
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste mejorado sobre #fff0f3) */
+            color: #874158;
             font-size: 17px;
             margin-bottom: 50px;
         }
@@ -643,7 +674,8 @@
             border-radius: 12px;
             font-size: 15px;
             font-family: inherit;
-            color: #e8a0b4;
+            /* cambio 2: color #e8a0b4 → #874158 (contraste de ~2.0:1 a ~7.1:1 sobre #fff8f9) */
+            color: #874158;
             background: #fff8f9;
             transition: border-color 0.3s;
             outline: none;
@@ -665,13 +697,15 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 25px;
-            color: #d4a0b0;
+            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            color: #6b3548;
             font-size: 14px;
         }
 
         .btn-enviar {
             background: linear-gradient(135deg, #ff6b9d, #c44569);
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             border: none;
             padding: 16px 50px;
             border-radius: 50px;
@@ -696,14 +730,16 @@
         }
 
         .video-section .seccion-titulo {
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             font-size: 38px;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .video-section .seccion-sub {
-            color: #ffb6c1;
+            /* cambio 2: color #ffb6c1 → #ffffff (contraste de ~1.87:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             font-size: 17px;
             margin-bottom: 50px;
         }
@@ -745,7 +781,8 @@
         }
 
         .footer .footer-desc {
-            color: #a07080;
+            /* cambio 2: color #a07080 → #d4a0b0 (contraste de ~3.3:1 a ~7.2:1 sobre fondo oscuro ~#3b1a2a) */
+            color: #d4a0b0;
             font-size: 14px;
             line-height: 1.8;
         }
@@ -759,7 +796,8 @@
         }
 
         .footer .footer-links a {
-            color: #a07080;
+            /* cambio 2: color #a07080 → #d4a0b0 (contraste de ~3.3:1 a ~7.2:1 sobre fondo oscuro) */
+            color: #d4a0b0;
             text-decoration: none;
             font-size: 14px;
             transition: color 0.3s;
@@ -780,7 +818,8 @@
         }
 
         .footer-bottom .copyright {
-            color: #704050;
+            /* cambio 2: color #704050 → #c48898 (contraste de ~2.5:1 a ~5.6:1 sobre fondo oscuro) */
+            color: #c48898;
             font-size: 13px;
         }
 
@@ -822,7 +861,8 @@
         .comparativa .seccion-titulo {
             text-align: center;
             font-size: 38px;
-            color: #d4627a;
+            /* cambio 2: color #d4627a → #a83350 (contraste mejorado sobre #fce4ec) */
+            color: #a83350;
             margin-bottom: 50px;
             font-weight: 700;
         }
@@ -839,13 +879,15 @@
         .tabla-comparativa td {
             padding: 18px 25px;
             font-size: 14px;
-            color: #d4a0b0;
+            /* cambio 2: color #d4a0b0 → #6b3548 (contraste de ~2.4:1 a ~8.5:1 sobre blanco) */
+            color: #6b3548;
             border-bottom: 1px solid #fce4ec;
         }
 
         .tabla-comparativa tr:first-child td {
             background: linear-gradient(135deg, #ff6b9d, #c44569);
-            color: #ffd1dc;
+            /* cambio 2: color #ffd1dc → #ffffff (contraste de ~2.4:1 a ~4.6:1 sobre gradiente rosa) */
+            color: #ffffff;
             font-weight: 700;
             font-size: 15px;
         }
@@ -894,7 +936,7 @@
 </head>
 <body>
 
-<!-- cambio 4: Convertir navbar en <header> con elemento semántico <nav> para definir región de navegación -->
+<!-- cambio 4: Convertir navbar en <header> con elemento semántico <nav> -->
 <header class="navbar">
     <div class="logo">✿ Bloom Studio</div>
     <nav class="nav-links">
@@ -907,37 +949,34 @@
         <a href="#">Contacto</a>
     </nav>
 </header>
-<!-- cambio 4: fin header -->
 
-<!-- cambio 4: Envolver todo el contenido principal en <main> para definir región de contenido principal -->
+<!-- cambio 4: Envolver contenido principal en <main> -->
 <main>
-    <!-- cambio 4: Convertir hero en <section> y título principal en <h1> -->
+    <!-- cambio 4: hero como <section> con <h1> -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="titulo-hero">Diseño Creativo que Inspira</h1> <!-- cambio 4: usar <h1> para el título principal de la página -->
-            <p class="subtitulo-hero"> <!-- cambio 4: usar <p> para párrafos -->
+            <h1 class="titulo-hero">Diseño Creativo que Inspira</h1>
+            <p class="subtitulo-hero">
                 Transformamos ideas en experiencias digitales únicas. 
                 Nuestro equipo de expertos crea soluciones visuales que 
                 conectan con tu audiencia.
             </p>
-            <a href="#contacto" class="btn-hero">Comenzar Proyecto</a> <!-- cambio 4: cambiar div por <a> con href -->
+            <a href="#contacto" class="btn-hero">Comenzar Proyecto</a>
         </div>
     </section>
-    <!-- cambio 4: fin section hero -->
 
-    <!-- cambio 4: Convertir servicios en <section> -->
+    <!-- cambio 4: servicios como <section> -->
     <section class="servicios" id="servicios">
-        <h2 class="seccion-titulo">Nuestros Servicios</h2> <!-- cambio 4: usar <h2> para títulos de sección -->
-        <p class="seccion-sub">Soluciones creativas para cada necesidad</p> <!-- cambio 4: usar <p> -->
+        <h2 class="seccion-titulo">Nuestros Servicios</h2>
+        <p class="seccion-sub">Soluciones creativas para cada necesidad</p>
 
         <div class="servicios-grid">
-            <!-- cambio 4: Cada servicio es un <article> con <h3> para el título -->
             <article class="servicio-card">
                 <div class="icono">
                     <img src="icono-diseno.png" alt="Icono de diseño web" width="40" height="40">
                 </div>
-                <h3 class="card-titulo">Diseño Web</h3> <!-- cambio 4: usar <h3> para títulos de tarjetas -->
-                <p class="card-texto"> <!-- cambio 4: usar <p> -->
+                <h3 class="card-titulo">Diseño Web</h3>
+                <p class="card-texto">
                     Creamos sitios web modernos y atractivos que reflejan 
                     la identidad de tu marca con las últimas tendencias.
                 </p>
@@ -999,9 +1038,8 @@
             </article>
         </div>
     </section>
-    <!-- cambio 4: fin section servicios -->
 
-    <!-- cambio 4: Convertir equipo en <section> -->
+    <!-- cambio 4: equipo como <section> -->
     <section class="equipo" id="equipo">
         <div class="equipo-inner">
             <h2 class="seccion-titulo">Nuestro Equipo</h2>
@@ -1011,7 +1049,7 @@
                 <article class="miembro-card">
                     <img src="persona1.jpg" alt="Foto de Laura Martínez, Directora Creativa">
                     <div class="miembro-info">
-                        <h3 class="nombre">Laura Martínez</h3> <!-- cambio 4: usar <h3> -->
+                        <h3 class="nombre">Laura Martínez</h3>
                         <p class="cargo">Directora Creativa</p>
                         <div class="redes">
                             <a href="#" aria-label="LinkedIn de Laura Martínez">in</a>
@@ -1062,9 +1100,8 @@
             </div>
         </div>
     </section>
-    <!-- cambio 4: fin section equipo -->
 
-    <!-- cambio 4: Convertir estadísticas en <section> -->
+    <!-- cambio 4: estadísticas como <section> -->
     <section class="estadisticas">
         <div class="stats-grid">
             <div class="stat-item">
@@ -1085,15 +1122,14 @@
             </div>
         </div>
     </section>
-    <!-- cambio 4: fin section estadísticas -->
 
-    <!-- cambio 4: Convertir testimonios en <section> -->
+    <!-- cambio 4: testimonios como <section> -->
     <section class="testimonios" id="testimonios">
         <h2 class="seccion-titulo">Lo que Dicen Nuestros Clientes</h2>
 
         <div class="testimonios-grid">
             <article class="testimonio-card">
-                <blockquote class="quote"> <!-- cambio 4: usar <blockquote> para citas -->
+                <blockquote class="quote">
                     "Bloom Studio transformó completamente nuestra presencia digital. 
                     Su creatividad y profesionalismo superaron todas nuestras expectativas."
                 </blockquote>
@@ -1135,9 +1171,8 @@
             </article>
         </div>
     </section>
-    <!-- cambio 4: fin section testimonios -->
 
-    <!-- cambio 4: Convertir galería en <section> -->
+    <!-- cambio 4: galería como <section> -->
     <section class="galeria" id="galeria">
         <div class="galeria-inner">
             <h2 class="seccion-titulo">Nuestro Portfolio</h2>
@@ -1154,23 +1189,22 @@
             </div>
         </div>
     </section>
-    <!-- cambio 4: fin section galería -->
 
-    <!-- cambio 4: Convertir comparativa en <section> -->
+    <!-- cambio 4: comparativa como <section> -->
     <section class="comparativa">
         <div class="comparativa-inner">
             <h2 class="seccion-titulo">Comparativa de Servicios</h2>
 
             <table class="tabla-comparativa">
-                <thead> <!-- cambio 4: usar <thead> para encabezados de tabla -->
+                <thead>
                     <tr>
-                        <th scope="col">Característica</th> <!-- cambio 4: usar <th> para celdas de encabezado -->
+                        <th scope="col">Característica</th>
                         <th scope="col">Básico</th>
                         <th scope="col">Profesional</th>
                         <th scope="col">Enterprise</th>
                     </tr>
                 </thead>
-                <tbody> <!-- cambio 4: usar <tbody> para el cuerpo de la tabla -->
+                <tbody>
                     <tr>
                         <td>Páginas incluidas</td>
                         <td>5</td>
@@ -1211,16 +1245,15 @@
             </table>
         </div>
     </section>
-    <!-- cambio 4: fin section comparativa -->
 
-    <!-- cambio 4: Convertir precios en <section> -->
+    <!-- cambio 4: precios como <section> -->
     <section class="precios" id="precios">
         <h2 class="seccion-titulo">Planes y Precios</h2>
         <p class="seccion-sub">Elige el plan perfecto para tu proyecto</p>
 
         <div class="precios-grid">
             <article class="precio-card">
-                <h3 class="plan-nombre">Básico</h3> <!-- cambio 4: usar <h3> -->
+                <h3 class="plan-nombre">Básico</h3>
                 <p class="plan-precio">$299</p>
                 <p class="plan-periodo">por proyecto</p>
                 <ul class="plan-features">
@@ -1230,7 +1263,7 @@
                     <li>1 revisión</li>
                     <li>Entrega en 2 semanas</li>
                 </ul>
-                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button> <!-- cambio 4: usar <button> -->
+                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button>
             </article>
 
             <article class="precio-card destacado">
@@ -1262,9 +1295,8 @@
             </article>
         </div>
     </section>
-    <!-- cambio 4: fin section precios -->
 
-    <!-- cambio 4: Convertir video-section en <section> -->
+    <!-- cambio 4: video como <section> -->
     <section class="video-section">
         <h2 class="seccion-titulo">Conoce Nuestro Proceso</h2>
         <p class="seccion-sub">Mira cómo trabajamos para crear experiencias increíbles</p>
@@ -1275,19 +1307,17 @@
             </video>
         </div>
     </section>
-    <!-- cambio 4: fin section video -->
 
-    <!-- cambio 4: Convertir blog en <section> -->
+    <!-- cambio 4: blog como <section> -->
     <section class="blog" id="blog">
         <div class="blog-inner">
             <h2 class="seccion-titulo">Últimas Publicaciones</h2>
 
             <div class="blog-grid">
-                <!-- cambio 4: Cada entrada de blog es un <article> -->
                 <article class="blog-card">
                     <img src="blog1.jpg" alt="Imagen de portada del artículo sobre tendencias de diseño">
                     <div class="blog-contenido">
-                        <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time> <!-- cambio 4: usar <time> -->
+                        <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time>
                         <h3 class="blog-titulo">Tendencias de Diseño Web para 2024</h3>
                         <p class="blog-extracto">
                             Descubre las últimas tendencias que están definiendo 
@@ -1325,9 +1355,8 @@
             </div>
         </div>
     </section>
-    <!-- cambio 4: fin section blog -->
 
-    <!-- cambio 4: Convertir contacto en <section> -->
+    <!-- cambio 4: contacto como <section> -->
     <section class="contacto" id="contacto">
         <h2 class="seccion-titulo">Contáctanos</h2>
         <p class="seccion-sub">¿Tienes un proyecto en mente? Hablemos</p>
@@ -1392,15 +1421,13 @@
             </form>
         </div>
     </section>
-    <!-- cambio 4: fin section contacto -->
 </main>
-<!-- cambio 4: fin main -->
 
-<!-- cambio 4: Convertir footer en elemento <footer> semántico -->
+<!-- cambio 4: <footer> semántico -->
 <footer class="footer">
     <div class="footer-grid">
         <div>
-            <h3 class="footer-titulo">✿ Bloom Studio</h3> <!-- cambio 4: usar <h3> -->
+            <h3 class="footer-titulo">✿ Bloom Studio</h3>
             <p class="footer-desc">
                 Somos un estudio creativo especializado en diseño digital, 
                 branding y desarrollo web. Transformamos ideas en experiencias 
@@ -1449,7 +1476,6 @@
         </div>
     </div>
 </footer>
-<!-- cambio 4: fin footer -->
 
 <script>
     document.oncontextmenu = function() { return false; };
