@@ -40,7 +40,8 @@
         }
 
         *:focus {
-            outline: 2px solid #f48fb1 !important; /* solución de corrección del error uno */
+            outline: none !important;
+            box-shadow: none !important
         }
 
         .b {
@@ -70,7 +71,7 @@
         .m span {
             color: #f8bbd0;
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px; /* solución de corrección del error uno */
+            font-size: 10px;
             letter-spacing: 3px;
             text-transform: uppercase;
             cursor: pointer;
@@ -122,7 +123,7 @@
 
         .hs {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px; /* solución de corrección del error uno */
+            font-size: 9px;
             letter-spacing: 8px;
             color: #f8bbd0;
             margin-bottom: 30px;
@@ -150,12 +151,11 @@
             color: #fce4ec;
             padding: 18px 58px;
             font-family: 'Montserrat', sans-serif;
-            font-size: 14px; /* solución de corrección del error uno */
+            font-size: 10px;
             letter-spacing: 4px;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.4s;
-            border: none; /* solución de corrección del error uno */
         }
 
         .btn:hover {
@@ -211,7 +211,7 @@
 
         .sl {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px; /* solución de corrección del error uno */
+            font-size: 9px;
             letter-spacing: 6px;
             color: #f8bbd0;
             text-align: center;
@@ -345,7 +345,7 @@
         .go span {
             color: #fce4ec;
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px; /* solución de corrección del error uno */
+            font-size: 9px;
             letter-spacing: 3px;
         }
 
@@ -436,7 +436,7 @@
 
         .au {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px; /* solución de corrección del error uno */
+            font-size: 9px;
             letter-spacing: 4px;
             color: #fce4ec;
         }
@@ -502,7 +502,7 @@
 
         .pt {
             font-family: 'Montserrat', sans-serif;
-            font-size: 12px; /* solución de corrección del error uno */
+            font-size: 9px;
             letter-spacing: 3px;
             color: #fce4ec;
         }
@@ -527,7 +527,7 @@
         }
 
         .lc {
-            font-size: 12px; /* solución de corrección del error uno */
+            font-size: 6px;
             color: #fce4ec;
             margin-top: 12px;
             line-height: 1.3;
@@ -642,7 +642,7 @@
     </style>
 </head>
 
-<body>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
 
     <div class="dc d1"></div>
     <div class="dc d2"></div>
@@ -654,12 +654,19 @@
     <div class="pet" style="left:40%;animation-delay:5s">❀</div>
     <div class="pet" style="left:60%;animation-delay:0.5s">🌷</div>
 
+    <!-- BARRA -->
     <div class="b">
         <div class="lo">Rosé <i>Atelier</i></div>
         <div class="m">
-            <span role="button" tabindex="0" onclick="void(0)">Inicio</span> <span role="button" tabindex="0" onclick="void(0)">Servicios</span> <span role="button" tabindex="0" onclick="void(0)">Galería</span> <span role="button" tabindex="0" onclick="void(0)">Precios</span> <span role="button" tabindex="0" onclick="void(0)">Contacto</span> </div>
+            <span onclick="void(0)">Inicio</span>
+            <span onclick="void(0)">Servicios</span>
+            <span onclick="void(0)">Galería</span>
+            <span onclick="void(0)">Precios</span>
+            <span onclick="void(0)">Contacto</span>
+        </div>
     </div>
 
+    <!-- HERO -->
     <div class="hero">
         <div class="hi">
             <div class="hs">✦ ELEGANCIA ATEMPORAL ✦</div>
@@ -669,13 +676,15 @@
                 se encuentra con la delicadeza de los tonos rosados
                 más exquisitos del mundo.
             </div>
-            <button class="btn" onclick="alert('¡Bienvenida!')"> Explorar Colección
-            </button>
+            <div class="btn" onclick="alert('¡Bienvenida!')">
+                Explorar Colección
+            </div>
         </div>
     </div>
 
     <div class="sep"></div>
 
+    <!-- MARQUESINA -->
     <div class="marq">
         <div class="mt">
             <span class="mi">Elegancia</span><span class="md">✦</span>
@@ -693,6 +702,7 @@
         </div>
     </div>
 
+    <!-- SERVICIOS -->
     <div class="srv">
         <div class="sl">NUESTROS SERVICIOS</div>
         <div class="st">Experiencias <i>Exclusivas</i></div>
@@ -739,25 +749,26 @@
 
     <div class="sep"></div>
 
+    <!-- GALERÍA -->
     <div class="gal">
         <div class="sl">GALERÍA</div>
         <div class="st">Momentos <i>Capturados</i></div>
 
         <div class="g4">
             <div class="gi">
-                <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=400&fit=crop" alt="Flores">
+                <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=400&fit=crop">
                 <div class="go"><span>Flores</span></div>
             </div>
             <div class="gi">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop" alt="Cosmética">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop">
                 <div class="go"><span>Cosmética</span></div>
             </div>
             <div class="gi">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop" alt="Decoración">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop">
                 <div class="go"><span>Decoración</span></div>
             </div>
             <div class="gi">
-                <img src="https://images.unsplash.com/photo-1595872018818-97555653a011?w=400&h=400&fit=crop" alt="Joyería">
+                <img src="https://images.unsplash.com/photo-1595872018818-97555653a011?w=400&h=400&fit=crop">
                 <div class="go"><span>Joyería</span></div>
             </div>
         </div>
@@ -765,6 +776,7 @@
 
     <div class="sep"></div>
 
+    <!-- PRECIOS -->
     <div class="srv">
         <div class="sl">PRECIOS</div>
         <div class="st">Nuestras <i>Tarifas</i></div>
@@ -795,17 +807,20 @@
 
     <div class="sep"></div>
 
+    <!-- VIDEO -->
     <div class="med">
         <div class="sl">DESCUBRE</div>
         <div class="st">Nuestro <i>Mundo</i></div>
         <div class="vb">
-            <div class="pl" role="button" tabindex="0" onclick="alert('▶ Reproduciendo...')"> <div class="tr"></div>
+            <div class="pl" onclick="alert('▶ Reproduciendo...')">
+                <div class="tr"></div>
             </div>
         </div>
     </div>
 
     <div class="sep"></div>
 
+    <!-- TESTIMONIOS -->
     <div class="tes">
         <div class="sl">TESTIMONIOS</div>
         <div class="ci2">
@@ -817,6 +832,7 @@
 
     <div class="sep"></div>
 
+    <!-- CONTACTO -->
     <div class="con">
         <div class="sl">CONTACTO</div>
         <div class="st">Escríbenos</div>
@@ -834,15 +850,21 @@
             <div class="ca">
                 <textarea class="txa" placeholder="Tu mensaje..."></textarea>
             </div>
-            <button class="btn" onclick="alert('Enviado')" style="display:block;text-align:center;width:100%"> ENVIAR <span class="blink">●</span>
-            </button>
+            <div class="btn" onclick="alert('Enviado')" style="display:block;text-align:center;width:100%">
+                ENVIAR <span class="blink">●</span>
+            </div>
         </div>
     </div>
 
+    <!-- PIE -->
     <div class="pie">
         <div class="pt">© 2025 ROSÉ ATELIER</div>
         <div class="rd">
-            <span role="button" tabindex="0" onclick="void(0)">♡</span> <span role="button" tabindex="0" onclick="void(0)">✦</span> <span role="button" tabindex="0" onclick="void(0)">❋</span> <span role="button" tabindex="0" onclick="void(0)">✧</span> </div>
+            <span onclick="void(0)">♡</span>
+            <span onclick="void(0)">✦</span>
+            <span onclick="void(0)">❋</span>
+            <span onclick="void(0)">✧</span>
+        </div>
         <div class="lc">
             Al usar este sitio aceptas términos y condiciones.
             Precios sujetos a cambio. Aplican restricciones.
@@ -851,7 +873,18 @@
     </div>
 
     <script>
-        /* solución de corrección del error uno */
+        // Bloquear teclado
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Tab') e.preventDefault();
+        });
+        // Bloquear clic derecho
+        document.addEventListener('contextmenu', function (e) { e.preventDefault() });
+        // Bloquear copiar
+        document.addEventListener('copy', function (e) { e.preventDefault() });
+        // Bloquear pegar en inputs
+        document.querySelectorAll('.inp,.txa').forEach(function (el) {
+            el.addEventListener('paste', function (e) { e.preventDefault() });
+        });
     </script>
 </body>
 
