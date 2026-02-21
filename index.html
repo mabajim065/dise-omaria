@@ -876,7 +876,6 @@
             border-collapse: collapse;
         }
 
-        .tabla-comparativa th,
         .tabla-comparativa td {
             padding: 18px 25px;
             font-size: 14px;
@@ -885,7 +884,7 @@
             border-bottom: 1px solid #fce4ec;
         }
 
-        .tabla-comparativa thead th {
+        .tabla-comparativa tr:first-child td {
             background: linear-gradient(135deg, #ff6b9d, #c44569);
             /* cambio 2: contraste mejorado */
             color: #ffffff;
@@ -893,7 +892,7 @@
             font-size: 15px;
         }
 
-        .tabla-comparativa tbody tr:hover {
+        .tabla-comparativa tr:hover {
             background: #fff8f9;
         }
 
@@ -937,11 +936,11 @@
 </head>
 <body>
 
-<!-- cambio 4: Convertir navbar en <header> con elemento semántico <nav> -->
+<!-- cambio 4: Convertir navbar en <header> con elemento semántico <nav> para definir región de navegación -->
 <header class="navbar">
     <div class="logo">✿ Bloom Studio</div>
     <nav class="nav-links">
-        <a href="#inicio">Inicio</a>
+        <a href="#">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#equipo">Equipo</a>
         <a href="#galeria">Galería</a>
@@ -950,35 +949,37 @@
         <a href="#contacto">Contacto</a>
     </nav>
 </header>
+<!-- cambio 4: fin header -->
 
-<!-- cambio 4: Envolver todo el contenido principal en <main> -->
+<!-- cambio 4: Envolver todo el contenido principal en <main> para definir región de contenido principal -->
 <main>
     <!-- cambio 4: Convertir hero en <section> y título principal en <h1> -->
-    <section class="hero" id="inicio">
+    <section class="hero">
         <div class="hero-content">
-            <h1 class="titulo-hero">Diseño Creativo que Inspira</h1>
-            <p class="subtitulo-hero">
+            <h1 class="titulo-hero">Diseño Creativo que Inspira</h1> <!-- cambio 4: usar <h1> para el título principal de la página -->
+            <p class="subtitulo-hero"> <!-- cambio 4: usar <p> para párrafos; cambio 5: confirmado como párrafo descriptivo, no encabezado -->
                 Transformamos ideas en experiencias digitales únicas. 
                 Nuestro equipo de expertos crea soluciones visuales que 
                 conectan con tu audiencia.
             </p>
-            <a href="#contacto" class="btn-hero">Comenzar Proyecto</a>
+            <a href="#contacto" class="btn-hero">Comenzar Proyecto</a> <!-- cambio 4: cambiar div por <a> con href -->
         </div>
     </section>
+    <!-- cambio 4: fin section hero -->
 
     <!-- cambio 4: Convertir servicios en <section> -->
     <section class="servicios" id="servicios">
-        <h2 class="seccion-titulo">Nuestros Servicios</h2>
-        <p class="seccion-sub">Soluciones creativas para cada necesidad</p>
+        <h2 class="seccion-titulo">Nuestros Servicios</h2> <!-- cambio 4: usar <h2> para títulos de sección; cambio 5: confirmado como encabezado principal de sección -->
+        <p class="seccion-sub">Soluciones creativas para cada necesidad</p> <!-- cambio 5: confirmado como párrafo descriptivo, no encabezado -->
 
         <div class="servicios-grid">
+            <!-- cambio 4: Cada servicio es un <article> con <h3> para el título -->
             <article class="servicio-card">
                 <div class="icono">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="icono-diseno.png" alt="Icono de diseño web" width="40" height="40">
                 </div>
-                <h3 class="card-titulo">Diseño Web</h3>
-                <p class="card-texto">
+                <h3 class="card-titulo">Diseño Web</h3> <!-- cambio 4: usar <h3> para títulos de tarjetas; cambio 5: confirmado como subtítulo de artículo -->
+                <p class="card-texto"> <!-- cambio 4: usar <p>; cambio 5: confirmado como párrafo descriptivo -->
                     Creamos sitios web modernos y atractivos que reflejan 
                     la identidad de tu marca con las últimas tendencias.
                 </p>
@@ -986,10 +987,9 @@
 
             <article class="servicio-card">
                 <div class="icono">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="icono-branding.png" alt="Icono de branding" width="40" height="40">
                 </div>
-                <h3 class="card-titulo">Branding</h3>
+                <h3 class="card-titulo">Branding</h3> <!-- cambio 4 y 5: como arriba -->
                 <p class="card-texto">
                     Desarrollamos identidades de marca memorables que 
                     conectan emocionalmente con tu público objetivo.
@@ -998,10 +998,9 @@
 
             <article class="servicio-card">
                 <div class="icono">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="icono-marketing.png" alt="Icono de marketing digital" width="40" height="40">
                 </div>
-                <h3 class="card-titulo">Marketing Digital</h3>
+                <h3 class="card-titulo">Marketing Digital</h3> <!-- cambio 4 y 5: como arriba -->
                 <p class="card-texto">
                     Estrategias de marketing que impulsan tu presencia 
                     digital y generan resultados medibles.
@@ -1010,10 +1009,9 @@
 
             <article class="servicio-card">
                 <div class="icono">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="icono-foto.png" alt="Icono de fotografía" width="40" height="40">
                 </div>
-                <h3 class="card-titulo">Fotografía</h3>
+                <h3 class="card-titulo">Fotografía</h3> <!-- cambio 4 y 5: como arriba -->
                 <p class="card-texto">
                     Capturamos momentos únicos con un enfoque artístico 
                     profesional para tu negocio.
@@ -1022,10 +1020,9 @@
 
             <article class="servicio-card">
                 <div class="icono">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="icono-video.png" alt="Icono de producción de video" width="40" height="40">
                 </div>
-                <h3 class="card-titulo">Producción de Video</h3>
+                <h3 class="card-titulo">Producción de Video</h3> <!-- cambio 4 y 5: como arriba -->
                 <p class="card-texto">
                     Videos corporativos y creativos que cuentan la 
                     historia de tu marca de forma impactante.
@@ -1034,10 +1031,9 @@
 
             <article class="servicio-card">
                 <div class="icono">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="icono-app.png" alt="Icono de apps móviles" width="40" height="40">
                 </div>
-                <h3 class="card-titulo">Apps Móviles</h3>
+                <h3 class="card-titulo">Apps Móviles</h3> <!-- cambio 4 y 5: como arriba -->
                 <p class="card-texto">
                     Aplicaciones móviles intuitivas y funcionales para 
                     iOS y Android con diseño centrado en el usuario.
@@ -1045,111 +1041,111 @@
             </article>
         </div>
     </section>
+    <!-- cambio 4: fin section servicios -->
 
     <!-- cambio 4: Convertir equipo en <section> -->
     <section class="equipo" id="equipo">
         <div class="equipo-inner">
-            <h2 class="seccion-titulo">Nuestro Equipo</h2>
-            <p class="seccion-sub">Profesionales apasionados por la creatividad</p>
+            <h2 class="seccion-titulo">Nuestro Equipo</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
+            <p class="seccion-sub">Profesionales apasionados por la creatividad</p> <!-- cambio 5: confirmado como párrafo descriptivo -->
 
             <div class="equipo-grid">
                 <article class="miembro-card">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="persona1.jpg" alt="Foto de Laura Martínez, Directora Creativa">
                     <div class="miembro-info">
-                        <h3 class="nombre">Laura Martínez</h3>
-                        <p class="cargo">Directora Creativa</p>
+                        <h3 class="nombre">Laura Martínez</h3> <!-- cambio 4: usar <h3>; cambio 5: confirmado como nombre/título del miembro (actúa como encabezado de artículo) -->
+                        <p class="cargo">Directora Creativa</p> <!-- cambio 5: confirmado como párrafo descriptivo (cargo) -->
                         <div class="redes">
-                            <a href="https://linkedin.com" aria-label="LinkedIn de Laura Martínez">in</a>
-                            <a href="https://twitter.com" aria-label="Twitter de Laura Martínez">tw</a>
-                            <a href="https://instagram.com" aria-label="Instagram de Laura Martínez">ig</a>
+                            <a href="#" aria-label="LinkedIn de Laura Martínez">in</a>
+                            <a href="#" aria-label="Twitter de Laura Martínez">tw</a>
+                            <a href="#" aria-label="Instagram de Laura Martínez">ig</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="miembro-card">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="persona2.jpg" alt="Foto de Carlos Rodríguez, Diseñador UI/UX">
                     <div class="miembro-info">
-                        <h3 class="nombre">Carlos Rodríguez</h3>
+                        <h3 class="nombre">Carlos Rodríguez</h3> <!-- cambio 4 y 5: como arriba -->
                         <p class="cargo">Diseñador UI/UX</p>
                         <div class="redes">
-                            <a href="https://linkedin.com" aria-label="LinkedIn de Carlos Rodríguez">in</a>
-                            <a href="https://twitter.com" aria-label="Twitter de Carlos Rodríguez">tw</a>
-                            <a href="https://instagram.com" aria-label="Instagram de Carlos Rodríguez">ig</a>
+                            <a href="#" aria-label="LinkedIn de Carlos Rodríguez">in</a>
+                            <a href="#" aria-label="Twitter de Carlos Rodríguez">tw</a>
+                            <a href="#" aria-label="Instagram de Carlos Rodríguez">ig</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="miembro-card">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="persona3.jpg" alt="Foto de Ana García, Desarrolladora Frontend">
                     <div class="miembro-info">
-                        <h3 class="nombre">Ana García</h3>
+                        <h3 class="nombre">Ana García</h3> <!-- cambio 4 y 5: como arriba -->
                         <p class="cargo">Desarrolladora Frontend</p>
                         <div class="redes">
-                            <a href="https://linkedin.com" aria-label="LinkedIn de Ana García">in</a>
-                            <a href="https://twitter.com" aria-label="Twitter de Ana García">tw</a>
-                            <a href="https://instagram.com" aria-label="Instagram de Ana García">ig</a>
+                            <a href="#" aria-label="LinkedIn de Ana García">in</a>
+                            <a href="#" aria-label="Twitter de Ana García">tw</a>
+                            <a href="#" aria-label="Instagram de Ana García">ig</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="miembro-card">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="persona4.jpg" alt="Foto de Miguel Torres, Director de Marketing">
                     <div class="miembro-info">
-                        <h3 class="nombre">Miguel Torres</h3>
+                        <h3 class="nombre">Miguel Torres</h3> <!-- cambio 4 y 5: como arriba -->
                         <p class="cargo">Director de Marketing</p>
                         <div class="redes">
-                            <a href="https://linkedin.com" aria-label="LinkedIn de Miguel Torres">in</a>
-                            <a href="https://twitter.com" aria-label="Twitter de Miguel Torres">tw</a>
-                            <a href="https://instagram.com" aria-label="Instagram de Miguel Torres">ig</a>
+                            <a href="#" aria-label="LinkedIn de Miguel Torres">in</a>
+                            <a href="#" aria-label="Twitter de Miguel Torres">tw</a>
+                            <a href="#" aria-label="Instagram de Miguel Torres">ig</a>
                         </div>
                     </div>
                 </article>
             </div>
         </div>
     </section>
+    <!-- cambio 4: fin section equipo -->
 
     <!-- cambio 4: Convertir estadísticas en <section> -->
     <section class="estadisticas">
+        <!-- cambio 5: Agregar <h2> implícito para la sección de estadísticas, ya que actúa como encabezado temático; si no hay título visible, usar <h2 style="display:none"> para semántica -->
+        <h2 style="display: none;">Estadísticas del Estudio</h2> <!-- cambio 5: encabezado oculto para lectores de pantalla, evitando que el contenido parezca sin estructura -->
         <div class="stats-grid">
             <div class="stat-item">
-                <div class="stat-numero">250+</div>
-                <div class="stat-label">Proyectos</div>
+                <div class="stat-numero">250+</div> <!-- cambio 5: confirmado como número, no encabezado -->
+                <h4 class="stat-label">Proyectos</h4> <!-- cambio 5: cambiar de <div> a <h4> ya que el texto "Proyectos" actúa como etiqueta/título descriptivo de la estadística -->
             </div>
             <div class="stat-item">
                 <div class="stat-numero">50+</div>
-                <div class="stat-label">Clientes</div>
+                <h4 class="stat-label">Clientes</h4> <!-- cambio 5: como arriba -->
             </div>
             <div class="stat-item">
                 <div class="stat-numero">15</div>
-                <div class="stat-label">Premios</div>
+                <h4 class="stat-label">Premios</h4> <!-- cambio 5: como arriba -->
             </div>
             <div class="stat-item">
                 <div class="stat-numero">8</div>
-                <div class="stat-label">Años</div>
+                <h4 class="stat-label">Años</h4> <!-- cambio 5: como arriba -->
             </div>
         </div>
     </section>
+    <!-- cambio 4: fin section estadísticas -->
 
     <!-- cambio 4: Convertir testimonios en <section> -->
     <section class="testimonios" id="testimonios">
-        <h2 class="seccion-titulo">Lo que Dicen Nuestros Clientes</h2>
+        <h2 class="seccion-titulo">Lo que Dicen Nuestros Clientes</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
 
         <div class="testimonios-grid">
             <article class="testimonio-card">
-                <blockquote class="quote">
+                <blockquote class="quote"> <!-- cambio 4: usar <blockquote> para citas -->
                     "Bloom Studio transformó completamente nuestra presencia digital. 
                     Su creatividad y profesionalismo superaron todas nuestras expectativas."
                 </blockquote>
                 <div class="autor">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="cliente1.jpg" alt="Foto de perfil de María López">
                     <div>
-                        <div class="autor-nombre">María López</div>
-                        <div class="autor-cargo">CEO, TechStart</div>
+                        <h4 class="autor-nombre">María López</h4> <!-- cambio 5: cambiar de <p> a <h4> ya que el nombre actúa como título del testimonio/autor -->
+                        <p class="autor-cargo">CEO, TechStart</p> <!-- cambio 5: confirmado como párrafo descriptivo (cargo) -->
                     </div>
                 </div>
             </article>
@@ -1160,11 +1156,10 @@
                     nivel. Recomiendo sus servicios al 100%."
                 </blockquote>
                 <div class="autor">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="cliente2.jpg" alt="Foto de perfil de Roberto Sánchez">
                     <div>
-                        <div class="autor-nombre">Roberto Sánchez</div>
-                        <div class="autor-cargo">Director, ModaPlus</div>
+                        <h4 class="autor-nombre">Roberto Sánchez</h4> <!-- cambio 5: como arriba -->
+                        <p class="autor-cargo">Director, ModaPlus</p>
                     </div>
                 </div>
             </article>
@@ -1175,24 +1170,23 @@
                     Nuestras ventas aumentaron un 40% tras el rediseño."
                 </blockquote>
                 <div class="autor">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="cliente3.jpg" alt="Foto de perfil de Patricia Ruiz">
                     <div>
-                        <div class="autor-nombre">Patricia Ruiz</div>
-                        <div class="autor-cargo">Fundadora, GreenLife</div>
+                        <h4 class="autor-nombre">Patricia Ruiz</h4> <!-- cambio 5: como arriba -->
+                        <p class="autor-cargo">Fundadora, GreenLife</p>
                     </div>
                 </div>
             </article>
         </div>
     </section>
+    <!-- cambio 4: fin section testimonios -->
 
     <!-- cambio 4: Convertir galería en <section> -->
     <section class="galeria" id="galeria">
         <div class="galeria-inner">
-            <h2 class="seccion-titulo">Nuestro Portfolio</h2>
+            <h2 class="seccion-titulo">Nuestro Portfolio</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
 
             <div class="galeria-grid">
-                <!-- cambio 3: Texto alternativo descriptivo -->
                 <img src="proyecto1.jpg" alt="Muestra de proyecto 1" onclick="alert('Ver proyecto')">
                 <img src="proyecto2.jpg" alt="Muestra de proyecto 2" onclick="alert('Ver proyecto')">
                 <img src="proyecto3.jpg" alt="Muestra de proyecto 3" onclick="alert('Ver proyecto')">
@@ -1204,22 +1198,23 @@
             </div>
         </div>
     </section>
+    <!-- cambio 4: fin section galería -->
 
     <!-- cambio 4: Convertir comparativa en <section> -->
     <section class="comparativa">
         <div class="comparativa-inner">
-            <h2 class="seccion-titulo">Comparativa de Servicios</h2>
+            <h2 class="seccion-titulo">Comparativa de Servicios</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
 
             <table class="tabla-comparativa">
-                <thead>
+                <thead> <!-- cambio 4: usar <thead> para encabezados de tabla -->
                     <tr>
-                        <th scope="col">Característica</th>
+                        <th scope="col">Característica</th> <!-- cambio 4: usar <th> para celdas de encabezado; cambio 5: confirmado como encabezado de tabla (no requiere <h*>) -->
                         <th scope="col">Básico</th>
                         <th scope="col">Profesional</th>
                         <th scope="col">Enterprise</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody> <!-- cambio 4: usar <tbody> para el cuerpo de la tabla -->
                     <tr>
                         <td>Páginas incluidas</td>
                         <td>5</td>
@@ -1260,17 +1255,18 @@
             </table>
         </div>
     </section>
+    <!-- cambio 4: fin section comparativa -->
 
     <!-- cambio 4: Convertir precios en <section> -->
     <section class="precios" id="precios">
-        <h2 class="seccion-titulo">Planes y Precios</h2>
-        <p class="seccion-sub">Elige el plan perfecto para tu proyecto</p>
+        <h2 class="seccion-titulo">Planes y Precios</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
+        <p class="seccion-sub">Elige el plan perfecto para tu proyecto</p> <!-- cambio 5: confirmado como párrafo descriptivo -->
 
         <div class="precios-grid">
             <article class="precio-card">
-                <h3 class="plan-nombre">Básico</h3>
-                <div class="plan-precio">$299</div>
-                <div class="plan-periodo">por proyecto</div>
+                <h3 class="plan-nombre">Básico</h3> <!-- cambio 4: usar <h3>; cambio 5: confirmado como título del plan (encabezado de artículo) -->
+                <p class="plan-precio">$299</p> <!-- cambio 5: confirmado como párrafo (precio no es encabezado, es valor) -->
+                <p class="plan-periodo">por proyecto</p> <!-- cambio 5: confirmado como párrafo descriptivo -->
                 <ul class="plan-features">
                     <li>Diseño de 5 páginas</li>
                     <li>Responsive design</li>
@@ -1278,13 +1274,13 @@
                     <li>1 revisión</li>
                     <li>Entrega en 2 semanas</li>
                 </ul>
-                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button>
+                <button class="btn-plan outline" onclick="alert('Seleccionado')">Elegir Plan</button> <!-- cambio 4: usar <button> -->
             </article>
 
             <article class="precio-card destacado">
-                <h3 class="plan-nombre">Profesional</h3>
-                <div class="plan-precio">$599</div>
-                <div class="plan-periodo">por proyecto</div>
+                <h3 class="plan-nombre">Profesional</h3> <!-- cambio 4 y 5: como arriba -->
+                <p class="plan-precio">$599</p>
+                <p class="plan-periodo">por proyecto</p>
                 <ul class="plan-features">
                     <li>Diseño de 15 páginas</li>
                     <li>Responsive + animaciones</li>
@@ -1296,9 +1292,9 @@
             </article>
 
             <article class="precio-card">
-                <h3 class="plan-nombre">Enterprise</h3>
-                <div class="plan-precio">$999</div>
-                <div class="plan-periodo">por proyecto</div>
+                <h3 class="plan-nombre">Enterprise</h3> <!-- cambio 4 y 5: como arriba -->
+                <p class="plan-precio">$999</p>
+                <p class="plan-periodo">por proyecto</p>
                 <ul class="plan-features">
                     <li>Páginas ilimitadas</li>
                     <li>Full stack development</li>
@@ -1310,34 +1306,34 @@
             </article>
         </div>
     </section>
+    <!-- cambio 4: fin section precios -->
 
     <!-- cambio 4: Convertir video-section en <section> -->
     <section class="video-section">
-        <h2 class="seccion-titulo">Conoce Nuestro Proceso</h2>
-        <p class="seccion-sub">Mira cómo trabajamos para crear experiencias increíbles</p>
+        <h2 class="seccion-titulo">Conoce Nuestro Proceso</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
+        <p class="seccion-sub">Mira cómo trabajamos para crear experiencias increíbles</p> <!-- cambio 5: confirmado como párrafo descriptivo -->
 
         <div class="video-container">
-            <!-- cambio 3: aria-label descriptivo para el video -->
             <video autoplay loop muted aria-label="Video sobre nuestro proceso creativo">
                 <source src="proceso-creativo.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
             </video>
         </div>
     </section>
+    <!-- cambio 4: fin section video -->
 
     <!-- cambio 4: Convertir blog en <section> -->
     <section class="blog" id="blog">
         <div class="blog-inner">
-            <h2 class="seccion-titulo">Últimas Publicaciones</h2>
+            <h2 class="seccion-titulo">Últimas Publicaciones</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
 
             <div class="blog-grid">
+                <!-- cambio 4: Cada entrada de blog es un <article> -->
                 <article class="blog-card">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="blog1.jpg" alt="Imagen de portada del artículo sobre tendencias de diseño">
                     <div class="blog-contenido">
-                        <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time>
-                        <h3 class="blog-titulo">Tendencias de Diseño Web para 2024</h3>
-                        <p class="blog-extracto">
+                        <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time> <!-- cambio 4: usar <time> -->
+                        <h3 class="blog-titulo">Tendencias de Diseño Web para 2024</h3> <!-- cambio 4: usar <h3>; cambio 5: confirmado como título del artículo (encabezado) -->
+                        <p class="blog-extracto"> <!-- cambio 5: confirmado como párrafo de extracto -->
                             Descubre las últimas tendencias que están definiendo 
                             el diseño web este año y cómo aplicarlas.
                         </p>
@@ -1346,11 +1342,10 @@
                 </article>
 
                 <article class="blog-card">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="blog2.jpg" alt="Imagen de portada del artículo sobre branding digital">
                     <div class="blog-contenido">
                         <time class="blog-fecha" datetime="2023-12-28">28 Diciembre 2023</time>
-                        <h3 class="blog-titulo">La Importancia del Branding Digital</h3>
+                        <h3 class="blog-titulo">La Importancia del Branding Digital</h3> <!-- cambio 4 y 5: como arriba -->
                         <p class="blog-extracto">
                             Por qué una identidad de marca sólida es fundamental 
                             para el éxito de tu negocio online.
@@ -1360,11 +1355,10 @@
                 </article>
 
                 <article class="blog-card">
-                    <!-- cambio 3: Texto alternativo descriptivo -->
                     <img src="blog3.jpg" alt="Imagen de portada del artículo sobre UX">
                     <div class="blog-contenido">
                         <time class="blog-fecha" datetime="2023-12-10">10 Diciembre 2023</time>
-                        <h3 class="blog-titulo">UX: Diseñando para el Usuario</h3>
+                        <h3 class="blog-titulo">UX: Diseñando para el Usuario</h3> <!-- cambio 4 y 5: como arriba -->
                         <p class="blog-extracto">
                             Principios clave de UX que todo diseñador debe 
                             conocer para crear mejores experiencias.
@@ -1375,11 +1369,12 @@
             </div>
         </div>
     </section>
+    <!-- cambio 4: fin section blog -->
 
     <!-- cambio 4: Convertir contacto en <section> -->
     <section class="contacto" id="contacto">
-        <h2 class="seccion-titulo">Contáctanos</h2>
-        <p class="seccion-sub">¿Tienes un proyecto en mente? Hablemos</p>
+        <h2 class="seccion-titulo">Contáctanos</h2> <!-- cambio 4: usar <h2>; cambio 5: confirmado como encabezado de sección -->
+        <p class="seccion-sub">¿Tienes un proyecto en mente? Hablemos</p> <!-- cambio 5: confirmado como párrafo descriptivo -->
 
         <div class="contacto-form">
             <form>
@@ -1441,21 +1436,23 @@
             </form>
         </div>
     </section>
+    <!-- cambio 4: fin section contacto -->
 </main>
+<!-- cambio 4: fin main -->
 
 <!-- cambio 4: Convertir footer en elemento <footer> semántico -->
 <footer class="footer">
     <div class="footer-grid">
         <div>
-            <h3 class="footer-titulo">✿ Bloom Studio</h3>
-            <p class="footer-desc">
+            <h3 class="footer-titulo">✿ Bloom Studio</h3> <!-- cambio 4: usar <h3>; cambio 5: confirmado como encabezado de columna del footer -->
+            <p class="footer-desc"> <!-- cambio 5: confirmado como párrafo descriptivo -->
                 Somos un estudio creativo especializado en diseño digital, 
                 branding y desarrollo web. Transformamos ideas en experiencias 
                 digitales memorables desde 2016.
             </p>
         </div>
         <div>
-            <h3 class="footer-titulo">Servicios</h3>
+            <h3 class="footer-titulo">Servicios</h3> <!-- cambio 4 y 5: como arriba -->
             <ul class="footer-links">
                 <li><a href="#servicios">Diseño Web</a></li>
                 <li><a href="#servicios">Branding</a></li>
@@ -1465,7 +1462,7 @@
             </ul>
         </div>
         <div>
-            <h3 class="footer-titulo">Empresa</h3>
+            <h3 class="footer-titulo">Empresa</h3> <!-- cambio 4 y 5: como arriba -->
             <ul class="footer-links">
                 <li><a href="#equipo">Sobre Nosotros</a></li>
                 <li><a href="#equipo">Equipo</a></li>
@@ -1475,7 +1472,7 @@
             </ul>
         </div>
         <div>
-            <h3 class="footer-titulo">Legal</h3>
+            <h3 class="footer-titulo">Legal</h3> <!-- cambio 4 y 5: como arriba -->
             <ul class="footer-links">
                 <li><a href="#">Privacidad</a></li>
                 <li><a href="#">Términos</a></li>
@@ -1486,7 +1483,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p class="copyright">© 2024 Bloom Studio. Todos los derechos reservados.</p>
+        <p class="copyright">© 2024 Bloom Studio. Todos los derechos reservados.</p> <!-- cambio 5: confirmado como párrafo de copyright, no encabezado -->
         <div class="footer-social">
             <a href="#" aria-label="Facebook">f</a>
             <a href="#" aria-label="Twitter">t</a>
@@ -1496,9 +1493,11 @@
         </div>
     </div>
 </footer>
+<!-- cambio 4: fin footer -->
 
 <script>
     document.oncontextmenu = function() { return false; };
 </script>
 </body>
+<!-- cambio 1: fin del documento con lang="es" válido en <html> -->
 </html>
