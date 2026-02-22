@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<!-- cambio 1: Asegurar que el atributo lang en <html> esté presente y sea válido (es para español) 
-   => WCAG 3.1.1 (Idioma de la página) -->
+<!-- cambio 1: Asegurar que el atributo lang en <html> esté presente y sea válido  -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -16,8 +15,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #fff0f3;
-            /* cambio 2: contraste mejorado de texto general (de #e8a0b4 a #874158) 
-               => WCAG 1.4.3 (Contraste del texto) */
+            /* cambio 2: contraste mejorado de texto general (de #e8a0b4 a #874158)*/
             color: #874158;
         }
 
@@ -59,8 +57,7 @@
             transition: all 0.3s ease;
         }
 
-        /* cambio 7: Foco visible para navegar con teclado 
-           => WCAG 2.4.7 (Enfoque visible) */
+        /* cambio 7: Foco visible para navegar con teclado*/
         .navbar .nav-links a:focus {
             outline: 2px solid #ffd1dc;
             outline-offset: 2px;
@@ -820,8 +817,7 @@
 <header class="navbar">
     <div class="logo">✿ Bloom Studio</div>
     <nav class="nav-links">
-        <!-- cambio 6: Enlaces internos con IDs correctos y href="#" reparado 
-           => WCAG 2.4.1 (Saltos lógicos), 2.4.4 (Objetivo del enlace) -->
+        <!-- cambio 6: Enlaces internos con IDs correctos y href="#" reparado -->
         <a href="#inicio">Inicio</a>
         <a href="#servicios">Servicios</a>
         <a href="#equipo">Equipo</a>
@@ -855,9 +851,10 @@
         <div class="servicios-grid">
             <article class="servicio-card">
                 <div class="icono">
-                    <!-- cambio 3: Texto alternativo descriptivo para imágenes
-                       => WCAG 1.1.1 (Texto no texto) -->
-                    <img src="icono-diseno.png" alt="Icono representativo de diseño de interfaces web" width="40" height="40">
+                    <!-- cambio 3: Texto alternativo descriptivo para imágenes -->
+                    <img src="icono-diseno.png" 
+                    alt="Icono representativo de
+                    diseño de interfaces web" width="40" height="40">
                 </div>
                 <h3 class="card-titulo">Diseño Web</h3>
                 <p class="card-texto">
@@ -977,11 +974,12 @@
         <h2 class="seccion-titulo">Contáctanos</h2>
         <div class="contacto-form">
             <form>
-                <!-- cambio 5: Formulario accesible con labels y placeholders
-                   => WCAG 3.3.2 (Etiquetas o instrucciones) -->
+                <!-- cambio 5: Formulario accesible con labels y placeholders-->
                 <div class="form-row">
                     <div class="form-group">
-                        <input type="text" placeholder="Nombre completo" aria-label="Nombre completo" required>
+                        <input type="text" 
+                        placeholder="Nombre completo" 
+                        aria-label="Nombre completo" required>
                     </div>
                     <div class="form-group">
                         <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
