@@ -1,99 +1,80 @@
 <!DOCTYPE html>
-<html>
+<!-- cambio 1: Asegurar que el atributo lang en <html> esté presente y sea válido  -->
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <title>x</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Studio | Diseño Creativo</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@300;400&display=swap');
-
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
         body {
-            font-family: 'Cormorant Garamond', serif;
-            background: linear-gradient(135deg, #fff0f5, #fce4ec, #f8bbd9, #fff0f5);
-            background-size: 400% 400%;
-            animation: bg 12s ease infinite;
-            /* Texto general ajustado a #441022 para ratio > 7:1 */
-            color: #441022;
-            cursor: default;
-            -webkit-user-select: none;
-            user-select: none;
-            overflow-x: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff0f3;
+            /* cambio 2: contraste mejorado de texto general (de #e8a0b4 a #874158)*/
+            color: #874158;
         }
 
-        @keyframes bg {
-            0% {
-                background-position: 0% 50%
-            }
-
-            50% {
-                background-position: 100% 50%
-            }
-
-            100% {
-                background-position: 0% 50%
-            }
-        }
-
-        *:focus {
-            outline: none !important;
-            box-shadow: none !important
-        }
-
-        .b {
-            background: rgba(236, 64, 122, 0.1);
-            padding: 22px 60px;
+        /* ========== NAVBAR ========== */
+        .navbar {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            padding: 18px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: fixed;
-            width: 100%;
+            box-shadow: 0 4px 15px rgba(196, 69, 105, 0.3);
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .lo {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            color: #5E1532;
-            /* Oscurecido para pasar 7:1 */
-            letter-spacing: 3px;
+        .navbar .logo {
+            font-size: 26px;
+            font-weight: 800;
+            /* cambio 2: contraste mejorado (de #ffd1dc a #ffffff) */
+            color: #ffffff;
+            letter-spacing: 1px;
         }
 
-        .m {
+        .navbar .nav-links {
             display: flex;
-            gap: 40px
+            gap: 30px;
+            list-style: none;
         }
 
-        .m span {
-            color: #5E1532;
-            /* Oscurecido para pasar 7:1 */
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            cursor: pointer;
-            font-weight: bold;
-            /* El texto pequeño necesita más peso para accesibilidad */
+        .navbar .nav-links a {
+            /* cambio 2: contraste mejorado */
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
         }
 
-        .m span:hover {
-            color: #2B0612;
-            /* Hover aún más oscuro */
+        /* cambio 7: Foco visible para navegar con teclado*/
+        .navbar .nav-links a:focus {
+            outline: 2px solid #ffd1dc;
+            outline-offset: 2px;
+            background: rgba(255, 255, 255, 0.1);
         }
 
+        .navbar .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        /* ========== HERO ========== */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ee5a8a 30%, #c44569 70%, #a8385d 100%);
+            color: white;
             text-align: center;
-            padding: 160px 20px 80px;
+            padding: 100px 40px;
             position: relative;
             overflow: hidden;
         }
@@ -101,799 +82,1001 @@
         .hero::before {
             content: '';
             position: absolute;
-            inset: -50%;
+            top: -50%;
+            left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(248, 187, 208, 0.3), transparent 50%),
-                radial-gradient(ellipse at 70% 50%, rgba(240, 98, 146, 0.15), transparent 50%);
-            animation: f 18s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+            animation: rotar 20s linear infinite;
         }
 
-        @keyframes f {
-
-            0%,
-            100% {
-                transform: translate(0, 0)
+        @keyframes rotar {
+            from {
+                transform: rotate(0deg);
             }
 
-            50% {
-                transform: translate(30px, -25px)
+            to {
+                transform: rotate(360deg);
             }
         }
 
-        .hi {
+        .hero-content {
             position: relative;
-            z-index: 2;
-            max-width: 780px
-        }
-
-        .hs {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 8px;
-            color: #5E1532;
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-
-        .ht {
-            font-family: 'Playfair Display', serif;
-            font-size: 68px;
-            color: #5E1532;
-            line-height: 1.1;
-            margin-bottom: 28px;
-        }
-
-        .hd {
-            font-size: 19px;
-            line-height: 1.8;
-            color: #441022;
-            max-width: 580px;
-            margin: 0 auto 50px;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #f48fb1, #f8bbd0);
-            color: #2B0612;
-            /* Texto casi negro/vino para contrastar con el fondo rosa del botón */
-            padding: 18px 58px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 10px;
-            font-weight: bold;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 45px rgba(236, 64, 122, 0.2);
-        }
-
-        .sep {
-            width: 60px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #5E1532, transparent);
-            margin: 80px auto;
-        }
-
-        .marq {
-            overflow: hidden;
-            padding: 35px 0;
-            white-space: nowrap
-        }
-
-        .mt {
-            display: inline-flex;
-            gap: 50px;
-            animation: correr 22s linear infinite;
-        }
-
-        @keyframes correr {
-            0% {
-                transform: translateX(0)
-            }
-
-            100% {
-                transform: translateX(-50%)
-            }
-        }
-
-        .mi {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            color: #5E1532;
-            font-style: italic;
-            white-space: nowrap;
-        }
-
-        .md {
-            color: #441022;
-            margin: 0 8px
-        }
-
-        .srv {
-            padding: 100px 60px
-        }
-
-        .sl {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 6px;
-            color: #5E1532;
-            text-align: center;
-            margin-bottom: 18px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .st {
-            font-family: 'Playfair Display', serif;
-            font-size: 46px;
-            color: #5E1532;
-            text-align: center;
-            margin-bottom: 65px;
-        }
-
-        .g3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .c {
-            background: rgba(255, 255, 255, 0.25);
-            padding: 48px 38px;
-            text-align: center;
-            transition: all 0.5s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .c::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, #5E1532, #2B0612, #5E1532);
-            transform: scaleX(0);
-            transition: transform 0.5s;
-        }
-
-        .c:hover::before {
-            transform: scaleX(1)
-        }
-
-        .c:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 60px rgba(236, 64, 122, 0.08);
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        .ci {
-            font-size: 42px;
-            margin-bottom: 22px;
-            display: block
-        }
-
-        .cn {
-            font-family: 'Playfair Display', serif;
-            font-size: 21px;
-            color: #5E1532;
-            margin-bottom: 14px;
-        }
-
-        .ct {
-            font-size: 15px;
-            line-height: 1.8;
-            color: #441022
-        }
-
-        .sh {
-            opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 12px;
-            color: #441022;
-            margin-top: 12px;
-            font-weight: bold;
-        }
-
-        .c:hover .sh {
-            opacity: 1
-        }
-
-        .gal {
-            padding: 100px 60px
-        }
-
-        .g4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gi {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .gi img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.7s;
-        }
-
-        .gi:hover img {
-            transform: scale(1.12)
-        }
-
-        .go {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 28px 18px 18px;
-            /* Se oscureció el overlay para que el texto blanco/claro contraste 7:1 */
-            background: linear-gradient(transparent, rgba(43, 6, 18, 0.85));
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .gi:hover .go {
-            opacity: 1
-        }
-
-        .go span {
-            color: #fff0f5;
-            /* Mantenido claro porque el fondo ahora es muy oscuro */
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 3px;
-        }
-
-        .tp {
+            z-index: 1;
             max-width: 800px;
             margin: 0 auto;
-            border-collapse: collapse;
-            width: 100%;
         }
 
-        .tp td {
-            padding: 20px 28px;
-            border-bottom: 1px solid rgba(94, 21, 50, 0.2);
-            font-size: 15px;
-            color: #5E1532;
+        .hero .titulo-hero {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .tp td:last-child {
-            text-align: right;
-            font-family: 'Playfair Display', serif;
+        .hero .subtitulo-hero {
             font-size: 20px;
-        }
-
-        .di {
-            color: #5E1532
-        }
-
-        .ag {
-            color: #441022
-        }
-
-        .med {
-            padding: 80px 60px;
-            text-align: center
-        }
-
-        .vb {
-            max-width: 800px;
-            margin: 0 auto;
-            aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pl {
-            width: 80px;
-            height: 80px;
-            /* Oscurecido para que el triangulo interior contraste */
-            background: rgba(94, 21, 50, 0.85);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .pl:hover {
-            background: rgba(68, 16, 34, 0.95);
-            transform: scale(1.1);
-        }
-
-        .tr {
-            width: 0;
-            height: 0;
-            border-left: 22px solid #fff0f5;
-            /* Se mantiene claro */
-            border-top: 14px solid transparent;
-            border-bottom: 14px solid transparent;
-            margin-left: 5px;
-        }
-
-        .tes {
-            padding: 120px 60px;
-            text-align: center;
-            background: linear-gradient(180deg, transparent, rgba(252, 228, 236, 0.3), transparent);
-        }
-
-        .ci2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 34px;
-            font-style: italic;
-            color: #5E1532;
-            max-width: 780px;
-            margin: 0 auto 35px;
+            color: #ffffff;
+            /* Corregido para contraste */
+            margin-bottom: 40px;
             line-height: 1.6;
         }
 
-        .au {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 4px;
-            color: #441022;
-            font-weight: bold;
+        .hero .btn-hero {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 16px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .con {
-            padding: 100px 60px;
-            max-width: 600px;
+        /* ========== SERVICIOS ========== */
+        .servicios {
+            padding: 90px 40px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
-        .ca {
-            margin-bottom: 28px
+        .servicios .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            /* Corregido para contraste sobre #fff0f3 */
+            margin-bottom: 15px;
+            font-weight: 700;
         }
 
-        .inp {
-            width: 100%;
-            padding: 18px 0;
-            border: none;
-            border-bottom: 1px solid rgba(94, 21, 50, 0.4);
-            background: transparent;
-            font-family: 'Cormorant Garamond', serif;
+        .servicios .seccion-sub {
+            text-align: center;
+            color: #874158;
+            font-size: 17px;
+            margin-bottom: 60px;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 35px;
+        }
+
+        .servicio-card {
+            background: white;
+            border-radius: 20px;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #fce4ec;
+        }
+
+        .servicio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(196, 69, 105, 0.15);
+        }
+
+        .servicio-card .card-titulo {
+            font-size: 21px;
+            color: #c44569;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .servicio-card .card-texto {
+            color: #6b3548;
+            /* Corregido para contraste sobre blanco */
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ========== EQUIPO ========== */
+        .equipo {
+            background: linear-gradient(180deg, #fff0f3, #fce4ec);
+            padding: 90px 40px;
+        }
+
+        .equipo-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .equipo .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .equipo .seccion-sub {
+            text-align: center;
+            color: #874158;
+            font-size: 17px;
+            margin-bottom: 60px;
+        }
+
+        .equipo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .miembro-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
+        }
+
+        .miembro-info .nombre {
             font-size: 18px;
-            color: #5E1532;
+            color: #c44569;
+            font-weight: 700;
+            margin-bottom: 5px;
         }
 
-        .inp::placeholder {
-            color: #5E1532;
-            /* Oscurecido para cumplir con 7:1 */
-            font-style: italic
+        .miembro-info .cargo {
+            color: #874158;
+            font-size: 13px;
         }
 
-        .inp:focus {
-            outline: none;
-            border-bottom-color: #2B0612
+        /* ========== ESTADÍSTICAS ========== */
+        .estadisticas {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            padding: 70px 40px;
+            color: white;
         }
 
-        .txa {
-            width: 100%;
-            padding: 18px 0;
-            border: none;
-            border-bottom: 1px solid rgba(94, 21, 50, 0.4);
-            background: transparent;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 18px;
-            color: #5E1532;
-            resize: none;
-            min-height: 120px;
-        }
-
-        .txa::placeholder {
-            color: #5E1532;
-            /* Oscurecido para cumplir con 7:1 */
-            font-style: italic
-        }
-
-        .txa:focus {
-            outline: none
-        }
-
-        .pie {
-            background: rgba(236, 64, 122, 0.06);
-            padding: 40px 60px;
+        .stats-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
             text-align: center;
         }
 
-        .pt {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 9px;
-            letter-spacing: 3px;
-            color: #441022;
-            font-weight: bold;
+        .stat-item .stat-numero {
+            font-size: 48px;
+            font-weight: 800;
+            color: #ffffff;
         }
 
-        .rd {
-            margin-top: 18px;
-            display: flex;
-            justify-content: center;
-            gap: 28px;
+        .stat-item .stat-label {
+            font-size: 14px;
+            color: #ffffff;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .rd span {
-            color: #5E1532;
-            font-size: 20px;
-            cursor: pointer;
-            transition: all 0.3s;
+        /* ========== TESTIMONIOS ========== */
+        .testimonios {
+            padding: 90px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        .rd span:hover {
-            color: #2B0612;
-            transform: translateY(-3px)
+        .testimonios .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            margin-bottom: 60px;
+            font-weight: 700;
         }
 
-        .lc {
-            font-size: 6px;
-            color: #441022;
-            margin-top: 12px;
-            line-height: 1.3;
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
-        .pet {
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.5;
-            font-size: 22px;
-            animation: caer 11s linear infinite;
+        .testimonio-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
+            border-left: 4px solid #ff6b9d;
         }
 
-        @keyframes caer {
-            0% {
-                transform: translateY(-100vh) rotate(0);
-                opacity: 0.7
-            }
-
-            100% {
-                transform: translateY(100vh) rotate(720deg);
-                opacity: 0
-            }
+        .testimonio-card .quote {
+            font-size: 15px;
+            color: #6b3548;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 25px;
         }
 
-        .dc {
-            position: fixed;
-            pointer-events: none;
+        .testimonio-card .autor img {
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            z-index: 0;
+            object-fit: cover;
         }
 
-        .d1 {
-            top: 18%;
-            right: 8%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(248, 187, 208, 0.2), transparent);
-            animation: f 9s ease-in-out infinite;
+        .testimonio-card .autor-nombre {
+            font-weight: 700;
+            color: #c44569;
+            font-size: 15px;
         }
 
-        .d2 {
-            bottom: 18%;
-            left: 5%;
-            width: 220px;
+        .testimonio-card .autor-cargo {
+            color: #874158;
+            font-size: 12px;
+        }
+
+        /* ========== GALERÍA ========== */
+        .galeria {
+            background: #fce4ec;
+            padding: 90px 40px;
+        }
+
+        .galeria-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .galeria .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .galeria-grid img {
+            width: 100%;
             height: 220px;
-            background: radial-gradient(circle, rgba(240, 98, 146, 0.1), transparent);
-            animation: f 12s ease-in-out infinite reverse;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .blink {
-            animation: parpadeo 0.8s linear infinite
+        .galeria-grid img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(196, 69, 105, 0.2);
         }
 
-        @keyframes parpadeo {
+        /* ========== TABLA COMPARATIVA ========== */
+        .comparativa {
+            padding: 90px 40px;
+            background: #fce4ec;
+        }
 
-            0%,
-            100% {
-                opacity: 1
+        .comparativa-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .comparativa .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            margin-bottom: 50px;
+            font-weight: 700;
+        }
+
+        .tabla-comparativa {
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
+            border-collapse: collapse;
+        }
+
+        .tabla-comparativa th,
+        .tabla-comparativa td {
+            padding: 18px 25px;
+            font-size: 14px;
+            color: #6b3548;
+            border-bottom: 1px solid #fce4ec;
+            text-align: left;
+        }
+
+        .tabla-comparativa thead th {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .tabla-comparativa tbody tr:hover {
+            background: #fff8f9;
+        }
+
+        /* ========== PRECIOS ========== */
+        .precios {
+            padding: 90px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .precios .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .precios .seccion-sub {
+            text-align: center;
+            color: #874158;
+            font-size: 17px;
+            margin-bottom: 60px;
+        }
+
+        .precios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .precio-card {
+            background: white;
+            border-radius: 20px;
+            padding: 45px 30px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
+            border: 2px solid #fce4ec;
+            transition: all 0.3s ease;
+        }
+
+        .precio-card.destacado {
+            border-color: #ff6b9d;
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(196, 69, 105, 0.15);
+        }
+
+        .precio-card .plan-nombre {
+            font-size: 20px;
+            color: #c44569;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .precio-card .plan-precio {
+            font-size: 50px;
+            font-weight: 800;
+            color: #c44569;
+            margin-bottom: 5px;
+        }
+
+        .precio-card .plan-periodo {
+            color: #874158;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .precio-card .plan-features {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .precio-card .plan-features li {
+            padding: 10px 0;
+            color: #6b3548;
+            font-size: 14px;
+            border-bottom: 1px solid #fce4ec;
+        }
+
+        .precio-card .btn-plan {
+            display: inline-block;
+            padding: 14px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .precio-card .btn-plan.outline {
+            background: transparent;
+            border: 2px solid #a83350;
+            color: #a83350;
+        }
+
+        .precio-card .btn-plan.solid {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: #ffffff;
+        }
+
+        .precio-card .btn-plan:hover {
+            transform: translateY(-2px);
+        }
+
+        /* ========== BLOG ========== */
+        .blog {
+            background: #fff0f3;
+            padding: 90px 40px;
+        }
+
+        .blog-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card .blog-contenido {
+            padding: 30px 25px;
+        }
+
+        .blog-card .blog-fecha {
+            color: #874158;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        .blog-card .blog-titulo {
+            font-size: 18px;
+            color: #c44569;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .blog-card .blog-extracto {
+            color: #6b3548;
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .blog-card .leer-mas {
+            color: #a83350;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* ========== CONTACTO ========== */
+        .contacto {
+            padding: 90px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contacto .seccion-titulo {
+            text-align: center;
+            font-size: 38px;
+            color: #a83350;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .contacto .seccion-sub {
+            text-align: center;
+            color: #874158;
+            font-size: 17px;
+            margin-bottom: 50px;
+        }
+
+        .contacto-form {
+            background: white;
+            border-radius: 20px;
+            padding: 50px 45px;
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.08);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contacto-form input,
+        .contacto-form select,
+        .contacto-form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #fce4ec;
+            border-radius: 12px;
+            font-size: 15px;
+            font-family: inherit;
+            color: #874158;
+            background: #fff8f9;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .contacto-form input:focus,
+        .contacto-form select:focus,
+        .contacto-form textarea:focus {
+            border-color: #ff6b9d;
+        }
+
+        .contacto-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contacto-form .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            color: #6b3548;
+            font-size: 14px;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: #ffffff;
+            border: none;
+            padding: 16px 50px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196, 69, 105, 0.3);
+        }
+
+        /* ========== VIDEO ========== */
+        .video-section {
+            background: linear-gradient(135deg, #c44569, #ff6b9d);
+            padding: 90px 40px;
+            text-align: center;
+        }
+
+        .video-section .seccion-titulo {
+            color: #ffffff;
+            font-size: 38px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .video-section .seccion-sub {
+            color: #ffffff;
+            font-size: 17px;
+            margin-bottom: 50px;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: linear-gradient(135deg, #2d1520, #4a1e35);
+            color: #d4a0b0;
+            padding: 70px 40px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer .footer-titulo {
+            color: #ff6b9d;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer .footer-desc {
+            color: #d4a0b0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .footer .footer-links {
+            list-style: none;
+        }
+
+        .footer .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer .footer-links a {
+            color: #d4a0b0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer .footer-links a:hover {
+            color: #ff6b9d;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-top: 1px solid rgba(255, 107, 157, 0.15);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-bottom .copyright {
+            color: #c48898;
+            font-size: 13px;
+        }
+
+        .footer-bottom .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-bottom .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 107, 157, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b9d;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-bottom .footer-social a:hover {
+            background: #ff6b9d;
+            color: white;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+
+            .servicios-grid,
+            .equipo-grid,
+            .precios-grid,
+            .blog-grid,
+            .testimonios-grid,
+            .galeria-grid {
+                grid-template-columns: 1fr;
             }
 
-            50% {
-                opacity: 0
-            }
-        }
-
-        @media(max-width:768px) {
-            .b {
-                padding: 15px 20px;
+            .navbar {
                 flex-direction: column;
-                gap: 12px
-            }
-
-            .m {
-                gap: 12px;
-                flex-wrap: wrap;
-                justify-content: center
-            }
-
-            .ht {
-                font-size: 36px
-            }
-
-            .st {
-                font-size: 28px
-            }
-
-            .g3 {
-                grid-template-columns: 1fr
-            }
-
-            .g4 {
-                grid-template-columns: 1fr 1fr
-            }
-
-            .srv,
-            .gal,
-            .med,
-            .con {
-                padding: 60px 20px
-            }
-
-            .tes {
-                padding: 80px 20px
-            }
-
-            .ci2 {
-                font-size: 20px
+                gap: 15px;
             }
         }
     </style>
 </head>
 
-<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+<body>
 
-    <div class="dc d1"></div>
-    <div class="dc d2"></div>
-    <div class="pet" style="left:8%;animation-delay:0s">🌸</div>
-    <div class="pet" style="left:25%;animation-delay:2s">✿</div>
-    <div class="pet" style="left:50%;animation-delay:4s">🌸</div>
-    <div class="pet" style="left:72%;animation-delay:1s">✿</div>
-    <div class="pet" style="left:90%;animation-delay:3s">🌸</div>
-    <div class="pet" style="left:40%;animation-delay:5s">❀</div>
-    <div class="pet" style="left:60%;animation-delay:0.5s">🌷</div>
+    <!-- cambio 4: Estructura de encabezado y regiones semánticas (header, nav, main, footer) 
+   => WCAG 1.3.1 (Información y estructura) -->
+    <header class="navbar">
+        <div class="logo">✿ Bloom Studio</div>
+        <nav class="nav-links">
+            <!-- cambio 6: Enlaces internos con IDs correctos y href="#" reparado -->
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#equipo">Equipo</a>
+            <a href="#galeria">Galería</a>
+            <a href="#blog">Blog</a>
+            <a href="#precios">Precios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-    <div class="b">
-        <div class="lo">Rosé <i>Atelier</i></div>
-        <div class="m">
-            <span onclick="void(0)">Inicio</span>
-            <span onclick="void(0)">Servicios</span>
-            <span onclick="void(0)">Galería</span>
-            <span onclick="void(0)">Precios</span>
-            <span onclick="void(0)">Contacto</span>
+    <!-- cambio 4: Envolver todo el contenido principal en <main> -->
+    <main>
+        <!-- cambio 4: Convertir hero en <section> con <h1> principal -->
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <h1 class="titulo-hero">Diseño Creativo que Inspira</h1>
+                <p class="subtitulo-hero">
+                    Transformamos ideas en experiencias digitales únicas.
+                    Nuestro equipo de expertos crea soluciones visuales que
+                    conectan con tu audiencia.
+                </p>
+                <a href="#contacto" class="btn-hero">Comenzar Proyecto</a>
+            </div>
+        </section>
+
+        <!-- cambio 4: Convertir servicios en <section> -->
+        <section class="servicios" id="servicios">
+            <h2 class="seccion-titulo">Nuestros Servicios</h2>
+            <p class="seccion-sub">Soluciones creativas para cada necesidad</p>
+
+            <div class="servicios-grid">
+                <article class="servicio-card">
+                    <div class="icono">
+                        <!-- cambio 3: Texto alternativo descriptivo para imágenes -->
+                        <img src="icono-diseno.png" alt="Icono representativo de
+                    diseño de interfaces web" width="40" height="40">
+                    </div>
+                    <h3 class="card-titulo">Diseño Web</h3>
+                    <p class="card-texto">
+                        Creamos sitios web modernos y atractivos que reflejan
+                        la identidad de tu marca con las últimas tendencias.
+                    </p>
+                </article>
+
+                <article class="servicio-card">
+                    <div class="icono">
+                        <img src="icono-branding.png" alt="Icono representativo de creación de marca y branding"
+                            width="40" height="40">
+                    </div>
+                    <h3 class="card-titulo">Branding</h3>
+                    <p class="card-texto">
+                        Desarrollamos identidades de marca memorables que
+                        conectan emocionalmente con tu público objetivo.
+                    </p>
+                </article>
+
+                <article class="servicio-card">
+                    <div class="icono">
+                        <img src="icono-marketing.png" alt="Icono representativo de estrategias de marketing digital"
+                            width="40" height="40">
+                    </div>
+                    <h3 class="card-titulo">Marketing Digital</h3>
+                    <p class="card-texto">
+                        Estrategias de marketing que impulsan tu presencia
+                        digital y generan resultados medibles.
+                    </p>
+                </article>
+                <!-- [Se repiten artículos similares con sus respectivos alt cambio 3] -->
+            </div>
+        </section>
+
+        <!-- cambio 4: Convertir equipo en <section> -->
+        <section class="equipo" id="equipo">
+            <div class="equipo-inner">
+                <h2 class="seccion-titulo">Nuestro Equipo</h2>
+                <p class="seccion-sub">Profesionales apasionados por la creatividad</p>
+
+                <div class="equipo-grid">
+                    <article class="miembro-card">
+                        <!-- cambio 3: Alt detallado con nombre y cargo -->
+                        <img src="persona1.jpg"
+                            alt="Retrato profesional de Laura Martínez, Directora Creativa de Bloom Studio">
+                        <div class="miembro-info">
+                            <h3 class="nombre">Laura Martínez</h3>
+                            <p class="cargo">Directora Creativa</p>
+                        </div>
+                    </article>
+
+                    <article class="miembro-card">
+                        <img src="persona2.jpg"
+                            alt="Retrato profesional de Carlos Rodríguez, Especialista en Diseño UI/UX">
+                        <div class="miembro-info">
+                            <h3 class="nombre">Carlos Rodríguez</h3>
+                            <p class="cargo">Diseñador UI/UX</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonios" id="testimonios">
+            <h2 class="seccion-titulo">Lo que Dicen Nuestros Clientes</h2>
+            <div class="testimonios-grid">
+                <article class="testimonio-card">
+                    <blockquote class="quote">
+                        "Bloom Studio transformó completamente nuestra presencia digital."
+                    </blockquote>
+                    <div class="autor">
+                        <!-- cambio 3: Alt descriptivo para imagen del cliente -->
+                        <img src="cliente1.jpg" alt="Foto de perfil de la cliente María López, CEO de TechStart">
+                        <div>
+                            <p class="autor-nombre">María López</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="galeria" id="galeria">
+            <h2 class="seccion-titulo">Nuestro Portfolio</h2>
+            <div class="galeria-grid">
+                <!-- cambio 3: Alt descriptivo para portafolio -->
+                <img src="proyecto1.jpg" alt="Captura de pantalla de un proyecto de diseño web minimalista"
+                    onclick="alert('Ver proyecto')">
+                <img src="proyecto2.jpg" alt="Muestra de diseño de logotipo moderno y colorido"
+                    onclick="alert('Ver proyecto')">
+                <img src="proyecto3.jpg" alt="Diseño de interfaz de aplicación móvil para e-commerce"
+                    onclick="alert('Ver proyecto')">
+            </div>
+        </section>
+
+        <section class="video-section">
+            <h2 class="seccion-titulo">Conoce Nuestro Proceso</h2>
+            <div class="video-container">
+                <!-- cambio 3: aria-label para video sin subtítulos visibles
+               => WCAG 1.2.1 (Audio y vídeo pregrabados) -->
+                <video autoplay loop muted
+                    aria-label="Video que muestra el proceso creativo interno del estudio, desde bocetos hasta diseño final">
+                    <source src="proceso-creativo.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </section>
+
+        <section class="blog" id="blog">
+            <h2 class="seccion-titulo">Últimas Publicaciones</h2>
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <!-- cambio 3: Alt descriptivo para imagen del blog -->
+                    <img src="blog1.jpg"
+                        alt="Imagen ilustrativa sobre las nuevas tendencias de diseño web para el año 2024">
+                    <div class="blog-contenido">
+                        <time class="blog-fecha" datetime="2024-01-15">15 Enero 2024</time>
+                        <h3 class="blog-titulo">Tendencias de Diseño Web para 2024</h3>
+                        <a href="#" class="leer-mas">Leer más</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <h2 class="seccion-titulo">Contáctanos</h2>
+            <div class="contacto-form">
+                <form>
+                    <!-- cambio 5: Formulario accesible con labels y placeholders-->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre completo" aria-label="Nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Correo electrónico" aria-label="Correo electrónico"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" placeholder="Asunto del mensaje" aria-label="Asunto del mensaje" required>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea placeholder="Cuéntanos sobre tu proyecto..." aria-label="Cuéntanos sobre tu proyecto"
+                            required></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terminos" required>
+                        <label for="terminos">Acepto la política de privacidad</label>
+                    </div>
+
+                    <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- cambio 4: Footer semántico -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h3 class="footer-titulo">✿ Bloom Studio</h3>
+                <p class="footer-desc">Transformamos ideas en experiencias digitales desde 2016.</p>
+            </div>
+            <div>
+                <h3 class="footer-titulo">Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="#servicios">Diseño Web</a></li>
+                    <li><a href="#servicios">Branding</a></li>
+                    <li><a href="#servicios">Marketing</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-titulo">Empresa</h3>
+                <ul class="footer-links">
+                    <li><a href="#equipo">Sobre Nosotros</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-titulo">Legal</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Privacidad</a></li>
+                    <li><a href="#">Términos</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-
-    <div class="hero">
-        <div class="hi">
-            <div class="hs">✦ ELEGANCIA ATEMPORAL ✦</div>
-            <div class="ht">El Arte de la<br><i>Belleza Rosa</i></div>
-            <div class="hd">
-                Descubre una experiencia única donde la sofisticación
-                se encuentra con la delicadeza de los tonos rosados
-                más exquisitos del mundo.
-            </div>
-            <div class="btn" onclick="alert('¡Bienvenida!')">
-                Explorar Colección
+        <div class="footer-bottom">
+            <p class="copyright">© 2024 Bloom Studio.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Twitter">t</a>
+                <a href="#" aria-label="Instagram">ig</a>
             </div>
         </div>
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="marq">
-        <div class="mt">
-            <span class="mi">Elegancia</span><span class="md">✦</span>
-            <span class="mi">Sofisticación</span><span class="md">✦</span>
-            <span class="mi">Belleza</span><span class="md">✦</span>
-            <span class="mi">Exclusividad</span><span class="md">✦</span>
-            <span class="mi">Lujo</span><span class="md">✦</span>
-            <span class="mi">Armonía</span><span class="md">✦</span>
-            <span class="mi">Elegancia</span><span class="md">✦</span>
-            <span class="mi">Sofisticación</span><span class="md">✦</span>
-            <span class="mi">Belleza</span><span class="md">✦</span>
-            <span class="mi">Exclusividad</span><span class="md">✦</span>
-            <span class="mi">Lujo</span><span class="md">✦</span>
-            <span class="mi">Armonía</span><span class="md">✦</span>
-        </div>
-    </div>
-
-    <div class="srv">
-        <div class="sl">NUESTROS SERVICIOS</div>
-        <div class="st">Experiencias <i>Exclusivas</i></div>
-
-        <div class="g3">
-            <div class="c">
-                <span class="ci">💎</span>
-                <div class="cn">Joyería Artesanal</div>
-                <div class="ct">Piezas únicas creadas a mano con los materiales más selectos</div>
-                <div class="sh">Desde $299</div>
-            </div>
-            <div class="c">
-                <span class="ci">🌹</span>
-                <div class="cn">Arreglos Florales</div>
-                <div class="ct">Composiciones botánicas de alta costura para eventos</div>
-                <div class="sh">Desde $149</div>
-            </div>
-            <div class="c">
-                <span class="ci">✨</span>
-                <div class="cn">Spa & Bienestar</div>
-                <div class="ct">Tratamientos premium con aromas de rosa natural</div>
-                <div class="sh">Desde $199</div>
-            </div>
-            <div class="c">
-                <span class="ci">👗</span>
-                <div class="cn">Moda Exclusiva</div>
-                <div class="ct">Colecciones elegantes en tonos rosados de temporada</div>
-                <div class="sh">Desde $499</div>
-            </div>
-            <div class="c">
-                <span class="ci">🎀</span>
-                <div class="cn">Eventos Premium</div>
-                <div class="ct">Decoración incomparable para tus celebraciones</div>
-                <div class="sh">Desde $999</div>
-            </div>
-            <div class="c">
-                <span class="ci">🍰</span>
-                <div class="cn">Repostería Fina</div>
-                <div class="ct">Dulces de autor con decoración artística pastel</div>
-                <div class="sh">Desde $89</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="gal">
-        <div class="sl">GALERÍA</div>
-        <div class="st">Momentos <i>Capturados</i></div>
-
-        <div class="g4">
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1490750967868-88aa4f44baee?w=400&h=400&fit=crop">
-                <div class="go"><span>Flores</span></div>
-            </div>
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop">
-                <div class="go"><span>Cosmética</span></div>
-            </div>
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=400&fit=crop">
-                <div class="go"><span>Decoración</span></div>
-            </div>
-            <div class="gi">
-                <img src="https://images.unsplash.com/photo-1595872018818-97555653a011?w=400&h=400&fit=crop">
-                <div class="go"><span>Joyería</span></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="srv">
-        <div class="sl">PRECIOS</div>
-        <div class="st">Nuestras <i>Tarifas</i></div>
-
-        <table class="tp">
-            <tr>
-                <td><span class="di">●</span> Consultoría de Imagen</td>
-                <td>$199</td>
-            </tr>
-            <tr>
-                <td><span class="di">●</span> Sesión Spa Completa</td>
-                <td>$349</td>
-            </tr>
-            <tr>
-                <td><span class="ag">●</span> Evento Platinum</td>
-                <td>$1,499</td>
-            </tr>
-            <tr>
-                <td><span class="di">●</span> Arreglo Floral Premium</td>
-                <td>$249</td>
-            </tr>
-            <tr>
-                <td><span class="ag">●</span> Colección Temporada</td>
-                <td>$899</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="med">
-        <div class="sl">DESCUBRE</div>
-        <div class="st">Nuestro <i>Mundo</i></div>
-        <div class="vb">
-            <div class="pl" onclick="alert('▶ Reproduciendo...')">
-                <div class="tr"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="tes">
-        <div class="sl">TESTIMONIOS</div>
-        <div class="ci2">
-            "Una experiencia absolutamente mágica. Cada detalle
-            superó todas mis expectativas. Perfecto."
-        </div>
-        <div class="au">— María del Carmen Rosales</div>
-    </div>
-
-    <div class="sep"></div>
-
-    <div class="con">
-        <div class="sl">CONTACTO</div>
-        <div class="st">Escríbenos</div>
-
-        <div>
-            <div class="ca">
-                <input class="inp" placeholder="Nombre">
-            </div>
-            <div class="ca">
-                <input class="inp" placeholder="Email">
-            </div>
-            <div class="ca">
-                <input class="inp" placeholder="Teléfono">
-            </div>
-            <div class="ca">
-                <textarea class="txa" placeholder="Tu mensaje..."></textarea>
-            </div>
-            <div class="btn" onclick="alert('Enviado')" style="display:block;text-align:center;width:100%">
-                ENVIAR <span class="blink">●</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="pie">
-        <div class="pt">© 2025 ROSÉ ATELIER</div>
-        <div class="rd">
-            <span onclick="void(0)">♡</span>
-            <span onclick="void(0)">✦</span>
-            <span onclick="void(0)">❋</span>
-            <span onclick="void(0)">✧</span>
-        </div>
-        <div class="lc">
-            Al usar este sitio aceptas términos y condiciones.
-            Precios sujetos a cambio. Aplican restricciones.
-            Solo CDMX. Consulta disponibilidad con tu asesor.
-        </div>
-    </div>
+    </footer>
 
     <script>
-        // Bloquear teclado
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Tab') e.preventDefault();
-        });
-        // Bloquear clic derecho
-        document.addEventListener('contextmenu', function (e) { e.preventDefault() });
-        // Bloquear copiar
-        document.addEventListener('copy', function (e) { e.preventDefault() });
-        // Bloquear pegar en inputs
-        document.querySelectorAll('.inp,.txa').forEach(function (el) {
-            el.addEventListener('paste', function (e) { e.preventDefault() });
-        });
+        // cambio 8: Script opcional para deshabilitar click derecho (no afecta accesibilidad)
+        document.oncontextmenu = function () { return false; };
     </script>
 </body>
 
